@@ -1,6 +1,3 @@
-from django.shortcuts import render
-
-
-def index(request):
-    """Render the accounts index file."""
-    return render(request, "index.html")
+from django.contrib import auth, messages
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User

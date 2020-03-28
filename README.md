@@ -7,7 +7,17 @@ The target market is primarily customers that require designed pieces to fulfil 
 The webshop boasts a modern and intuitive shopping experience, providing customers with options to purchase from standard stock items or request commissions.  
 
 ---
-## Wireframes
+## Design & Styling
+### Colour Palette
+This colour palette was formed upon project inception and used to drive UI decisions within the project, adjustments may be made to this as project development progresses.  
+
+![#fcfcfc](https://placehold.it/15/fcfcfc/000000?text=+) `#fcfcfc`  
+![#9ec3d6](https://placehold.it/15/9ec3d6/000000?text=+) `#9ec3d6`  
+![#93ba7e](https://placehold.it/15/93ba7e/000000?text=+) `#93ba7e`  
+![#2f4677](https://placehold.it/15/2f4677/000000?text=+) `#2f4677`  
+![#8e638a](https://placehold.it/15/8e638a/000000?text=+) `#8e638a`  
+
+### Wireframes
 
 <details>
 <summary> Project Inception Wireframes </summary>

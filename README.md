@@ -7,3 +7,13 @@ The target market is primarily customers that require designed pieces to fulfil 
 The webshop boasts a modern and intuitive shopping experience, providing customers with options to purchase from standard stock items or request commissions.  
 
 ---
+## Wireframes
+
+Project inception wireframes were created to provide guidance from the initial planning stages with a mobile-first development perspective and were used as the starting point for page layouts.  
+
+### Homepage
+- ![Mobile](https://ibb.co/q9pXzwK)   
+- ![Desktop](https://ibb.co/zHJMBRM)
+
+### Products
+- ![Mobile](https://ibb.co/Pr6k4Vv)

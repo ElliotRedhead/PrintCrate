@@ -9,6 +9,9 @@ The webshop boasts a modern and intuitive shopping experience, providing custome
 ---
 ## Wireframes
 
+<details>
+<summary> Project Inception Wireframes </summary>
+
 Project inception wireframes were created to provide guidance from the initial planning stages with a mobile-first development perspective and were used as the starting point for page layouts.  
 
 ### Homepage
@@ -17,3 +20,4 @@ Project inception wireframes were created to provide guidance from the initial p
 
 ### Products
 - [Mobile Products Page](https://ibb.co/Pr6k4Vv)
+</details>

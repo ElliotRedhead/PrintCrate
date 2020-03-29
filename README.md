@@ -6,6 +6,8 @@ The target market is primarily customers that require designed pieces to fulfil 
 
 The webshop boasts a modern and intuitive shopping experience, providing customers with options to purchase from standard stock items or request commissions.  
 
+[![Build Status](https://travis-ci.org/ElliotRedhead/PrintCrate.svg?branch=master)](https://travis-ci.org/ElliotRedhead/PrintCrate)
+
 ---
 ## Design & Styling
 ### Colour Palette

@@ -4,9 +4,9 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 
 
-@login_required
+# @login_required
 def logout(request):
     """Log the user out."""
     auth.logout(request)
-    messages.success(request, "You have successfully been logged out.")
-    return redirect(reverse("index"))
+    messages.success(request, "You have been successfully logged out.")
+    return redirect(reverse("home"))

@@ -20,6 +20,6 @@ from homepage import urls as homepage_urls
 
 urlpatterns = [
     path("", include(homepage_urls)),
-    path('admin/', admin.site.urls),
-    path('accounts/', include(accounts_urls))
+    path("admin/", admin.site.urls),
+    path("accounts/", include(accounts_urls))
 ]

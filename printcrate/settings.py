@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'bootstrap_modal_forms',
+    'crispy_forms',
     'django.contrib.staticfiles',
     'printcrate',
     'accounts',

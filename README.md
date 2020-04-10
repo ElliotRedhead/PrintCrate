@@ -21,6 +21,21 @@ The webshop boasts a modern and intuitive shopping experience, providing custome
 
 ### User Story Scope
 
+Key objectives/requirements for site users.
+
+1. As a new user: I want to create an account.
+2. As a returning user: I want to login to my existing account.
+3. As a user browsing products: I want to navigate products effectively.
+4. As a user interested in a particular product: I want to expand details of a specific product to view a description.
+5. As a user interested in the background of the company: I want to read more about the business.
+6. As a user purchasing a product: I want to add a product to my cart.
+7. As a user purchasing a product: I want to know if there is sufficient stock available for my order.
+8. As a user purchasing a product: I want to view the products currently in my cart.
+9. As a user reviewing my cart: I want to alter quantities of products in my cart.
+10. As a returning user: I want to be able to update my account details if required.
+11. As a satisfied customer: I want to be able to share PrintCrate on social networks.
+12. As a customer requesting a non-standard model: I want to upload an image file for the company to review, with a message and contact details.
+
 ---
 ## Design & Styling
 ### Colour Palette

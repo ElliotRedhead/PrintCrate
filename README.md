@@ -9,6 +9,19 @@ The webshop boasts a modern and intuitive shopping experience, providing custome
 [![Build Status](https://travis-ci.org/ElliotRedhead/PrintCrate.svg?branch=master)](https://travis-ci.org/ElliotRedhead/PrintCrate)
 
 ---
+## User Experience
+
+### Target Audience
+
+- Potential buyers of the existing standard product range.
+- People with product requirements that require specific customisation.
+- People searching for 3D-printed products.
+
+## User Stories
+
+### User Story Scope
+
+---
 ## Design & Styling
 ### Colour Palette
 This colour palette was formed upon project inception and used to drive UI decisions within the project, adjustments may be made to this as project development progresses.  

@@ -27,9 +27,18 @@ This colour palette was formed upon project inception and used to drive UI decis
 Project inception wireframes were created to provide guidance from the initial planning stages with a mobile-first development perspective and were used as the starting point for page layouts.  
 
 ### Homepage
-- [Mobile Homepage](https://ibb.co/q9pXzwK)   
-- [Desktop Homepage](https://ibb.co/zHJMBRM)
+- [Mobile Homepage](https://ibb.co/5T6JPHq)   
+- [Desktop Homepage](https://ibb.co/ZH1vXtv)
 
 ### Products
-- [Mobile Products Page](https://ibb.co/Pr6k4Vv)
+- [Mobile Products Page](https://ibb.co/dm6xhLW)
+- [Desktop Products Page](https://ibb.co/F0MbX28)
+
+### Contact
+- [Mobile Contact Page](https://ibb.co/dDMD2gS)
+- [Desktop Contact Page](https://ibb.co/jRKmr98)
+
+### About
+- [Mobile About Page](https://ibb.co/GcrngWG)
+- [Desktop About Page](https://ibb.co/wswMx68)
 </details>

@@ -9,6 +9,7 @@ The webshop boasts a modern and intuitive shopping experience, providing custome
 [![Build Status](https://travis-ci.org/ElliotRedhead/PrintCrate.svg?branch=master)](https://travis-ci.org/ElliotRedhead/PrintCrate)
 
 ---
+
 ## User Experience
 
 ### Target Audience
@@ -37,8 +38,11 @@ Key objectives/requirements for site users.
 12. As a customer requesting a non-standard model: I want to upload an image file for the company to review, with a message and contact details.
 
 ---
+
 ## Design & Styling
+
 ### Colour Palette
+
 This colour palette was formed upon project inception and used to drive UI decisions within the project, adjustments may be made to this as project development progresses.  
 
 ![#fcfcfc](https://placehold.it/15/fcfcfc/000000?text=+) `#fcfcfc`  
@@ -55,18 +59,23 @@ This colour palette was formed upon project inception and used to drive UI decis
 Project inception wireframes were created to provide guidance from the initial planning stages with a mobile-first development perspective and were used as the starting point for page layouts.  
 
 ### Homepage
-- [Mobile Homepage](https://ibb.co/5T6JPHq)   
-- [Desktop Homepage](https://ibb.co/ZH1vXtv)
+
+- [Mobile Homepage](/wireframes/Home-Mobile.png)
+- [Desktop Homepage](/wireframes/Home-Desktop.png)
 
 ### Products
-- [Mobile Products Page](https://ibb.co/dm6xhLW)
-- [Desktop Products Page](https://ibb.co/F0MbX28)
+
+- [Mobile Products Page](/wireframes/Products-Mobile.png)
+- [Desktop Products Page](/wireframes/Products-Desktop.png)
 
 ### Contact
-- [Mobile Contact Page](https://ibb.co/dDMD2gS)
-- [Desktop Contact Page](https://ibb.co/jRKmr98)
+
+- [Mobile Contact Page](/wireframes/Contact-Mobile.png)
+- [Desktop Contact Page](/wireframes/Contact-Desktop.png)
 
 ### About
-- [Mobile About Page](https://ibb.co/GcrngWG)
-- [Desktop About Page](https://ibb.co/wswMx68)
+
+- [Mobile About Page](/wireframes/About-Mobile.png)
+- [Desktop About Page](/wireframes/About-Desktop.png)
+
 </details>

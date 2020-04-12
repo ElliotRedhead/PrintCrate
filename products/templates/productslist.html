@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block page_title %}Products | PrintCrate{% endblock %}
+{% block content %}
+{% for product in products %}
+<h1>{{ product.product_name }}</h1>
+{% endfor %}
+{% endblock %}

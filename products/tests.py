@@ -8,4 +8,4 @@ class ProductTest(TestCase):
     def test_product_name_returned(self):
         "Correct product name is returned."
         product = Product(name="Test Design")
-        self.assertEqual("Incorrect design", product.name)
+        self.assertEqual("Test Design", product.name)

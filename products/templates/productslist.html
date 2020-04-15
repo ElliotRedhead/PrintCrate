@@ -4,15 +4,15 @@
 <div class="container">
   <div class="d-flex justify-content-around row">
     {% for product in products %}
-    <div class="col-12 col-md-3 card">
+    <div class="col-12 col-md-5 col-lg-4 card">
       <div class="container">
         <div class="row">
-          <div class="col-5 col-md-12"></div>
+          <div class="d-flex align-self-center product-image col-5 col-md-12">Image here</div>
           <div class="col-7 col-md-12">
-            <h1>{{ product.name }}</h1>
-            <h2>{{ product.description }}</h2>
-            <h3>£{{ product.price }}</h3>
-            <h4>Number in stock: {{ product.stock_available }}</h4>
+            <p>{{ product.name }}</p>
+            <p>{{ product.description }}</p>
+            <p>£{{ product.price }}</p>
+            <p>Number in stock: {{ product.stock_available }}</p>
             <button>Product Details</button>
           </div>
         </div>

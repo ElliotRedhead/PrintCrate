@@ -1,10 +1,10 @@
 # PrintCrate
 
-A full ecommerce website built in Django for purchasing of 3D-printed models.  
+A full ecommerce website built in Django for purchasing of 3D-printed models.
 
-The target market is primarily customers that require designed pieces to fulfil niche requirements, products that may not be available as lone pieces elsewhere (e.g. spare parts) or customisation of existing model dimensions to suit their purpose (e.g. clean attachment to desks of various thicknesses without screw-fixtures).  
+The target market is primarily customers that require designed pieces to fulfil niche requirements, products that may not be available as lone pieces elsewhere (e.g. spare parts) or customisation of existing model dimensions to suit their purpose (e.g. clean attachment to desks of various thicknesses without screw-fixtures).
 
-The webshop boasts a modern and intuitive shopping experience, providing customers with options to purchase from standard stock items or request commissions.  
+The webshop boasts a modern and intuitive shopping experience, providing customers with options to purchase from standard stock items or request commissions.
 
 [![Build Status](https://travis-ci.org/ElliotRedhead/PrintCrate.svg?branch=master)](https://travis-ci.org/ElliotRedhead/PrintCrate)
 
@@ -43,39 +43,55 @@ Key objectives/requirements for site users.
 
 ### Colour Palette
 
-This colour palette was formed upon project inception and used to drive UI decisions within the project, adjustments may be made to this as project development progresses.  
+This colour palette was formed upon project inception and used to drive UI decisions within the project, adjustments may be made to this as project development progresses.
 
 ![#fcfcfc](https://placehold.it/15/fcfcfc/000000?text=+) `#fcfcfc`  
 ![#9ec3d6](https://placehold.it/15/9ec3d6/000000?text=+) `#9ec3d6`  
 ![#93ba7e](https://placehold.it/15/93ba7e/000000?text=+) `#93ba7e`  
 ![#2f4677](https://placehold.it/15/2f4677/000000?text=+) `#2f4677`  
-![#8e638a](https://placehold.it/15/8e638a/000000?text=+) `#8e638a`  
+![#8e638a](https://placehold.it/15/8e638a/000000?text=+) `#8e638a`
 
 ### Wireframes
 
 <details>
 <summary> Project Inception Wireframes </summary>
 
-Project inception wireframes were created to provide guidance from the initial planning stages with a mobile-first development perspective and were used as the starting point for page layouts.  
+Project inception wireframes were created to provide guidance from the initial planning stages with a mobile-first development perspective and were used as the starting point for page layouts.
 
 ### Homepage
 
 - [Mobile Homepage](/wireframes/Home-Mobile.png)
+- [Tablet Homepage](/wireframes/Home-Tablet.png)
 - [Desktop Homepage](/wireframes/Home-Desktop.png)
+
+### Register
+
+- [Mobile Register](/wireframes/Register-Mobile.png)
+- [Tablet Register](/wireframes/Register-Tablet.png)
+- [Desktop Register](/wireframes/Register-Desktop.png)
+
+### Login
+
+- [Mobile Login](/wireframes/Login-Mobile.png)
+- [Tablet Login](/wireframes/Login-Tablet.png)
+- [Desktop Login](/wireframes/Login-Desktop.png)
 
 ### Products
 
 - [Mobile Products Page](/wireframes/Products-Mobile.png)
+- [Tablet Products Page](/wireframes/Products-Tablet.png)
 - [Desktop Products Page](/wireframes/Products-Desktop.png)
 
 ### Contact
 
 - [Mobile Contact Page](/wireframes/Contact-Mobile.png)
+- [Tablet Contact Page](/wireframes/Contact-Tablet.png)
 - [Desktop Contact Page](/wireframes/Contact-Desktop.png)
 
 ### About
 
 - [Mobile About Page](/wireframes/About-Mobile.png)
+- [Tablet About Page](/wireframes/About-Tablet.png)
 - [Desktop About Page](/wireframes/About-Desktop.png)
 
 </details>

@@ -94,3 +94,5 @@ The standard inventory sold on this website is constructed with the following mo
 | Product Description | description     | ---                            | TextField                 |
 | Product Price       | price           | max_digits=5, decimal_places=2 | DecimalField              |
 | Quantity Available  | stock_available | MaxValueValidator(50)          | PositiveSmallIntegerField |
+
+<!-- Further additions to this model will include a product image and if the product is part of the showcase set. -->

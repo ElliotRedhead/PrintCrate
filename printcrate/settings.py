@@ -27,7 +27,8 @@ SECRET_KEY = 'o8r+9a*9!7wmmfg=fm!r3mrv)p@hj@pbcl!^4zte9$-*#($*oq'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "*.herokuapp.com", "printcrate.herokuapp.com", "127.0.0.1"]
+ALLOWED_HOSTS = ["localhost", "*.herokuapp.com",
+                 "printcrate.herokuapp.com", "127.0.0.1"]
 
 # Application definition
 
@@ -42,7 +43,8 @@ INSTALLED_APPS = [
     'printcrate',
     'accounts',
     'homepage',
-	'products'
+    'products',
+    'storages'
 ]
 
 MIDDLEWARE = [
@@ -68,6 +70,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -123,9 +126,27 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+AWS_S3_OBJECT_PARAMETERS = {
+    'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+    'CacheControl': 'max-age=99999999',
+}
+
+AWS_STORAGE_BUCKET_NAME = "django-printcrate"
+AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+AWS_SECRET_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+AWS_S3_CUSTOM_DOMAIN = "%s.s3.amazonaws.com" % AWS_STORAGE_BUCKET_NAME
+
+AWS_DEFAULT_ACL = None
+
 STATICFILES_LOCATION = "static"
+STATICFILES_STORAGE = "custom_storages.StaticStorage"
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+MEDIAFILES_LOCATION = "media"
+DEFAULT_FILE_LOCATION = "custom_storages.MediaStorage"
+
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 LOGIN_REDIRECT_URL = "home"

@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm
 
 
-# @login_required
+@login_required
 def logout(request):
     """Log the user out."""
     auth.logout(request)

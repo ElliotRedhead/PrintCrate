@@ -10,7 +10,7 @@
       {% if user.is_authenticated %}
       <li class="nav-item active">
         <a class="nav-link" href="#">Profile</a></li>
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
       {% else %}
       <li class="nav-item active">
@@ -20,11 +20,11 @@
       {% endif %}
       <li class="nav-item active">
         <a class="nav-link" href="{% url 'products' %}">Browse Products</a></li>
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="#">About</a></li>
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="#">Contact Us</a></li>
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="#">Custom Orders</a></li>
     </ul>
   </div>

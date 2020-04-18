@@ -4,6 +4,8 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 
 class Product(models.Model):
     name = models.CharField(max_length=25)
+    product_image = models.ImageField(
+        upload_to="product_images", blank=True)
     description = models.TextField()
     price = models.DecimalField(
         max_digits=5, decimal_places=2, validators=[MinValueValidator(0.00)])

@@ -1,7 +1,12 @@
 body {
-  font: 13px;
+  font: 12px;
+  font-family: fantasy;
+}
+
+.product-image-container {
+  min-height: 20rem;
 }
 
 .product-image {
-  height: 12rem;
+  max-height: 5rem;
 }

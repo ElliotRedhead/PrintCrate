@@ -1,0 +1,11 @@
+body {
+  font: 12px;
+}
+
+.product-image-container {
+  min-height: 5rem;
+}
+
+.product-image {
+  max-height: 5rem;
+}

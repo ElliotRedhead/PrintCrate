@@ -22,4 +22,4 @@ def registration(request):
             return redirect("home")
     else:
         form = UserRegisterForm()
-    return render(request, "register.html", {"form": form})
+    return render(request, "register.html", {"form": form, "page_title": "Register | PrintCrate"})

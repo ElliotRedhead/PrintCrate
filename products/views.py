@@ -4,4 +4,4 @@ from .models import Product
 
 def products_view(request):
     products = Product.objects.all()
-    return render(request, "productslist.html", {"products": products})
+    return render(request, "productslist.html", {"products": products, "page_title": "Products | PrintCrate"})

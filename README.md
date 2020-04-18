@@ -60,39 +60,39 @@ Project inception wireframes were created to provide guidance from the initial p
 
 ### Homepage
 
-- [Mobile Homepage](/wireframes/Home-Mobile.png)
-- [Tablet Homepage](/wireframes/Home-Tablet.png)
-- [Desktop Homepage](/wireframes/Home-Desktop.png)
+- [Mobile Homepage](/wireframes/home-mobile.png)
+- [Tablet Homepage](/wireframes/home-tablet.png)
+- [Desktop Homepage](/wireframes/home-desktop.png)
 
-### Register
+### Register Page
 
-- [Mobile Register](/wireframes/Register-Mobile.png)
-- [Tablet Register](/wireframes/Register-Tablet.png)
-- [Desktop Register](/wireframes/Register-Desktop.png)
+- [Mobile Register](/wireframes/register-mobile.png)
+- [Tablet Register](/wireframes/register-tablet.png)
+- [Desktop Register](/wireframes/register-desktop.png)
 
-### Login
+### Login Page
 
-- [Mobile Login](/wireframes/Login-Mobile.png)
-- [Tablet Login](/wireframes/Login-Tablet.png)
-- [Desktop Login](/wireframes/Login-Desktop.png)
+- [Mobile Login](/wireframes/login-mobile.png)
+- [Tablet Login](/wireframes/login-tablet.png)
+- [Desktop Login](/wireframes/login-desktop.png)
 
-### Products
+### Products Page
 
-- [Mobile Products Page](/wireframes/Products-Mobile.png)
-- [Tablet Products Page](/wireframes/Products-Tablet.png)
-- [Desktop Products Page](/wireframes/Products-Desktop.png)
+- [Mobile Products Page](/wireframes/products-mobile.png)
+- [Tablet Products Page](/wireframes/products-tablet.png)
+- [Desktop Products Page](/wireframes/products-desktop.png)
 
-### Contact
+### Contact Page
 
-- [Mobile Contact Page](/wireframes/Contact-Mobile.png)
-- [Tablet Contact Page](/wireframes/Contact-Tablet.png)
-- [Desktop Contact Page](/wireframes/Contact-Desktop.png)
+- [Mobile Contact Page](/wireframes/contact-mobile.png)
+- [Tablet Contact Page](/wireframes/contact-tablet.png)
+- [Desktop Contact Page](/wireframes/contact-desktop.png)
 
-### About
+### About Page
 
-- [Mobile About Page](/wireframes/About-Mobile.png)
-- [Tablet About Page](/wireframes/About-Tablet.png)
-- [Desktop About Page](/wireframes/About-Desktop.png)
+- [Mobile About Page](/wireframes/about-mobile.png)
+- [Tablet About Page](/wireframes/about-tablet.png)
+- [Desktop About Page](/wireframes/about-desktop.png)
 
 </details>
 
@@ -100,7 +100,7 @@ Project inception wireframes were created to provide guidance from the initial p
 
 ## Data Modelling
 
-### Products
+### Products Model
 
 The standard inventory sold on this website is constructed with the following model:
 

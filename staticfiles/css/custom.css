@@ -1,5 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Paaji+2&display=swap");
+
 body {
   font: 12px;
+  font-family: "Baloo Paaji 2", cursive;
 }
 
 .product-image-container {

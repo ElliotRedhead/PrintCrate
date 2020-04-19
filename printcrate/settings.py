@@ -142,15 +142,20 @@ USE_TZ = True
 # AWS_S3_CUSTOM_DOMAIN = "%s.s3.amazonaws.com" % AWS_STORAGE_BUCKET_NAME
 # AWS_DEFAULT_ACL = None
 
-STATICFILES_LOCATION = "static"
-# STATICFILES_STORAGE = "custom_storages.StaticStorage"
-STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+if "DEV" in os.environ:
+    STATIC_URL = "/static/"
+else:
+    STATIC_URL = "/staticfiles/"
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    STATICFILES_STORAGE = "custom_storages.StaticStorage"
+    STATICFILES_LOCATION = "static"
+    MEDIAFILES_LOCATION = "media"
+    DEFAULT_FILE_LOCATION = "custom_storages.MediaStorage"
 
-MEDIAFILES_LOCATION = "media"
-DEFAULT_FILE_LOCATION = "custom_storages.MediaStorage"
+
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
+
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
-# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 LOGIN_REDIRECT_URL = "home"

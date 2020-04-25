@@ -3,7 +3,7 @@ from products.models import Product
 from django.contrib.auth.models import User
 
 
-class OrderDetails(models.Model):
+class CustomerDetails(models.Model):
     customer_auth = models.ForeignKey(User, on_delete=models.CASCADE)
     full_name = models.CharField(max_length=100, blank=False)
     primary_address_line = models.CharField(max_length=50, blank=False)

@@ -142,8 +142,8 @@ USE_TZ = True
 # AWS_S3_CUSTOM_DOMAIN = "%s.s3.amazonaws.com" % AWS_STORAGE_BUCKET_NAME
 # AWS_DEFAULT_ACL = None
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-if "DEV" in os.environ:
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+if "DEPLOY" not in os.environ:
     STATIC_URL = "/static/"
 else:
     STATIC_URL = "/staticfiles/"

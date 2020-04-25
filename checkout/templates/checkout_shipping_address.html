@@ -2,7 +2,11 @@
 {% load crispy_forms_tags %}
 {% block content %}
 <form method="POST">
-  {% csrf_token %}
-  {{ customer_shipping_form|crispy }}
+  <fieldset class="form-group">
+    {{ customer_shipping_form|crispy }}
+  </fieldset>
+  <div class="form-group">
+    <button type="submit">Confirm</button>
+  </div>
 </form>
 {% endblock %}

@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'printcrate',
     'accounts',
+    'cart',
     'checkout',
     'homepage',
     'products',

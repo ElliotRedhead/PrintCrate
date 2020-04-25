@@ -144,7 +144,7 @@ USE_TZ = True
 # AWS_DEFAULT_ACL = None
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-if "DEV" in os.environ:
+if "DEPLOY" not in os.environ:
     STATIC_URL = "/static/"
 else:
     STATIC_URL = "/staticfiles/"

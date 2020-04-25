@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'printcrate',
     'accounts',
+    'cart',
+    'checkout',
     'homepage',
     'products',
     'storages'
@@ -143,6 +145,7 @@ USE_TZ = True
 # AWS_DEFAULT_ACL = None
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+
 if "DEPLOY" not in os.environ:
     STATIC_URL = "/static/"
 else:

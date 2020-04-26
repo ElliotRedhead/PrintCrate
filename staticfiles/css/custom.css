@@ -12,3 +12,39 @@ body {
 .product-image {
   max-height: 5rem;
 }
+
+footer .fab {
+  font-size: 4rem;
+}
+
+footer .fas {
+  font-size: 3.5rem;
+}
+
+/* Navigation bar styling */
+
+.navbar {
+  background-color: #93ba7e;
+}
+
+/* Custom button styling to suit site theme. */
+
+.btn-custom {
+  background-color: #93ba7e;
+  color: #ffffff;
+  border-radius: 0.15rem;
+}
+
+.btn-custom:focus {
+  box-shadow: 0rem 0rem 1rem 0.2rem #ffffff;
+  border-color: #000000;
+}
+
+.btn-custom:hover {
+  background-color: #86aa72;
+  border-color: #000000;
+}
+
+footer {
+  background-color: #eeeeee;
+}

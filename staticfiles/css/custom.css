@@ -5,26 +5,27 @@ body {
   font-family: "Baloo Paaji 2", cursive;
 }
 
-.product-image-container {
-  min-height: 5rem;
-}
-
-.product-image {
-  max-height: 5rem;
-}
-
-footer .fab {
-  font-size: 4rem;
-}
-
-footer .fas {
-  font-size: 3.5rem;
+#site-title {
+  text-decoration: none;
+  color: #000000;
 }
 
 /* Navigation bar styling */
 
 .navbar {
   background-color: #93ba7e;
+}
+
+.social-icon {
+  height: 3rem;
+}
+
+.product-image-container {
+  min-height: 5rem;
+}
+
+.product-image {
+  max-height: 5rem;
 }
 
 /* Custom button styling to suit site theme. */

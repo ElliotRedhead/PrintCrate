@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.conf import settings
+from django.conf.urls.static import static
 from django.urls import path, include
 from accounts import urls as accounts_urls
 from homepage import urls as homepage_urls
@@ -29,5 +31,5 @@ urlpatterns = [
     path("products/", include(products_urls)),
     path("cart/", include(cart_urls)),
     path("checkout/", include(checkout_urls))
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += staticfiles_urlpatterns()

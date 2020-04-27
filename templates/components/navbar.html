@@ -3,7 +3,9 @@
     aria-controls="navbarLinks" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <h1>PrintCrate</h1>
+  <a href="{% url 'home' %}">
+    <h1>PrintCrate</h1>
+  </a>
   <a href="{% url 'cart_view' %}" class="order-lg-2"><i class="fas fa-shopping-basket"></i></a>
   <div class="collapse navbar-collapse order-lg-1" id="navbarLinks">
     <ul class="navbar-nav ml-auto">

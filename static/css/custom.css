@@ -5,6 +5,11 @@ body {
   font-family: "Baloo Paaji 2", cursive;
 }
 
+#site-title {
+  text-decoration: none;
+  color: #000000;
+}
+
 .product-image-container {
   min-height: 5rem;
 }

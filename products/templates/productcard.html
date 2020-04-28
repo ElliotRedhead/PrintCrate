@@ -7,5 +7,5 @@
   <p>{{ product.description }}</p>
   <p>£{{ product.price }}</p>
   <p>Number in stock: {{ product.stock_available }}</p>
-  <button>Product Details</button>
+  <a href="{% url 'product_detail' product.pk %}" class="btn btn-primary">Product Details</a>
 </div>

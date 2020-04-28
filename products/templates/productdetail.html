@@ -1,1 +1,16 @@
 {% extends "base.html" %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-4 offset-1">
+      <img class="product-image" src="{{ product.product_image.url }}" alt="Product image of {{ product.name }}.">
+    </div>
+    <div class="col-6">
+      <p>{{product.name}}</p>
+      <p>{{product.description}}</p>
+      <p>£{{product.price}}</p>
+      <p>Number in stock: {{product.stock_available}}</p>
+    </div>
+  </div>
+</div>
+{% endblock %}

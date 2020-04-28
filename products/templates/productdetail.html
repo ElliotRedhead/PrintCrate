@@ -10,6 +10,18 @@
       <p>{{product.description}}</p>
       <p>£{{product.price}}</p>
       <p>Number in stock: {{product.stock_available}}</p>
+      <form action="{% url 'add_to_cart' product.pk %}" method="POST">
+        {% csrf_token %}
+        <div class="input-group">
+          <input type="number" name="quantity" aria-label="Input field for quantity." min="1" max="999"
+            class="form-control" placeholder="Quantity" />
+          <span class="input-group-btn">
+            <button class="btn btn-dark" type="submit">
+              Add
+            </button>
+          </span>
+        </div>
+      </form>
     </div>
   </div>
 </div>

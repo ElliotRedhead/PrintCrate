@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-{% for item in cart %}
+{% for item in cart_items %}
 {% include "components/cart-contents.html" %}
 {% endfor %}
 <p>Total: £{{ total }} </p>

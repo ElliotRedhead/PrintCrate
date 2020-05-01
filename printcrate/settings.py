@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'checkout',
     'homepage',
     'products',
-    'storages'
+    'storages',
+    'sweetify'
 ]
 
 MIDDLEWARE = [

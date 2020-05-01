@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect, reverse
+from django.contrib import messages
+from django.http import HttpResponseRedirect
 
 # The contents of this file are closely based on the course content taught in
 # the CodeInstitute Full Stack Web Development course.
@@ -7,7 +9,11 @@ from django.shortcuts import render, redirect, reverse
 
 
 def cart_view(request):
-    return render(request, "cart.html")
+    if request.session["cart"] == {}:
+        messages.error(request, "Your cart is empty")
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+    else:
+        return render(request, "cart.html")
 
 
 def add_to_cart(request, id):

@@ -10,21 +10,31 @@ import sweetify
 
 
 def cart_view(request):
-    if request.session["cart"] == {}:
-        sweetify.error(
-            request,
-            "Your cart is empty.",
-            text="Add products to your cart.",
-            timer=4000,
-            timerProgressBar=True,
-            button=True
-        )
-        origin_page = request.META.get('HTTP_REFERER', '/')
-        if origin_page.endswith("/cart/"):
-            return redirect(reverse("products"))
-        return HttpResponseRedirect(origin_page)
+    """Handles request for displaying the contents of the cart.
+
+    User is returned to their original page if attempting to access an empty cart, with a modal message to alert that the cart is empty with prompt to add products.
+    If user has emptied their cart they are navigated to the products page, with the modal triggered.
+    """
+    origin_page = request.META.get('HTTP_REFERER', '/')
+    empty_cart_modal = sweetify.error(
+        request,
+        "Your cart is empty.",
+        text="Add products to your cart.",
+        timer=4000,
+        timerProgressBar=True,
+        button=True
+    )
+    if "cart" in request.session:
+        if request.session["cart"] == {}:
+            empty_cart_modal
+            if origin_page.endswith("/cart/"):
+                return redirect(reverse("products"))
+            return HttpResponseRedirect(origin_page)
+        else:
+            return render(request, "cart.html")
     else:
-        return render(request, "cart.html")
+        empty_cart_modal
+        return redirect(origin_page)
 
 
 def add_to_cart(request, id):

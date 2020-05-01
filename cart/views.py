@@ -11,7 +11,10 @@ from django.http import HttpResponseRedirect
 def cart_view(request):
     if request.session["cart"] == {}:
         messages.error(request, "Your cart is empty")
-        return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
+        origin_page = request.META.get('HTTP_REFERER', '/')
+        if origin_page.endswith("/cart/"):
+            return redirect(reverse("products"))
+        return HttpResponseRedirect(origin_page)
     else:
         return render(request, "cart.html")
 

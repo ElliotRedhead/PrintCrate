@@ -9,14 +9,8 @@ import sweetify
 # and to best suit the PrintCrate project.
 
 
-def cart_view(request):
-    """Handles request for displaying the contents of the cart.
-
-    User is returned to their original page if attempting to access an empty cart, with a modal message to alert that the cart is empty with prompt to add products.
-    If user has emptied their cart they are navigated to the products page, with the modal triggered.
-    """
-    origin_page = request.META.get('HTTP_REFERER', '/')
-    empty_cart_modal = sweetify.error(
+def empty_cart_modal(request):
+    sweetify.error(
         request,
         "Your cart is empty.",
         text="Add products to your cart.",
@@ -24,16 +18,26 @@ def cart_view(request):
         timerProgressBar=True,
         button=True
     )
+    return request
+
+
+def cart_view(request):
+    """Handles request for displaying the contents of the cart.
+
+    User is returned to their original page if attempting to access an empty cart, with a modal message to alert that the cart is empty with prompt to add products.
+    If user has emptied their cart they are navigated to the products page, with the modal triggered.
+    """
+    origin_page = request.META.get('HTTP_REFERER', '/')
     if "cart" in request.session:
         if request.session["cart"] == {}:
-            empty_cart_modal
+            empty_cart_modal(request)
             if origin_page.endswith("/cart/"):
                 return redirect(reverse("products"))
             return HttpResponseRedirect(origin_page)
         else:
             return render(request, "cart.html")
     else:
-        empty_cart_modal
+        empty_cart_modal(request)
         return redirect(origin_page)
 
 

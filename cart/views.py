@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
 from django.http import HttpResponseRedirect
+import sweetify
 
 # The contents of this file are closely based on the course content taught in
 # the CodeInstitute Full Stack Web Development course.
@@ -10,7 +11,14 @@ from django.http import HttpResponseRedirect
 
 def cart_view(request):
     if request.session["cart"] == {}:
-        messages.error(request, "Your cart is empty")
+        sweetify.error(
+            request,
+            "Your cart is empty.",
+            text="Add products to your cart.",
+            timer=4000,
+            timerProgressBar=True,
+            button=True
+        )
         origin_page = request.META.get('HTTP_REFERER', '/')
         if origin_page.endswith("/cart/"):
             return redirect(reverse("products"))

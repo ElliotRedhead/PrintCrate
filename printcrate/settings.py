@@ -165,3 +165,5 @@ MEDIA_URL = "/media/"
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 LOGIN_URL = "login"
 LOGIN_REDIRECT_URL = "home"
+
+SWEETIFY_SWEETALERT_LIBRARY = "sweetalert2"

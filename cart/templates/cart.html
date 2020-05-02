@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-{% for item in cart_items %}
-{% include "components/cart-contents.html" %}
-{% endfor %}
-<p>Total: £{{ total }} </p>
-<a href="{% url 'shipping' %}" class="btn btn-success" role="button">Checkout</a>
+<div class="container main-container">
+  {% for item in cart_items %}
+  {% include "components/cart-contents.html" %}
+  {% endfor %}
+  <p>Total: £{{ total }} </p>
+  <a href="{% url 'shipping' %}" class="btn btn-success" role="button">Checkout</a>
+</div>
 {% endblock %}

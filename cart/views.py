@@ -1,6 +1,7 @@
+import json
 from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, JsonResponse
 import sweetify
 
 # The contents of this file are closely based on the course content taught in
@@ -35,6 +36,12 @@ def cart_view(request):
                 return redirect(reverse("products"))
             return HttpResponseRedirect(origin_page)
         else:
+            if request.method == "POST":
+                if request.headers["Quantity-Validation-Fetch"]:
+                    custom_fetch_request = json.loads(request.body)
+                    response = validate_item_quantity_change(
+                        request, custom_fetch_request)
+                    return JsonResponse(response)
             return render(request, "cart.html")
     else:
         empty_cart_modal(request)
@@ -65,3 +72,15 @@ def adjust_cart(request, id):
 
     request.session["cart"] = cart
     return redirect(reverse("cart_view"))
+
+
+def validate_item_quantity_change(request, custom_fetch_request):
+    # Below is testing response.
+    # Comparison with current cart contents is required.
+    item_id = custom_fetch_request["itemId"]
+    new_item_quantity = custom_fetch_request["newItemQuantity"]
+    response = {
+        "itemId": item_id,
+        "newItemQuantity": new_item_quantity
+    }
+    return response

@@ -14,7 +14,7 @@ function containerHeightHandling(){
 
 $(".quantity-input").change(function(){
     newItemQuantity = this.value;
-    itemId = this.itemId;
+    itemId = this.dataset.itemId;
     const fetchInputData = {
         itemId: itemId,
         newItemQuantity: newItemQuantity 
@@ -34,7 +34,7 @@ function fetchParameterSetup(fetchInputData){
 		cors: "*same-origin",
 		headers: new Headers({
             "Content-Type": "application/json",
-            "Custom-Fetch": true,
+            "Quantity-Validation-Fetch": true,
             "X-CSRFToken": csrftoken,
             "X-Requested-With": "XMLHttpRequest"
         }),

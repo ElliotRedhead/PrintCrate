@@ -1,4 +1,8 @@
+import json
 from django.shortcuts import render, redirect, reverse
+from django.contrib import messages
+from django.http import HttpResponseRedirect, JsonResponse
+import sweetify
 
 # The contents of this file are closely based on the course content taught in
 # the CodeInstitute Full Stack Web Development course.
@@ -6,8 +10,42 @@ from django.shortcuts import render, redirect, reverse
 # and to best suit the PrintCrate project.
 
 
+def empty_cart_modal(request):
+    sweetify.error(
+        request,
+        "Your cart is empty.",
+        text="Add products to your cart.",
+        timer=4000,
+        timerProgressBar=True,
+        button=True
+    )
+    return request
+
+
 def cart_view(request):
-    return render(request, "cart.html")
+    """Handles request for displaying the contents of the cart.
+
+    User is returned to their original page if attempting to access an empty cart, with a modal message to alert that the cart is empty with prompt to add products.
+    If user has emptied their cart they are navigated to the products page, with the modal triggered.
+    """
+    origin_page = request.META.get('HTTP_REFERER', '/')
+    if "cart" in request.session:
+        if request.session["cart"] == {}:
+            empty_cart_modal(request)
+            if origin_page.endswith("/cart/"):
+                return redirect(reverse("products"))
+            return HttpResponseRedirect(origin_page)
+        else:
+            if request.method == "POST":
+                if request.headers["Quantity-Validation-Fetch"]:
+                    custom_fetch_request = json.loads(request.body)
+                    response = validate_item_quantity_change(
+                        request, custom_fetch_request)
+                    return JsonResponse(response)
+            return render(request, "cart.html")
+    else:
+        empty_cart_modal(request)
+        return redirect(origin_page)
 
 
 def add_to_cart(request, id):
@@ -34,3 +72,15 @@ def adjust_cart(request, id):
 
     request.session["cart"] = cart
     return redirect(reverse("cart_view"))
+
+
+def validate_item_quantity_change(request, custom_fetch_request):
+    # Below is testing response.
+    # Comparison with current cart contents is required.
+    item_id = custom_fetch_request["itemId"]
+    new_item_quantity = custom_fetch_request["newItemQuantity"]
+    response = {
+        "itemId": item_id,
+        "newItemQuantity": new_item_quantity
+    }
+    return response

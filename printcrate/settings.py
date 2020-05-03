@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     'products',
     'about',
     'storages'
+    'storages',
+    'sweetify'
 ]
 
 MIDDLEWARE = [
@@ -75,6 +77,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
+                'cart.contexts.cart_contents'
             ],
         },
     },
@@ -164,3 +167,5 @@ MEDIA_URL = "/media/"
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 LOGIN_URL = "login"
 LOGIN_REDIRECT_URL = "home"
+
+SWEETIFY_SWEETALERT_LIBRARY = "sweetalert2"

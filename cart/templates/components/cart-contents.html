@@ -6,8 +6,9 @@
     <label for="inputAmount" class="sr-only">New Quantity</label>
     <div class="input-group">
       <div class="input-group-addon">Quantity:</div>
-      <input data-item-id="{{ item.product.id }}" name="quantity" type="number" min="0" max="999"
-        class="form-control quantity-input" value="{{ item.quantity }}">
+      <input data-item-id="{{ item.product.id }}" name="quantity" type="number" min="0"
+        max="{{ item.product.stock_available }}" class="form-control quantity-input" value="{{ item.quantity }}"
+        required>
     </div>
     <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-edit"
         aria-hidden="true"></span>Amend</button>

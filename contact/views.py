@@ -20,10 +20,18 @@ def contact_us(request):
                 send_mail(subject, contact_message, customer_email_address, [
                           os.environ.get("EMAIL_RECIPIENT")])
             except BadHeaderError:
-                return HttpResponse('Invalid header found.')
-            return redirect("home")
+                return HttpResponse("Invalid header found.")
+            return redirect("contact_success")
     return render(
         request,
         "contact.html",
         {"page_title": "Contact Us | PrintCrate", "contact_form": contact_form},
+    )
+
+
+def contact_success(request):
+    return render(
+        request,
+        "contact_success.html",
+        {"page_title": "Contact Success | PrintCrate"}
     )

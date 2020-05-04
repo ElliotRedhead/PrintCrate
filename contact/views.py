@@ -9,13 +9,13 @@ from .forms import ContactForm
 
 def contact_us(request):
     if request.method == "GET":
-        form = ContactForm()
+        contact_form = ContactForm()
     else:
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            subject = form.cleaned_data["subject"]
-            customer_email_address = form.cleaned_data["email"]
-            contact_message = form.cleaned_data["contact_message"]
+        contact_form = ContactForm(request.POST)
+        if contact_form.is_valid():
+            subject = contact_form.cleaned_data["subject"]
+            customer_email_address = contact_form.cleaned_data["email"]
+            contact_message = contact_form.cleaned_data["contact_message"]
             try:
                 send_mail(subject, contact_message, customer_email_address, [
                           os.environ.get("EMAIL_RECIPIENT")])
@@ -25,5 +25,5 @@ def contact_us(request):
     return render(
         request,
         "contact.html",
-        {"page_title": "Contact Us | PrintCrate", "form": form},
+        {"page_title": "Contact Us | PrintCrate", "contact_form": contact_form},
     )

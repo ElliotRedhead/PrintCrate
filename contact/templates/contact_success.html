@@ -1,7 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="container main-container">
-  <h1>Thank you for your message.</h1>
-  <p>We will respond as soon as possible.</p>
+<section class="d-flex main-container">
+  <div class="container align-self-center">
+    <div class="row">
+      <h1 class="col-12 text-center">Thank you for your message.</h1>
+      <p class="col-12 text-center">We will respond as soon as possible.</p>
+    </div>
+    <div class="row">
+      <!-- Button to browse products. -->
+      <a href="{% url 'products' %}" class="btn btn-custom col-10 offset-1 offset-md-3 col-md-6">
+        Browse Products
+      </a>
+    </div>
+  </div>
 </section>
 {% endblock %}

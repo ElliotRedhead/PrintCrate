@@ -10,6 +10,7 @@
   <div class="row">
     <div class="col-12">
       <form method="POST">
+        {% csrf_token %}
         {{ customer_shipping_form|crispy }}
         <button type="submit">Confirm</button>
       </form>

@@ -1,13 +1,19 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-<h2>Your Shipping Information</h2>
-<form method="POST">
-  <fieldset class="form-group">
-    {{ customer_shipping_form|crispy }}
-  </fieldset>
-  <div class="form-group">
-    <button type="submit">Confirm</button>
+<section class="container main-container">
+  <div class="row">
+    <div class="col-12 text-center">
+      <h2>Your Shipping Information</h2>
+    </div>
   </div>
-</form>
+  <div class="row">
+    <div class="col-12">
+      <form method="POST">
+        {{ customer_shipping_form|crispy }}
+        <button type="submit">Confirm</button>
+      </form>
+    </div>
+  </div>
+</section>
 {% endblock %}

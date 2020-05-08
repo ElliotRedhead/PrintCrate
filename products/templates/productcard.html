@@ -1,11 +1,16 @@
-<div class="align-self-center product-image-container col-5 col-md-12">
-  <img class="product-image" src="{{ product.product_image.url }}" alt="Product image of {{ product.name }}.">
-  </img>
-</div>
-<div class="col-7 col-md-12">
-  <p>{{ product.name }}</p>
-  <p>{{ product.description }}</p>
-  <p>£{{ product.price }}</p>
-  <p>Number in stock: {{ product.stock_available }}</p>
-  <a href="{% url 'product_detail' product.pk %}" class="btn btn-primary">Product Details</a>
+<div class="container fill-parent-height">
+  <div class="row fill-parent-height">
+    <div class="product-image-container col-5 col-md-12 d-flex justify-content-center align-items-center">
+      <img class="product-image" src="{{ product.product_image.url }}" alt="Product image of {{ product.name }}.">
+      </img>
+    </div>
+    <div class="col-7 col-md-12 d-flex flex-column justify-content-center align-items-center">
+      <div>{{ product.name }}</div>
+      <div class="product-description">{{ product.description }}</div>
+      <div>£{{ product.price }}</div>
+      <div>Number in stock: {{ product.stock_available }}</p>
+        <a href="{% url 'product_detail' product.pk %}" class="btn btn-custom">Product Details</a>
+      </div>
+    </div>
+  </div>
 </div>

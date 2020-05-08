@@ -20,8 +20,21 @@ body {
   height: 3rem;
 }
 
+.card {
+  height: 25rem;
+}
+
+.product-description {
+  height: 8rem;
+  overflow-y: auto;
+}
+
+.fill-parent-height {
+  height: 100% !important;
+}
+
 .product-image-container {
-  min-height: 5rem;
+  min-height: 8rem;
 }
 
 .product-image {

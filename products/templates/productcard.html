@@ -5,8 +5,8 @@
       </img>
     </div>
     <div class="col-7 col-md-12 d-flex flex-column justify-content-around align-items-center">
-      <div class="my-3">{{ product.name }}</div>
-      <div class="product-description">{{ product.description }}</div>
+      <div class="mt-3 mb-2">{{ product.name }}</div>
+      <div class="product-description d-flex align-items-center my-1">{{ product.description }}</div>
       <div>£{{ product.price }}</div>
       <div>Number in stock: {{ product.stock_available }}</p>
         <a href="{% url 'product_detail' product.pk %}" class="btn btn-custom mb-2">Product Details</a>

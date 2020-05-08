@@ -20,10 +20,6 @@ body {
   height: 3rem;
 }
 
-.card {
-  height: 25rem;
-}
-
 .product-description {
   height: 8rem;
   overflow-y: auto;

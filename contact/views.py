@@ -15,7 +15,8 @@ def contact_us(request):
         if contact_form.is_valid():
             subject = contact_form.cleaned_data["subject"]
             customer_email_address = contact_form.cleaned_data["email"]
-            contact_message = contact_form.cleaned_data["contact_message"]
+            contact_message = customer_email_address + " - " + \
+                contact_form.cleaned_data["contact_message"]
             try:
                 send_mail(subject, contact_message, customer_email_address, [
                           os.environ.get("EMAIL_RECIPIENT")])

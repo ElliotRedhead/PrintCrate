@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="jumbotron full-height">
+<section class="jumbotron full-height d-flex align-items-center">
   <div class="container-fluid">
     <div class="row my-5">
-      <h1 class="col-12 d-flex justify-content-center">PrintCrate</h1>
+      <h1 class="col-12 text-center">PrintCrate</h1>
     </div>
     <div class="row justify-content-center my-5">
-      <p class="lead">3D prints and designs for both aesthetic and functional needs.</p>
+      <p class="lead text-center">3D prints and designs for both aesthetic and functional needs.</p>
     </div>
     <hr class="my-4">
     <div class="row my-5 align-content-center">
@@ -17,18 +17,14 @@
         role="button">About Us</a>
     </div>
   </div>
-</div>
-<div class="container">
-  <div class="d-flex row">
+</section>
+<section class="container-fluid">
+  <div class="row d-flex flex-wrap justify-content-around">
     {% for product in products %}
-    <div class="col-12 col-md-6 col-lg-4 card">
-      <div class="container">
-        <div class="row">
-          {% include "productcard.html" %}
-        </div>
-      </div>
+    <div class="col-12 col-md-6 col-lg-4 my-3">
+      {% include "productcard.html" %}
     </div>
     {% endfor %}
   </div>
-</div>
+</section>
 {% endblock %}

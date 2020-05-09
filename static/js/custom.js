@@ -1,5 +1,6 @@
 $(function () {
-    containerHeightHandling()
+    containerHeightHandling();
+    homepageProductSelection(bootstrapDetectBreakpoint());
 }
 );
 
@@ -41,4 +42,10 @@ function fetchParameterSetup(fetchInputData){
 		body: JSON.stringify(fetchInputData)
 	};
 	return fetchParameters;
+}
+
+function homepageProductSelection(breakpoint){
+    if (breakpoint.index < 3) {
+        $(".product-container").eq(2).hide();
+    }
 }

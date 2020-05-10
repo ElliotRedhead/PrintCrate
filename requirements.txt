@@ -35,6 +35,7 @@ s3transfer==0.3.3
 six==1.14.0
 snowballstemmer==2.0.0
 sqlparse==0.3.1
+stripe==2.47.0
 sweetify==2.0.0
 typed-ast==1.4.1
 urllib3==1.25.9

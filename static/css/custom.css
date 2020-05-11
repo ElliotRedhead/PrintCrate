@@ -10,12 +10,6 @@ body {
   color: #000000;
 }
 
-/* Navigation bar styling */
-
-.navbar {
-  background-color: #93ba7e;
-}
-
 .social-icon {
   height: 3rem;
 }
@@ -40,7 +34,7 @@ body {
 /* Custom button styling to suit site theme. */
 
 .btn-custom {
-  background-color: #93ba7e;
+  background-color: #339448;
   color: #ffffff;
   border-radius: 0.15rem;
 }
@@ -51,10 +45,7 @@ body {
 }
 
 .btn-custom:hover {
-  background-color: #86aa72;
+  background-color: #285238;
   border-color: #000000;
-}
-
-footer {
-  background-color: #eeeeee;
+  color: #ffffff;
 }

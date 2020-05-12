@@ -1,6 +1,7 @@
 import datetime
 from django.db import models
 from django.contrib.auth.models import User
+from products.models import Product
 
 
 class CustomerShipping(models.Model):
@@ -18,3 +19,13 @@ class CustomerShipping(models.Model):
 
     def __str__(self):
         return f"{self.id}-{self.purchase_date}-{self.customer}"
+
+
+class OrderDetail(models.Model):
+    shipping = models.ForeignKey(
+        CustomerShipping, null=False, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, null=False, on_delete=models.CASCADE)
+    quantity = models.IntegerField(blank=False)
+
+    def __str__(self):
+        return (f"{self.quantity}-{self.product.name}-{self.product.price}")

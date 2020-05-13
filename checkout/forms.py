@@ -19,7 +19,7 @@ class CustomerShippingForm(forms.ModelForm):
 
 class PaymentForm(forms.Form):
     MONTH_CHOICES = [(i, i) for i in range(1, 12+1)]
-    YEAR_CHOICES = [(i, i) for i in range(2017, 2036)]
+    YEAR_CHOICES = [(i, i) for i in range(2020, 2036)]
 
     credit_card_number = forms.CharField(
         label="Credit card number",
@@ -30,9 +30,9 @@ class PaymentForm(forms.Form):
         required=False
     )
     expiry_month = forms.ChoiceField(
-        label="Month", choices=MONTH_CHOICES, required=False
+        label="Expiration Month", choices=MONTH_CHOICES, required=False
     )
     expiry_year = forms.ChoiceField(
-        label="Year", choices=YEAR_CHOICES, required=False
+        label="Expiration Year", choices=YEAR_CHOICES, required=False
     )
     stripe_id = forms.CharField(widget=forms.HiddenInput())

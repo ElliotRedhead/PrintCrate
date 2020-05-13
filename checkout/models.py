@@ -15,10 +15,9 @@ class CustomerShipping(models.Model):
     postcode = models.CharField(max_length=20, blank=False)
     country = models.CharField(max_length=50, blank=False)
     phone_number = models.CharField(max_length=20, blank=False)
-    purchase_date = models.DateField(default=datetime.date.today, blank=True)
 
     def __str__(self):
-        return f"{self.id}-{self.purchase_date}-{self.customer}"
+        return f"{self.id}-{self.customer}"
 
 
 class OrderDetail(models.Model):
@@ -26,6 +25,8 @@ class OrderDetail(models.Model):
         CustomerShipping, null=False, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, null=False, on_delete=models.CASCADE)
     quantity = models.IntegerField(blank=False)
+    total = models.IntegerField(blank=False)
+    purchase_date = models.DateField(default=datetime.date.today, blank=True)
 
     def __str__(self):
-        return (f"{self.quantity}-{self.product.name}-{self.product.price}")
+        return (f"{self.quantity}-{self.product.name}-{self.purchase_date}-£{self.total}")

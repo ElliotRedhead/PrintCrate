@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import CustomerShipping, OrderDetail
 
-# Register your models here.
+admin.site.register(CustomerShipping)
+admin.site.register(OrderDetail)

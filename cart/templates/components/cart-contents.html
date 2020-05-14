@@ -1,16 +1,16 @@
 <div class="row">
-  <p class="col-3">{{ item.product.name }}</p>
-  <p class="col-1">£{{ item.product.price }}</p>
-  <form method="POST" action="{% url 'adjust_cart' item.id %}" class="form-inline">
+  <p class="col-4 pt-2 text-center">{{ item.product.name }}</p>
+  <p class="col-2 pt-2 text-center">£{{ item.product.price }}</p>
+  <form method="POST" action="{% url 'adjust_cart' item.id %}"
+    class="form col-6 col-sm-4 offset-sm-1 col-lg-2 offset-lg-1">
     {% csrf_token %}
-    <label for="inputAmount" class="sr-only">New Quantity</label>
+    <label for="inputAmount" class="sr-only">Item Quantity</label>
     <div class="input-group">
-      <div class="input-group-addon">Quantity:</div>
       <input data-item-id="{{ item.product.id }}" name="quantity" type="number" min="0"
-        max="{{ item.product.stock_available }}" class="form-control quantity-input" value="{{ item.quantity }}"
-        required>
+        max="{{ item.product.stock_available }}" class="form-control quantity-input text-center"
+        value="{{ item.quantity }}" required>
+      <button type="submit" class="input-group-append btn btn-custom"><span class="glyphicon glyphicon-edit"
+          aria-hidden="true"></span>Amend</button>
     </div>
-    <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-edit"
-        aria-hidden="true"></span>Amend</button>
   </form>
 </div>

@@ -14,6 +14,16 @@ body {
   font-family: "Black Ops One", cursive;
 }
 
+.jumbotron {
+  background-image: url("../img/zmorph-3dprinter.jpg");
+  background-size: cover;
+  padding: 0;
+}
+
+.jumbotron > div {
+  background-color: #ffffffb9;
+}
+
 .social-icon {
   height: 3rem;
   background-color: #ffffff;

@@ -1,12 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Open+Sans&display=swap");
 
 body {
-  font: 12px;
+  font-size: 16px;
   font-family: "Open Sans", sans-serif;
+}
+.remove-text-decoration:hover {
+  text-decoration: none;
 }
 
 #site-title {
-  text-decoration: none;
+  font-size: 1.5rem !important;
   color: #000000;
   font-family: "Black Ops One", cursive;
 }

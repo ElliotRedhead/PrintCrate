@@ -50,3 +50,12 @@ function homepageProductSelection(breakpoint){
         $(".product-container").eq(2).hide();
     }
 }
+
+$("#clipboard-url").click(function(){
+    new ClipboardJS("#clipboard-url");
+    swal.fire({
+        icon: "success",
+        text:"Site URL copied to clipboard.",
+        timer: 3000,
+    });
+})

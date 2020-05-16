@@ -1,13 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Baloo+Paaji+2&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Open+Sans&display=swap");
 
 body {
   font: 12px;
-  font-family: "Baloo Paaji 2", cursive;
+  font-family: "Open Sans", sans-serif;
 }
 
 #site-title {
   text-decoration: none;
   color: #000000;
+  font-family: "Black Ops One", cursive;
 }
 
 .social-icon {

@@ -50,6 +50,7 @@ body {
 
 .btn-custom {
   background-color: #339448;
+  border-color: #bdbdbd;
   color: #ffffff;
   border-radius: 0.15rem;
 }

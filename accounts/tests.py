@@ -15,12 +15,21 @@ class RegistrationFormTest(TestCase):
             form.fields["password2"].label == "Password confirmation")
 
     def test_field_help_prompts(self):
-        """Tests if Django help text tips are displayed for applicable fields, email field not included as validated via other means."""
+        """Tests if Django help text tips are displayed for applicable fields.
+
+        The email field is not included as validated via other means.
+        """
         form = UserRegisterForm()
-        self.assertTrue(form.fields["username"].help_text ==
-                        "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.")
+        self.assertTrue(form.fields["username"].help_text == "Required. "
+                        "150 characters or fewer. "
+                        "Letters, digits and @/./+/-/_ only.")
         self.assertTrue(form.fields["password1"].help_text ==
-                        "<ul><li>Your password can’t be too similar to your other personal information.</li><li>Your password must contain at least 8 characters.</li><li>Your password can’t be a commonly used password.</li><li>Your password can’t be entirely numeric.</li></ul>")
+                        "<ul><li>Your password can’t be too similar "
+                        "to your other personal information.</li>"
+                        "<li>Your password must contain at least "
+                        "8 characters.</li><li>Your password can’t be a "
+                        "commonly used password.</li><li>Your password "
+                        "can’t be entirely numeric.</li></ul>")
         self.assertTrue(form.fields["password2"].help_text ==
                         "Enter the same password as before, for verification.")
 
@@ -45,7 +54,8 @@ class LoginViewTest(TestCase, Client):
         """Tests if a view is loaded upon calling the login URL.
 
         The test responds positively with 200,
-        test fails if status code 404 expected."""
+        test fails if status code 404 expected.
+        """
         response = self.client.get(
             "/accounts/login", {"template_name": "login.html"})
         self.assertEqual(response.status_code, 200)
@@ -60,5 +70,9 @@ class LoginViewTest(TestCase, Client):
         User.objects.create_user(
             username="testuser", password="thisisasecret101")
         response = self.client.post(
-            "/accounts/login", {"template_name": "login.html", "username": "testuser", "password": "thisisasecret101"}, follow=True)
+            "/accounts/login",
+            {"template_name": "login.html",
+             "username": "testuser",
+             "password": "thisisasecret101"},
+            follow=True)
         self.assertTrue(response.context["user"].is_active)

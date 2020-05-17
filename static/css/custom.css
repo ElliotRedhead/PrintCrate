@@ -54,6 +54,7 @@ body {
   border-color: #dfdfdf;
   color: #ffffff;
   border-radius: 0.15rem;
+  letter-spacing: 0.1rem;
 }
 
 .btn-custom:focus {

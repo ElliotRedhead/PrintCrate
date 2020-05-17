@@ -1,4 +1,6 @@
-from django.test import TestCase
+from django.test import TestCase, Client
+from django.contrib.auth import views as auth
+from django.contrib.auth.models import User
 from .forms import UserRegisterForm
 
 
@@ -32,3 +34,24 @@ class RegistrationFormTest(TestCase):
         }
         form = UserRegisterForm(data=form_data)
         self.assertTrue(form.is_valid())
+
+
+class LoginViewTest(TestCase, Client):
+    def client_setup(self):
+        self.client = Client()
+
+    def test_login_page_responds_with_url_call(self):
+        """Tests if a view is loaded upon calling the login URL.
+
+        The test responds positively with 200,
+        test fails if status code 404 expected."""
+        response = self.client.get(
+            "/accounts/login", {"template_name": "login.html"})
+        self.assertEqual(response.status_code, 200)
+
+    def test_successful_submission(self):
+        User.objects.create_user(
+            username="testuser", password="thisisasecret101")
+        response = self.client.post(
+            "/accounts/login", {"template_name": "login.html", "username": "testuser", "password": "thisisasecret101"}, follow=True)
+        self.assertTrue(response.context["user"].is_active)

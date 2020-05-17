@@ -38,6 +38,7 @@ class RegistrationFormTest(TestCase):
 
 class LoginViewTest(TestCase, Client):
     def client_setup(self):
+        """Creates client to conduct unit tests."""
         self.client = Client()
 
     def test_login_page_responds_with_url_call(self):
@@ -50,6 +51,12 @@ class LoginViewTest(TestCase, Client):
         self.assertEqual(response.status_code, 200)
 
     def test_successful_submission(self):
+        """Tests if user is logged in with valid credentials.
+
+        An example user is created in the database, credentials
+        for that user are then submitted in the login view.
+        The user is then deemed active if login was successful.
+        """
         User.objects.create_user(
             username="testuser", password="thisisasecret101")
         response = self.client.post(

@@ -80,3 +80,52 @@ class TestCheckoutInfoView(TestCase):
         self.assertEqual(shipping.postcode, "SI54 7JU")
         self.assertEqual(shipping.country, "United States")
         self.assertEqual(shipping.phone_number, "76484377")
+
+    def test_checkout_custom_templates_rendered_with_successful_call(self):
+        User.objects.create_user(
+            username="testuser", password="thisisasecret101")
+        self.client.login(username="testuser", password="thisisasecret101")
+        item = Product(name="Product",
+                       product_image="testing_img.jpg",
+                       description="Product description.",
+                       price="20.00",
+                       stock_available="5",
+                       showcase_product="True")
+        item.save()
+        session = self.client.session
+        session["cart"] = {1: 1}
+        session.save()
+        response = self.client.get("/checkout/info/")
+        self.assertTemplateUsed(response, "checkout_shipping_address.html")
+        self.assertTemplateUsed(response, "base.html")
+        self.assertTemplateUsed(response, "layout/head.html")
+        self.assertTemplateUsed(response, "components/navbar.html")
+        self.assertTemplateUsed(response, "components/footer.html")
+        self.assertTemplateUsed(response, "layout/scripts.html")
+
+    def test_checkout_third_party_templates_rendered_with_successful_call(self):
+        User.objects.create_user(
+            username="testuser", password="thisisasecret101")
+        self.client.login(username="testuser", password="thisisasecret101")
+        item = Product(name="Product",
+                       product_image="testing_img.jpg",
+                       description="Product description.",
+                       price="20.00",
+                       stock_available="5",
+                       showcase_product="True")
+        item.save()
+        session = self.client.session
+        session["cart"] = {1: 1}
+        session.save()
+        response = self.client.get("/checkout/info/")
+        self.assertTemplateUsed(response, "bootstrap/uni_form.html")
+        self.assertTemplateUsed(response, "bootstrap/errors.html")
+        self.assertTemplateUsed(response, "bootstrap/field.html")
+        self.assertTemplateUsed(response, "django/forms/widgets/text.html")
+        self.assertTemplateUsed(response, "django/forms/widgets/input.html")
+        self.assertTemplateUsed(response, "django/forms/widgets/attrs.html")
+        self.assertTemplateUsed(
+            response, "bootstrap/layout/help_text_and_errors.html")
+        self.assertTemplateUsed(
+            response, "bootstrap/layout/field_errors_block.html")
+        self.assertTemplateUsed(response, "bootstrap/layout/help_text.html")

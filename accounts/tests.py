@@ -47,18 +47,36 @@ class RegistrationFormTest(TestCase):
         self.assertTrue(form.is_valid())
 
 
+class RegistrationViewTest(TestCase, Client):
+    """Tests the user registration view functionality."""
+
+    def client_setup(self):
+        """Creates new client to conduct isolated unit tests."""
+        self.client = Client()
+
+    def test_registration_page_responds_with_url_call(self):
+        """Tests if a view is loaded upon calling the login URL.
+
+        The test passes with 200 (success),
+        test fails if other status codes e.g. 404 (not found) are returned.
+        """
+        response = self.client.get(
+            "/accounts/register", {"template_name": "register.html"})
+        self.assertEqual(response.status_code, 200)
+
+
 class LoginViewTest(TestCase, Client):
     """Tests the user login view functionality."""
 
     def client_setup(self):
-        """Creates client to conduct unit tests."""
+        """Creates new client to conduct isolated unit tests."""
         self.client = Client()
 
     def test_login_page_responds_with_url_call(self):
         """Tests if a view is loaded upon calling the login URL.
 
-        The test responds positively with 200,
-        test fails if status code 404 expected.
+        The test passes with 200 (success),
+        test fails if other status codes e.g. 404 (not found) are returned.
         """
         response = self.client.get(
             "/accounts/login", {"template_name": "login.html"})

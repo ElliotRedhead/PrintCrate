@@ -7,12 +7,16 @@ import stripe
 from products.models import Product
 from .models import CustomerShipping, OrderDetail
 from cart.contexts import cart_contents
+from cart.views import empty_cart_modal
 
 stripe.api_key = settings.STRIPE_SECRET
 
 
 @login_required
 def checkout_shipping_address_view(request):
+    if not request.session.get("cart"):
+        empty_cart_modal(request)
+        return redirect("products")
     if request.method == "POST":
         customer_shipping = CustomerShippingForm(request.POST)
         if customer_shipping.is_valid():
@@ -22,7 +26,6 @@ def checkout_shipping_address_view(request):
             return redirect("payment")
     else:
         form = CustomerShippingForm()
-
     return render(request, "checkout_shipping_address.html", {"page_title": "Shipping | PrintCrate", "customer_shipping_form": form})
 
 

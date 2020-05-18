@@ -5,6 +5,8 @@ from .models import CustomerShipping
 
 
 class TestCheckoutInfoView(TestCase):
+    """Tests for the checkout info/shipping page."""
+
     def client_setup(self):
         """Creates new client to conduct isolated unit tests."""
         self.client = Client()
@@ -17,6 +19,7 @@ class TestCheckoutInfoView(TestCase):
         self.assertRedirects(response, "/accounts/login?next=/checkout/info/")
 
     def test_redirect_if_user_logged_empty_cart(self):
+        """Tests if an authenticated user is redirected with empty cart."""
         User.objects.create_user(
             username="testuser", password="thisisasecret101")
         self.client.login(username="testuser", password="thisisasecret101")
@@ -26,6 +29,7 @@ class TestCheckoutInfoView(TestCase):
         self.assertRedirects(response, "/products/")
 
     def test_page_loads_if_user_logged_with_cart_items(self):
+        """Tests if authenticated user loads page with cart contents."""
         User.objects.create_user(
             username="testuser", password="thisisasecret101")
         self.client.login(username="testuser", password="thisisasecret101")
@@ -43,6 +47,7 @@ class TestCheckoutInfoView(TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_submission_of_shipping_information_creates_object(self):
+        """Tests if object is correctly created upon user submission."""
         User.objects.create_user(
             username="testuser", password="thisisasecret101")
         self.client.login(username="testuser", password="thisisasecret101")

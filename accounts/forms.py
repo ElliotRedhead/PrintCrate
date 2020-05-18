@@ -4,6 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 
 
 class UserRegisterForm(UserCreationForm):
+    """The registration form fields based on Django User model."""
     email = forms.EmailField()
     email.label = "Email"
 

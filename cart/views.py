@@ -51,8 +51,8 @@ def cart_view(request):
 
 
 def add_to_cart(request, id):
+    """Adds the required quantity of a product to session variable."""
     quantity = int(request.POST.get("quantity"))
-
     cart = request.session.get("cart", {})
     if id in cart:
         cart[id] = int(cart[id]) + quantity
@@ -64,14 +64,13 @@ def add_to_cart(request, id):
 
 
 def adjust_cart(request, id):
+    """Alters existing product quantity, removes if quantity less than 1."""
     quantity = int(request.POST.get("quantity"))
     cart = request.session.get("cart", {})
-
     if quantity > 0:
         cart[id] = quantity
     else:
         cart.pop(id)
-
     request.session["cart"] = cart
     return redirect(reverse("cart_view"))
 

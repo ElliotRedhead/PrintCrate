@@ -82,6 +82,10 @@ class TestCheckoutInfoView(TestCase):
         self.assertEqual(shipping.phone_number, "76484377")
 
     def test_checkout_custom_templates_rendered_with_successful_call(self):
+        """Tests if correct templates are rendered upon calling checkout URL.
+
+        Placeholder data is used to successfully access the checkout page.
+        """
         User.objects.create_user(
             username="testuser", password="thisisasecret101")
         self.client.login(username="testuser", password="thisisasecret101")
@@ -104,6 +108,10 @@ class TestCheckoutInfoView(TestCase):
         self.assertTemplateUsed(response, "layout/scripts.html")
 
     def test_checkout_third_party_templates_rendered_with_successful_call(self):
+        """Tests if third-party templates are rendered upon calling checkout URL.
+
+        Placeholder data is used to successfully access the checkout page.
+        """
         User.objects.create_user(
             username="testuser", password="thisisasecret101")
         self.client.login(username="testuser", password="thisisasecret101")

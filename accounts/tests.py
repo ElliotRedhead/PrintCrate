@@ -5,6 +5,8 @@ from .forms import UserRegisterForm
 
 
 class RegistrationFormTest(TestCase):
+    """Tests registration form validation."""
+
     def test_field_labels(self):
         """Tests if field labels exist and are correct."""
         form = UserRegisterForm()
@@ -46,6 +48,8 @@ class RegistrationFormTest(TestCase):
 
 
 class LoginViewTest(TestCase, Client):
+    """Tests the user login view functionality."""
+
     def client_setup(self):
         """Creates client to conduct unit tests."""
         self.client = Client()

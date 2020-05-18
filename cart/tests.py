@@ -1,10 +1,11 @@
 from django.test import TestCase, Client
 from products.models import Product
-from django.shortcuts import get_object_or_404
 from django.contrib.auth.models import User
 
 
 class TestCartView(TestCase):
+    """Tests loading the cart view under various conditions."""
+
     def client_setup(self):
         """Creates new client to conduct isolated unit tests."""
         self.client = Client()

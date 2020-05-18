@@ -10,10 +10,12 @@ class TestCartView(TestCase):
         self.client = Client()
 
     def test_redirect_with_empty_cart(self):
+        """Tests calling cart URL when cart is empty."""
         response = self.client.get("/cart/")
         self.assertEqual(response.status_code, 302)
 
     def test_view_cart_contents(self):
+        """Creates user & product, adds to cart & tests URL call."""
         User.objects.create_user(
             username="testuser", password="thisisasecret101")
         item = Product(name="Product",
@@ -31,7 +33,10 @@ class TestCartView(TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_cart_correct_user_templates_rendered_with_call(self):
-        """Tests if correct templates are rendered upon calling cart URL."""
+        """Tests if correct templates are rendered upon calling cart URL.
+
+        Placeholder data is used to successfully access the cart page.
+        """
         User.objects.create_user(
             username="testuser", password="thisisasecret101")
         item = Product(name="Product",

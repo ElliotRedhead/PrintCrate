@@ -77,8 +77,8 @@ class RegistrationViewTest(TestCase, Client):
         self.assertTemplateUsed(response, "layout/head.html")
         self.assertTemplateUsed(response, "layout/scripts.html")
 
-    def test_registration_correct_third_party_templates_rendered_with_call(self):
-        """Tests if third party templates are used upon calling register URL."""
+    def test_registration_third_party_templates_rendered_with_call(self):
+        """Tests third party templates used with register URL."""
         response = self.client.get("/accounts/register")
         self.assertTemplateUsed(response, "bootstrap/uni_form.html")
         self.assertTemplateUsed(response, "bootstrap/errors.html")

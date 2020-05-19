@@ -1,13 +1,12 @@
-{% extends 'base.html' %}
-
-<!-- Enables Boostrap CSS customisation of form appearance. -->
+{% extends "base.html" %}
+<!-- Enables Bootstrap CSS customisation of form appearance. -->
 {% load crispy_forms_tags %}
-
 {% block content %}
 <div class="container main-container">
   <div class="row">
     <div class="col-12 col-md-6">
-      <h2>Login</h2>
+      <!-- Login form to log into existing account. -->
+      <h1>Login</h1>
       <form method="POST">
         {% csrf_token %}
         <fieldset class="form-group">
@@ -19,8 +18,6 @@
       </form>
       <span>New user? <a href="{% url 'register' %}">Register</a></span>
     </div>
-
   </div>
 </div>
-
 {% endblock %}

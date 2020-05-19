@@ -1,13 +1,12 @@
 {% extends "base.html" %}
-
 <!-- Enables Boostrap CSS customisation of form appearance. -->
 {% load crispy_forms_tags %}
-
 {% block content %}
 <div class="container main-container">
   <div class="row">
     <div class="col-12 col-md-6">
-      <h2>Create an account</h2>
+      <!-- Register form to create a new account. -->
+      <h1>Create an account</h1>
       <form method="POST">
         {% csrf_token %}
         <fieldset class="form-group">
@@ -17,7 +16,7 @@
           <button type="submit">Register</button>
         </div>
       </form>
-      <span>Already registered? <a href="#">Login</a></span>
+      <span>Already registered? <a href="{% url 'login' %}">Login</a></span>
     </div>
   </div>
 </div>

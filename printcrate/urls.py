@@ -20,6 +20,7 @@ from django.conf.urls.static import static
 from django.urls import path, include
 from accounts import urls as accounts_urls
 from about import urls as about_urls
+from faq import urls as faq_urls
 from contact import urls as contact_urls
 from homepage import urls as homepage_urls
 from products import urls as products_urls
@@ -30,6 +31,7 @@ urlpatterns = [
     path("", include(homepage_urls)),
     path("admin/", admin.site.urls),
     path("about/", include(about_urls)),
+    path("faq/", include(faq_urls)),
     path("contact/", include(contact_urls)),
     path("accounts/", include(accounts_urls)),
     path("products/", include(products_urls)),

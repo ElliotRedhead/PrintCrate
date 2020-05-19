@@ -104,11 +104,13 @@ Project inception wireframes were created to provide guidance from the initial p
 
 The standard inventory sold on this website is constructed with the following model:
 
-| Key Name            | Database Key    | Field Validation                                     | Value Type                |
-| ------------------- | --------------- | ---------------------------------------------------- | ------------------------- |
-| Product Name        | name            | max_length=25                                        | CharField                 |
-| Product Description | description     | ---                                                  | TextField                 |
-| Product Price       | price           | max_digits=5, decimal_places=2, MinValueValidator(0) | DecimalField              |
-| Quantity Available  | stock_available | MinValueValidator(0), MaxValueValidator(50)          | PositiveSmallIntegerField |
+| Key Name            | Database Key     | Field Validation                                     | Value Type                |
+| ------------------- | ---------------- | ---------------------------------------------------- | ------------------------- |
+| Product Name        | name             | max_length=25                                        | CharField                 |
+| Product Image       | product_image    | ---                                                  | ImageField                |
+| Product Description | description      | max_length=150                                       | TextField                 |
+| Product Price       | price            | max_digits=5, decimal_places=2, MinValueValidator(0) | DecimalField              |
+| Quantity Available  | stock_available  | MinValueValidator(0), MaxValueValidator(50)          | PositiveSmallIntegerField |
+| Showcase Product    | showcase_product | ---                                                  | Boolean                   |
 
 <!-- Further additions to this model will include a product image and if the product is part of the showcase set. -->

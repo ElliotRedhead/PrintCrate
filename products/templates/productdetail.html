@@ -14,7 +14,7 @@
         {% csrf_token %}
         <div class="input-group">
           <input type="number" name="quantity" aria-label="Input field for quantity." min="1"
-            max="{{ product.stock_available }}" class="form-control" placeholder="Quantity" />
+            max="{{ product.stock_available }}" class="form-control" placeholder="Quantity" required />
           <span class="input-group-btn">
             <button class="btn btn-dark" type="submit">
               Add

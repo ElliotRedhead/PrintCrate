@@ -7,7 +7,7 @@
     <h1 id="site-title">PRINTCRATE</h1>
   </a>
   <a href="{% url 'cart_view' %}" class="order-lg-2"><i class="fas fa-shopping-basket"></i></a>
-  <div class="collapse navbar-collapse order-lg-1">
+  <div id="navbarLinks" class="collapse navbar-collapse order-lg-1">
     <ul class="navbar-nav ml-auto">
       {% if user.is_authenticated %}
       <li class="nav-item active">

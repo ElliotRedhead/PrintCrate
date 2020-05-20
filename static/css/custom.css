@@ -71,3 +71,12 @@ body {
 ul {
   list-style-type: "-";
 }
+
+.navbar-nav > .nav-item {
+  border-left: 0.05rem solid #dfdfdf;
+}
+
+.navbar-nav > .nav-item:hover {
+  background-color: #dfdfdf;
+  border-radius: 0.2rem;
+}

@@ -117,6 +117,8 @@ The option to add a product to the user's cart is given here.
 
 ### About PrintCrate
 
+The about page gives a brief summary of what PrintCrate is and the main offering to the customer.
+
 ### Contact
 
 ### Frequently Asked Questions

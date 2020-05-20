@@ -126,6 +126,8 @@ The recipient email address is kept hidden in this way and prevents bot scraping
 
 ### Frequently Asked Questions
 
+The FAQ page answers some common questions that are raised concerning logistics of the business, product material details and other services provided by PrintCrate.
+
 ### Register Account
 
 ### Login

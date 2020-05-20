@@ -149,6 +149,8 @@ The user has the ability to update the quantities of products in their cart, and
 
 ### Checkout
 
+The checkout feature allows users to submit their shipping address and conduct payment through Stripe processing.
+
 ## Data Modelling
 
 ### User Model

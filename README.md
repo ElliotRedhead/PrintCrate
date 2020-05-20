@@ -116,3 +116,19 @@ The standard inventory sold on this website is constructed with the following mo
 | Product Price       | price            | max_digits=5, decimal_places=2, MinValueValidator(0) | DecimalField              |
 | Quantity Available  | stock_available  | MinValueValidator(0), MaxValueValidator(50)          | PositiveSmallIntegerField |
 | Showcase Product    | showcase_product | default=False                                        | Boolean                   |
+
+### Shipping Information Model
+
+This model stores the shipping information for an order placed by a user.
+
+| Key Name               | Database Key           | Field Validation                     | Value Type      |
+| ---------------------- | ---------------------- | ------------------------------------ | --------------- |
+| Customer               | customer               | on_delete=models.CASCADE             | ForeignKey User |
+| Customer Full Name     | full_name              | max_length=100, blank=False          | CharField       |
+| Primary Address Line   | primary_address_line   | max_length=50, blank=False           | CharField       |
+| Secondary Address Line | secondary_address_line | max_length=50, blank=True, null=True | CharField       |
+| Town/City              | town_or_city           | max_length=50, blank=False           | CharField       |
+| County                 | county                 | max_length=50, blank=False           | CharField       |
+| Postcode               | postcode               | max_length=20, blank=False           | CharField       |
+| Country                | country                | max_length=50,blank=False            | CharField       |
+| Phone Number           | phone_number           | max_length=20, blank=False           | CharField       |

@@ -121,6 +121,9 @@ The about page gives a brief summary of what PrintCrate is and the main offering
 
 ### Contact
 
+The contact page provides a form for users to send their message directly to the PrintCrate owners.  
+The recipient email address is kept hidden in this way and prevents bot scraping of that information.
+
 ### Frequently Asked Questions
 
 ### Register Account

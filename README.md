@@ -112,6 +112,9 @@ Users can access more details about each product by using the "Product Details" 
 
 ### Product Details
 
+Individual product detail pages include information such as the product name, image, description, price and quantity available.  
+The option to add a product to the user's cart is given here.
+
 ### About PrintCrate
 
 ### Contact

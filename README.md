@@ -130,6 +130,8 @@ The FAQ page answers some common questions that are raised concerning logistics 
 
 ### Register Account
 
+A user who is not logged in can access the Register page from the navigation bar, they are then prompted for username, email, password and a confirmation of the chosen password in order to create an account.
+
 ### Login
 
 ### Logout

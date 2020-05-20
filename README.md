@@ -130,9 +130,13 @@ The FAQ page answers some common questions that are raised concerning logistics 
 
 ### Register Account
 
-A user who is not logged in can access the Register page from the navigation bar, they are then prompted for username, email, password and a confirmation of the chosen password in order to create an account.
+A user who is not logged in can access the Register page from the navigation bar, they are then prompted for username, email, password and a confirmation of the chosen password in order to create an account.  
+If the user already owns an account, there is a prompt to login instead below the registration form.
 
 ### Login
+
+The login page prompts the user for their existing username and password to access their account.  
+If the user does not already own an account, a prompt below the login form can be clicked to redirect to the registration form.
 
 ### Logout
 

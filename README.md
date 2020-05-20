@@ -140,6 +140,8 @@ If the user does not already own an account, a prompt below the login form can b
 
 ### Logout
 
+A logged in user can logout via the navigation bar link, this clears all session data. Any items in their cart and not checked out at that time are cleared to prevent shared accounts detailing incomplete orders to other users.
+
 ### Cart
 
 ### Checkout

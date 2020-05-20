@@ -144,6 +144,9 @@ A logged in user can logout via the navigation bar link, this clears all session
 
 ### Cart
 
+The cart provides a list of all products in the user's cart with the current total price of all items in the cart.  
+The user has the ability to update the quantities of products in their cart, and the total price is updated when those changes are submitted.
+
 ### Checkout
 
 ## Data Modelling

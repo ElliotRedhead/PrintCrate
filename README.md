@@ -98,11 +98,19 @@ Project inception wireframes were created to provide guidance from the initial p
 
 --
 
-## Features
+## Page Features
 
 ### Home
 
-### Product Browse
+The homepage serves as the main landing page for site visitors.  
+The user is directed to browse products or learn more about PrintCrate, with a selection of products showcased as examples for the user.
+
+### Products List
+
+Cards displaying the products available at PrintCrate provide an overview of standard stock, giving a summary of each product available at a glance.  
+Users can access more details about each product by using the "Product Details" button of their selected product.
+
+### Product Details
 
 ### About PrintCrate
 

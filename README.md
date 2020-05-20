@@ -98,6 +98,28 @@ Project inception wireframes were created to provide guidance from the initial p
 
 --
 
+## Features
+
+### Home
+
+### Product Browse
+
+### About PrintCrate
+
+### Contact
+
+### Frequently Asked Questions
+
+### Register Account
+
+### Login
+
+### Logout
+
+### Cart
+
+### Checkout
+
 ## Data Modelling
 
 ### User Model

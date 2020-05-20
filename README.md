@@ -132,3 +132,14 @@ This model stores the shipping information for an order placed by a user.
 | Postcode               | postcode               | max_length=20, blank=False           | CharField       |
 | Country                | country                | max_length=50,blank=False            | CharField       |
 | Phone Number           | phone_number           | max_length=20, blank=False           | CharField       |
+
+### Order Detail Model
+
+This model stores the details of an order made by a customer.
+
+| Key Name    | Database Key | Field Validation                        | Value Type                  |
+| ----------- | ------------ | --------------------------------------- | --------------------------- |
+| Shipping    | shipping     | null=False, on_delete=models.CASCADE    | ForeignKey CustomerShipping |
+| Product     | product      | null=False, on_delete=models.CASCADE    | ForeignKey Product          |
+| Quantity    | quantity     | blank=False                             | IntegerField                |
+| Total Price | total        | default=datetime.date.today, blank=True | DateField                   |

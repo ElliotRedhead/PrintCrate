@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="container-fluid main-container">
+  <div class="row">
+    <form class="form-inline" action="{% url 'product_search' %}" method="GET">
+      <input class="form-control" type="text" name="search_query">
+      <button class="btn btn-custom" type="search">Search</button>
+    </form>
+  </div>
   <div class="row d-flex flex-wrap">
     {% for product in products %}
     <div class="col-12 col-md-6 col-lg-4 my-3">

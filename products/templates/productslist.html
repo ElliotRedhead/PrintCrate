@@ -2,6 +2,7 @@
 {% block content %}
 <div class="container-fluid main-container">
   <div class="row">
+    <!-- Search form to filter for queried term. -->
     <form class="form-inline" action="{% url 'product_search' %}" method="GET">
       <input class="form-control" type="text" name="search_query">
       <button class="btn btn-custom" type="search">Search</button>

@@ -26,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'o8r+9a*9!7wmmfg=fm!r3mrv)p@hj@pbcl!^4zte9$-*#($*oq'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = not(bool(os.getenv("DEPLOY")))
+DEBUG = True
 
 ALLOWED_HOSTS = ["localhost", "*.herokuapp.com",
                  "printcrate.herokuapp.com", "127.0.0.1"]

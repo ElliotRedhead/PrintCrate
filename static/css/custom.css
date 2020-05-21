@@ -43,6 +43,10 @@ body {
 .fill-parent-height {
   height: 100%;
 }
+.card {
+  background-color: #f5f3ee;
+  box-shadow: 0.2rem 0.2rem 0.2rem #5252527a;
+}
 
 .product-image-container {
   min-height: 8rem;

@@ -200,3 +200,94 @@ This model stores the details of an order made by a customer.
 ## Testing
 
 Testing details can be viewed in the [TESTING.md](/TESTING.md) file.
+
+## Deployment
+
+### Running this project in a local environment
+
+#### Prerequisites
+
+- An Integrated Development Environment (IDE) e.g. [Visual Studio Code](https://code.visualstudio.com/)
+- [Python 3](https://www.python.org/downloads/)
+- [PIP](https://pip.pypa.io/en/stable/installing/)
+- [Git](https://gist.github.com/derhuerst/1b15ff4652a867391f03)
+
+Accounts for the following (some environmental variables are required from these.):
+
+- [Stripe](https://dashboard.stripe.com/register)
+- [AWS](https://aws.amazon.com/) and [an S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html)
+- [Gmail](https://www.google.com/gmail/)
+
+1. Save a copy of this github repository with the Git clone function in your terminal:
+
+   ```
+   git clone https://github.com/ElliotRedhead/PrintCrate
+   ```
+
+2. In your IDE, navigate to the location that you saved the repository to.
+
+3. Create a virtual environment to load the project's required packages into. Enter the command:
+
+   ```terminal
+   py .venv venv
+   ```
+
+   _NB: Please refer to documentation for the specific syntax required for your OS, `py` may require replacement with `python3` or `python`_
+
+4. Activate the virtual environment:
+
+   ```terminal
+   source venv/Scripts/activate
+   ```
+
+   _NB: This command will vary based on your OS, see [Virtual Environment documentation](https://docs.python.org/3/library/venv.html) for help._
+
+5. If required, update the Package Installer for Python (PIP):
+
+   ```terminal
+   pip install --upgrade pip.
+   ```
+
+6. Install all required project packages:
+
+   ```terminal
+   pip install -r requirements.txt.
+   ```
+
+7. Setting environment variables:  
+    Create a file in the root of the project named "env.py", copy the code block below and populate with your details:
+
+   ```python
+   import os
+   os.environ.setdefault("AWS_ACCESS_KEY_ID", "<Your AWS Access Key>")
+   os.environ.setdefault("AWS_SECRET_ACCESS_KEY","<Your AWS Secret Access Key>")
+   os.environ.setdefault("DATABASE_URL", "<Your PostgreSQL Database URL>")
+   os.environ.setdefault("EMAIL_HOST", "<Your SMTP Enabled Gmail Address>")
+   #See [this page](https://kinsta.com/knowledgebase/free-smtp-server/) for enabling instructions.
+   os.environ.setdefault("HOST_PASS", "<Your SMTP Enabled Gmail Password")
+   os.environ.setdefault("EMAIL_RECIPIENT", "<Email Address to Send Contact Form Messages to")
+   os.environ.setdefault("STRIPE_PUBLISHABLE", "<Your Stripe Publishable Key>")
+   os.environ.setdefault("STRIPE_SECRET", "<Your Stripe Secret Key>")
+   ```
+
+8. Migrate models to create your database structures:
+
+   ```terminal
+   py manage.py migrate
+   ```
+
+9. Create a superuser to access admin features:
+
+   ```terminal
+   py manage.py createsuperuser
+   ```
+
+10. Run the project on a local server:
+
+    ```terminal
+    py manage.py runserver
+    ```
+
+11. Add new products to the database by accessing the URL provided in the terminal and adding "/admin", logging in with your superuser credentials and accessing the Products table.
+
+---

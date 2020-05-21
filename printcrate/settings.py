@@ -89,7 +89,7 @@ WSGI_APPLICATION = 'printcrate.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-if "DATABASE_URL" in os.environ:
+if "DATABASE_URL" in os.environ and os.getenv("DEPLOY") is True:
     DATABASES = {"default": dj_database_url.parse(
         os.environ.get("DATABASE_URL"))}
 else:
@@ -144,8 +144,8 @@ AWS_S3_OBJECT_PARAMETERS = {
 
 AWS_STORAGE_BUCKET_NAME = "django-printcrate-bucket"
 AWS_S3_REGION_NAME = "eu-west-2"
-AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
-AWS_SECRET_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
+AWS_SECRET_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
 AWS_S3_CUSTOM_DOMAIN = "%s.s3.amazonaws.com" % AWS_STORAGE_BUCKET_NAME
 AWS_DEFAULT_ACL = None
 
@@ -154,10 +154,16 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 if os.getenv("DEPLOY") is False:
     STATIC_URL = "/static/"
 else:
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
     STATIC_URL = "/staticfiles/"
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-    STATICFILES_LOCATION = "custom_storages.StaticStorage"
+    STATICFILES_LOCATION = "static"
+    MEDIAFILES_LOCATION = "media"
     DEFAULT_FILE_LOCATION = "custom_storages.MediaStorage"
+    STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN,
+                                     STATICFILES_LOCATION)
+    MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)

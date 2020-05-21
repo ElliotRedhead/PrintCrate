@@ -45,11 +45,7 @@ Key objectives/requirements for site users.
 
 This colour palette was formed upon project inception and used to drive UI decisions within the project, adjustments may be made to this as project development progresses.
 
-![#fcfcfc](https://placehold.it/15/fcfcfc/000000?text=+) `#fcfcfc`  
-![#9ec3d6](https://placehold.it/15/9ec3d6/000000?text=+) `#9ec3d6`  
-![#93ba7e](https://placehold.it/15/93ba7e/000000?text=+) `#93ba7e`  
-![#2f4677](https://placehold.it/15/2f4677/000000?text=+) `#2f4677`  
-![#8e638a](https://placehold.it/15/8e638a/000000?text=+) `#8e638a`
+# New Colour Scheme Implemented
 
 ### Wireframes
 

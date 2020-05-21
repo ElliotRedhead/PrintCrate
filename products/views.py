@@ -22,4 +22,4 @@ def product_search(request):
         q_object.add((Q(name__icontains=term) | Q(
             description__icontains=term)), q_object.connector)
     products = Product.objects.filter(q_object)
-    return render(request, "productslist.html", {"products": products, "page_title": "Products | PrintCrate"})
+    return render(request, "productslist.html", {"products": products, "page_title": "Products | PrintCrate", "search_query": search_query})

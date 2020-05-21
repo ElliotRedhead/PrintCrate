@@ -25,6 +25,11 @@ body {
   background-color: #ffffffb9;
 }
 
+#jumbotron-title {
+  font-family: "Black Ops One", cursive;
+  font-size: 3rem;
+}
+
 .social-icon {
   height: 3rem;
   background-color: #ffffff;

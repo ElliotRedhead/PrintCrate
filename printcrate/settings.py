@@ -156,7 +156,7 @@ if os.getenv("DEPLOY") is False:
 else:
     STATIC_URL = "/staticfiles/"
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-    STATICFILES_STORAGE = "custom_storages.StaticStorage"
+    STATICFILES_LOCATION = "custom_storages.StaticStorage"
     DEFAULT_FILE_LOCATION = "custom_storages.MediaStorage"
 
 

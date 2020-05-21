@@ -50,7 +50,9 @@ body {
 /* Custom button styling to suit site theme. */
 
 .btn-custom {
-  background-color: #339448;
+  background: #23b772;
+  background: linear-gradient(180deg, #23b772 35%, #1d8152 100%);
+  box-shadow: 0.2rem 0.2rem 0.2rem #5252527a;
   border-color: #dfdfdf;
   color: #ffffff;
   border-radius: 0.15rem;

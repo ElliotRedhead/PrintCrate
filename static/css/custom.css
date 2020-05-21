@@ -82,3 +82,13 @@ ul {
   background-color: #dfdfdf;
   border-radius: 0.2rem;
 }
+
+.fas {
+  color: #23b772;
+  text-shadow: -0.05rem 0 #000000, 0.05rem 0 black, 0 0.05rem black,
+    0 -0.05rem black;
+}
+
+.quality-icon {
+  font-size: 2rem;
+}

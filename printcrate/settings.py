@@ -26,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'o8r+9a*9!7wmmfg=fm!r3mrv)p@hj@pbcl!^4zte9$-*#($*oq'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = not(bool(os.getenv("DEPLOY")))
 
 ALLOWED_HOSTS = ["localhost", "*.herokuapp.com",
                  "printcrate.herokuapp.com", "127.0.0.1"]
@@ -137,17 +137,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-# AWS_S3_OBJECT_PARAMETERS = {
-#     'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
-#     'CacheControl': 'max-age=99999999',
-# }
+AWS_S3_OBJECT_PARAMETERS = {
+    'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+    'CacheControl': 'max-age=99999999',
+}
 
-# AWS_STORAGE_BUCKET_NAME = "django-printcrate-bucket"
-# AWS_S3_REGION_NAME = "eu-west-2"
-# AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
-# AWS_SECRET_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
-# AWS_S3_CUSTOM_DOMAIN = "%s.s3.amazonaws.com" % AWS_STORAGE_BUCKET_NAME
-# AWS_DEFAULT_ACL = None
+AWS_STORAGE_BUCKET_NAME = "django-printcrate-bucket"
+AWS_S3_REGION_NAME = "eu-west-2"
+AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+AWS_SECRET_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+AWS_S3_CUSTOM_DOMAIN = "%s.s3.amazonaws.com" % AWS_STORAGE_BUCKET_NAME
+AWS_DEFAULT_ACL = None
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 

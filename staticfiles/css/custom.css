@@ -1,27 +1,55 @@
-@import url("https://fonts.googleapis.com/css2?family=Baloo+Paaji+2&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Open+Sans&display=swap");
 
 body {
-  font: 12px;
-  font-family: "Baloo Paaji 2", cursive;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+}
+.remove-text-decoration:hover {
+  text-decoration: none;
 }
 
 #site-title {
-  text-decoration: none;
+  font-size: 1.8rem;
   color: #000000;
+  font-family: "Black Ops One", cursive;
 }
 
-/* Navigation bar styling */
+.jumbotron {
+  background-image: url("../img/zmorph-3dprinter.jpg");
+  background-size: cover;
+  padding: 0;
+  border-radius: 0;
+}
 
-.navbar {
-  background-color: #93ba7e;
+.jumbotron > div {
+  background-color: #ffffffb9;
+}
+
+#jumbotron-title {
+  font-family: "Black Ops One", cursive;
+  font-size: 3rem;
 }
 
 .social-icon {
   height: 3rem;
+  background-color: #ffffff;
+}
+
+.product-description {
+  height: 8rem;
+  overflow-y: auto;
+}
+
+.fill-parent-height {
+  height: 100%;
+}
+.card {
+  background-color: #ebf0ea;
+  box-shadow: 0.2rem 0.2rem 0.2rem #5252527a;
 }
 
 .product-image-container {
-  min-height: 5rem;
+  min-height: 8rem;
 }
 
 .product-image {
@@ -31,9 +59,13 @@ body {
 /* Custom button styling to suit site theme. */
 
 .btn-custom {
-  background-color: #93ba7e;
+  background: #23b772;
+  background: linear-gradient(180deg, #23b772 35%, #1d8152 100%);
+  box-shadow: 0.2rem 0.2rem 0.2rem #5252527a;
+  border-color: #dfdfdf;
   color: #ffffff;
   border-radius: 0.15rem;
+  letter-spacing: 0.1rem;
 }
 
 .btn-custom:focus {
@@ -42,10 +74,30 @@ body {
 }
 
 .btn-custom:hover {
-  background-color: #86aa72;
+  background-color: #285238;
   border-color: #000000;
+  color: #ffffff;
 }
 
-footer {
-  background-color: #eeeeee;
+ul {
+  list-style-type: "-";
+}
+
+.navbar-nav > .nav-item {
+  border-left: 0.05rem solid #dfdfdf;
+}
+
+.navbar-nav > .nav-item:hover {
+  background-color: #dfdfdf;
+  border-radius: 0.2rem;
+}
+
+.fas {
+  color: #23b772;
+  text-shadow: -0.05rem 0 #000000, 0.05rem 0 black, 0 0.05rem black,
+    0 -0.05rem black;
+}
+
+.quality-icon {
+  font-size: 2rem;
 }

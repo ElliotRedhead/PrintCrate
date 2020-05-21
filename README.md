@@ -196,3 +196,7 @@ This model stores the details of an order made by a customer.
 | Product     | product      | null=False, on_delete=models.CASCADE    | ForeignKey Product          |
 | Quantity    | quantity     | blank=False                             | IntegerField                |
 | Total Price | total        | default=datetime.date.today, blank=True | DateField                   |
+
+## Testing
+
+Testing details can be viewed in the [TESTING.md](/TESTING.md) file.

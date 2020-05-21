@@ -218,6 +218,8 @@ Accounts for the following (some environmental variables are required from these
 - [AWS](https://aws.amazon.com/) and [an S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html)
 - [Gmail](https://www.google.com/gmail/)
 
+#### Step Instructions
+
 1. Save a copy of this github repository with the Git clone function in your terminal:
 
    ```

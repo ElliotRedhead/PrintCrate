@@ -79,3 +79,12 @@ def validate_item_quantity_change(request, custom_fetch_request):
         "newItemQuantity": new_item_quantity
     }
     return response
+
+
+def remove_from_cart(request, id):
+    print(id)
+    cart = request.session.get("cart")
+    print(cart)
+    cart.pop(id)
+    request.session["cart"] = cart
+    return redirect(reverse("cart_view"))

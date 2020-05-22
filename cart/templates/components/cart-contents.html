@@ -1,5 +1,11 @@
-<div class="row">
-  <p class="col-4 pt-2 text-center">{{ item.product.name }}</p>
+<div class="row d-flex align-items-center">
+  <div class="col-4">
+    <form class="remove-cart-item-form" method="POST" action="{% url 'remove_from_cart' item.id %}">
+      {% csrf_token %}
+      <button class="btn" alt=" Remove item from cart." type="submit"><i class="fas fa-times-circle"></i></button>
+    </form>
+    <p class="pt-2 text-center">{{ item.product.name }}</p>
+  </div>
   <p class="col-2 pt-2 text-center">£{{ item.product.price }}</p>
   <form method="POST" action="{% url 'adjust_cart' item.id %}"
     class="form col-6 col-sm-4 offset-sm-1 col-lg-2 offset-lg-1">

@@ -136,3 +136,13 @@ ul {
 .quality-icon {
   font-size: 3.5rem;
 }
+
+.remove-cart-item-form {
+  display: block;
+  position: fixed;
+  left: 1px;
+}
+
+.fa-times-circle {
+  color: #fc7d7d;
+}

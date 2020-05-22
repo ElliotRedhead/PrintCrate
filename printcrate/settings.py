@@ -26,9 +26,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'o8r+9a*9!7wmmfg=fm!r3mrv)p@hj@pbcl!^4zte9$-*#($*oq'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-if bool(os.getenv("DEPLOY")):
+if os.getenv("DEPLOY"):
     DEBUG = False
 else:
+    print("Debug is set to true, this is only suitable for development environments.")
     DEBUG = True
 
 ALLOWED_HOSTS = ["localhost", "*.herokuapp.com",
@@ -92,10 +93,12 @@ WSGI_APPLICATION = 'printcrate.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-if "DATABASE_URL" in os.environ:
+if "DATABASE_URL" in os.environ and os.getenv("DEPLOY"):
+    print("Using the PostgreSQL database.")
     DATABASES = {"default": dj_database_url.parse(
         os.environ.get("DATABASE_URL"))}
 else:
+    print("Falling back to SQLite Database.")
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
@@ -155,7 +158,7 @@ AWS_S3_FILE_OVERWRITE = False
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
-if bool(os.getenv("DEPLOY")):
+if os.getenv("DEPLOY"):
     STATICFILES_STORAGE = 'custom_storages.StaticStorage'
     DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
     STATIC_URL = "/staticfiles/"

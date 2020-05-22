@@ -1,16 +1,9 @@
-<div class="card container">
-  <div class="row fill-parent-height">
-    <div class="product-image-container col-5 col-md-12 d-flex justify-content-center align-items-center">
-      <img class="product-image" src="{{ product.product_image.url }}" alt="Product image of {{ product.name }}.">
-      </img>
-    </div>
-    <div class="col-7 col-md-12 d-flex flex-column justify-content-around align-items-center">
-      <div class="font-weight-bold mt-3 mb-2">{{ product.name }}</div>
-      <div class="product-description my-2">{{ product.description }}</div>
-      <div>£{{ product.price }}</div>
-      <div>Number in stock: {{ product.stock_available }}</p>
-        <a href="{% url 'product_detail' product.pk %}" class="btn btn-custom mb-2">Product Details</a>
-      </div>
-    </div>
+<div class="product-card d-flex justify-content-around align-items-center">
+  <img class="product-image" src="{{ product.product_image.url }}" alt="Product image of {{ product.name }}.">
+  </img>
+  <div class="d-flex flex-column justify-content-around align-items-center" style="height:10rem;">
+    <div class="font-weight-bold mt-3">{{ product.name }}</div>
+    <div>£{{ product.price }}</div>
+    <a href="{% url 'product_detail' product.pk %}" class="btn btn-custom mb-2">Product Details</a>
   </div>
 </div>

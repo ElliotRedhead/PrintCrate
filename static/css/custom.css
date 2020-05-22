@@ -43,17 +43,20 @@ body {
 .fill-parent-height {
   height: 100%;
 }
-.card {
+
+.product-card {
+  height: 15rem;
+  border-style: double;
+  border-color: #d3d8d2;
+  border-radius: 0.5rem;
   background-color: #ebf0ea;
   box-shadow: 0.2rem 0.2rem 0.2rem #5252527a;
 }
 
-.product-image-container {
-  min-height: 8rem;
-}
-
 .product-image {
-  max-height: 5rem;
+  height: 9.5rem;
+  width: 9.5rem;
+  object-fit: cover;
 }
 
 /* Custom button styling to suit site theme. */

@@ -94,8 +94,8 @@ ul {
 
 .fas {
   color: #23b772;
-  text-shadow: -0.05rem 0 #000000, 0.05rem 0 black, 0 0.05rem black,
-    0 -0.05rem black;
+  text-shadow: -0.05rem 0 #000000, 0.05rem 0 #000000, 0 0.05rem #000000,
+    0 -0.05rem #000000;
 }
 
 .quality-icon {

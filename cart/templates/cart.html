@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="container-fluid main-container d-flex flex-column justify-content-center">
-  <div class="row">
-    <div class="col-4 text-center">Name</div>
-    <div class="col-2 text-center">Price</div>
-    <div class="col-5 col-lg-4 text-center">Quantity</div>
+  <div class="row font-weight-bold text-center">
+    <div class="col-4">Name</div>
+    <div class="col-2">Price</div>
+    <div class="col-5 col-lg-4">Quantity</div>
   </div>
   {% for item in cart_items %}
   {% include "components/cart-contents.html" %}

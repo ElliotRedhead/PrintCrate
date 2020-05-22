@@ -51,13 +51,24 @@ body {
   border-color: #c2c2c2;
   background-color: #ebf0ea;
   box-shadow: 0.2rem 0.2rem 0.2rem #5252527a;
+  overflow: hidden;
+}
+
+.product-image-container {
+  height: 15rem;
+  overflow: hidden;
 }
 
 .product-image {
-  height: 11rem;
+  height: 9rem;
   width: 9rem;
   object-fit: cover;
-  border: 0.2rem solid #000000;
+  transition: transform 0.5s ease;
+  overflow: hidden;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.5, 1.5);
 }
 
 .product-card-information {

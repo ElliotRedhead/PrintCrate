@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container-fluid main-container d-flex flex-column justify-content-center">
-  <div class="row font-weight-bold text-center">
+<div class="container main-container d-flex flex-column justify-content-center">
+  <div class="row font-weight-bold text-center mb-3">
     <div class="col-4">Name</div>
-    <div class="col-2">Price</div>
-    <div class="col-5 col-lg-4">Quantity</div>
+    <div class="col-2 offset-md-1">Price</div>
+    <div class="col-5">Quantity</div>
   </div>
   {% for item in cart_items %}
   {% include "components/cart-contents.html" %}
   {% endfor %}
-  <p class="text-center">Total: £{{ total }} </p>
-  <a href="{% url 'shipping' %}" class="btn btn-success" role="button">Checkout</a>
+  <p class="text-center mt-5">Total: £{{ total }} </p>
+  <a href="{% url 'shipping' %}" class="btn btn-custom mt-3" role="button">Checkout</a>
 </div>
 {% endblock %}

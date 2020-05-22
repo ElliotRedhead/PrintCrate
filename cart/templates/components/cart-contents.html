@@ -6,12 +6,11 @@
     </form>
     <p class="pt-2 text-center">{{ item.product.name }}</p>
   </div>
-  <p class="col-2 pt-2 text-center">£{{ item.product.price }}</p>
-  <form method="POST" action="{% url 'adjust_cart' item.id %}"
-    class="form col-6 col-sm-4 offset-sm-1 col-lg-2 offset-lg-1">
+  <p class="col-2 offset-md-1 pt-2 text-center">£{{ item.product.price }}</p>
+  <form method="POST" action="{% url 'adjust_cart' item.id %}" class="form col-6 col-md-3 offset-md-1">
     {% csrf_token %}
     <label for="inputAmount" class="sr-only">Item Quantity</label>
-    <div class="input-group">
+    <div class="input-group ml-2">
       <input data-item-id="{{ item.product.id }}" name="quantity" type="number" min="0"
         max="{{ item.product.stock_available }}" class="form-control quantity-input text-center"
         value="{{ item.quantity }}" required>

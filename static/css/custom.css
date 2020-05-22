@@ -139,7 +139,7 @@ ul {
 
 .remove-cart-item-form {
   display: block;
-  position: fixed;
+  position: absolute;
   left: 1px;
 }
 

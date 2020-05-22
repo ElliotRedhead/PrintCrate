@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Open+Sans&family=Lato:ital,wght@1,700&display=swap");
 
 body {
   font-size: 16px;
@@ -45,18 +45,36 @@ body {
 }
 
 .product-card {
-  height: 15rem;
+  height: 17rem;
   border-style: double;
-  border-color: #d3d8d2;
-  border-radius: 0.5rem;
+  border-width: 0.1rem;
+  border-color: #c2c2c2;
   background-color: #ebf0ea;
   box-shadow: 0.2rem 0.2rem 0.2rem #5252527a;
 }
 
 .product-image {
-  height: 9.5rem;
-  width: 9.5rem;
+  height: 11rem;
+  width: 9rem;
   object-fit: cover;
+  border: 0.2rem solid #000000;
+}
+
+.product-card-information {
+  height: 9rem;
+}
+
+.product-card-information > div {
+  font-family: "Lato", sans-serif;
+}
+
+.product-card-title {
+  font-size: 1.2rem;
+  text-transform: capitalize;
+}
+
+.product-card-price {
+  color: #23b772;
 }
 
 /* Custom button styling to suit site theme. */

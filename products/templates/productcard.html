@@ -1,9 +1,9 @@
 <div class="product-card d-flex justify-content-around align-items-center">
-  <img class="product-image" src="{{ product.product_image.url }}" alt="Product image of {{ product.name }}.">
+  <img class="product-image ml-1" src="{{ product.product_image.url }}" alt="Product image of {{ product.name }}.">
   </img>
-  <div class="d-flex flex-column justify-content-around align-items-center" style="height:10rem;">
-    <div class="font-weight-bold mt-3">{{ product.name }}</div>
-    <div>£{{ product.price }}</div>
+  <div class="product-card-information d-flex flex-column justify-content-around align-items-center mr-2">
+    <div class="product-card-title font-weight-bold mt-3 text-center">{{ product.name }}</div>
+    <div class="product-card-price text-center">£{{ product.price }}</div>
     <a href="{% url 'product_detail' product.pk %}" class="btn btn-custom mb-2">Product Details</a>
   </div>
 </div>

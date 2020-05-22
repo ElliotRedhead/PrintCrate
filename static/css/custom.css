@@ -146,3 +146,8 @@ ul {
 .fa-times-circle {
   color: #fc7d7d;
 }
+
+#cart-container {
+  background: #afdab534;
+  border-radius: 0.5rem;
+}

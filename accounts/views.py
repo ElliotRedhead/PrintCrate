@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse
-from django.contrib import auth, messages
+from django.contrib import auth
 from django.contrib.auth.decorators import login_required
+import sweetify
 from .forms import UserRegisterForm
 
 
@@ -8,7 +9,10 @@ from .forms import UserRegisterForm
 def logout(request):
     """Log the user out."""
     auth.logout(request)
-    messages.success(request, "You have been successfully logged out.")
+    sweetify.success(
+        request,
+        "You have been successfully logged out."
+    )
     return redirect(reverse("home"))
 
 
@@ -19,6 +23,14 @@ def registration(request):
         form = UserRegisterForm(request.POST)
         if form.is_valid():
             form.save()
+            sweetify.success(
+                request,
+                "Account created successfully."
+            )
+            user = auth.authenticate(request, username=form.cleaned_data.get("username"),
+                                     password=form.cleaned_data.get("password1"))
+            if user is not None:
+                auth.login(request, user)
             return redirect("home")
     else:
         form = UserRegisterForm()

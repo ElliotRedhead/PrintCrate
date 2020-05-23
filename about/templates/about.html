@@ -3,27 +3,88 @@
 <section class="d-flex main-container">
   <div class="container-fluid align-self-center my-auto">
     <div class="row my-auto">
-      <div class="col-6 col-md-12 my-auto">
-        <div class="row">
-          <!-- Page title. -->
-          <h1 class="text-center col-12">About PrintCrate</h1>
-        </div>
+      <div class="col-12 my-auto">
+        <!-- Page title. -->
+        <h1 class="text-center">About PrintCrate</h1>
       </div>
+    </div>
+    <div class="row">
       <!-- Details of PrintCrate's purpose, what it offers, why the customer should shop there. -->
-      <div class="col-6 col-md-12 text-center">
+      <div class="col-12 text-center">
         <p>PrintCrate utilises the latest advances in Fused Deposition Modeling to bring you niche 3d-prints at
           affordable prices! <br>
           Whether you need a custom replacement part or a decorative piece, we can create something specifically for
           you.</p>
       </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="accordion" id="faq-accordion">
+          <div class="card">
+            <div class="card-header">
+              <button class="btn d-flex" type="button" data-toggle="collapse" data-target="#collapse-faq-one"
+                aria-expanded="false" aria-controls="collapsefaqone">Can I make a bulk
+                order?</button>
+            </div>
+            <div id="collapse-faq-one" class="collapse hide" aria-labelled-by="collapsefaqone"
+              data-parent="#faq-accordion">
+              <p class="card-body">Standard stock levels are based on previous customer demand, if you require a greater
+                quantity than is available
+                please <a href="{% url 'contact' %}">contact us</a>.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header">
+              <button class="btn d-flex" type="button" data-toggle="collapse" data-target="#collapse-faq-two"
+                aria-expanded="false" aria-controls="collapsefaqtwo">Can I purchase design files (STL files) of your
+                products?</button>
+            </div>
+            <div id="collapse-faq-two" class="collapse hide" aria-labelled-by="collapsefaqtwo"
+              data-parent="#faq-accordion">
+              <p class="card-body">We don't currently offer purchasing of standard design files, we can however provide
+                design files for
+                custom orders,
+                <a href="{% url 'contact' %}">contact us</a> for more information.</p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <button class="btn d-flex" type="button" data-toggle="collapse" data-target="#collapse-faq-three"
+                aria-expanded="false" aria-controls="collapsefaqthree">What plastics are used in your products?</button>
+            </div>
+            <div id="collapse-faq-three" class="collapse hide" aria-labelled-by="collapsefaqthree"
+              data-parent="#faq-accordion">
+              <p class="card-body">PETG, a Glycol modified version of Polyethylene Terephthalate (PET) is primarily
+                used.
+                PETG is suitable for printing across a wide variety of applications as it is durable, strong and impact
+                resistance while
+                maintaining lower printing costs. </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <button class="btn d-flex" type="button" data-toggle="collapse" data-target="#collapse-faq-four"
+                aria-expanded="false" aria-controls="collapsefaqfour">Are your products food-safe?</button>
+            </div>
+            <div id="collapse-faq-four" class="collapse hide" aria-labelled-by="collapsefaqfour"
+              data-parent="#faq-accordion">
+              <p class="card-body">We cannot provide food-safe/medical grade products due to the nature of FDM printing,
+                custom orders of
+                products
+                for
+                these environments will be advised against their use past educational purposes.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="row">
       <!-- Button to browse products. -->
-      <a href="{% url 'products' %}"
-        class="btn btn-custom col-10 offset-1 offset-md-2 mr-md-1 col-md-4 offset-lg-3 col-lg-3 offset-xl-4 col-xl-2">
+      <a href="{% url 'products' %}" class="btn btn-custom col-10 offset-1 col-md-4 offset-md-4">
         Browse Products
-      </a>
-      <!-- Button to access FAQ. -->
-      <a href="{% url 'frequently_asked' %}" class="btn btn-custom col-10 offset-1 ml-md-1 col-md-4 col-lg-3 col-xl-2">
-        FAQ
       </a>
     </div>
   </div>

@@ -1,11 +1,15 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-{{ total }}
 <section class="container main-container">
   <div class="row">
     <div class="col-12 text-center">
       <h2>Your Payment Information</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <p>Enter payment details below to authorise transaction of £{{ total }}.</p>
     </div>
   </div>
   <div class="row">
@@ -15,6 +19,11 @@
         {{ payment_form|crispy }}
         <button type="submit">Confirm</button>
       </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <p id="stripe-error-message"></p>
     </div>
   </div>
 </section>

@@ -67,8 +67,6 @@ def checkout_payment(request):
                     order_detail.save()
                 del request.session["cart"]
                 return redirect(reverse("home"))
-        else:
-            print("===== \n Payment form invalid. \n=====")
     else:
         payment_form = PaymentForm()
     return render(request, "checkout_payment.html", {

@@ -35,3 +35,7 @@ def registration(request):
     else:
         form = UserRegisterForm()
     return render(request, "register.html", {"form": form, "page_title": "Register | PrintCrate"})
+
+
+def profile(request):
+    return render(request, "profile.html", {"page_title": "Profile | PrintCrate"})

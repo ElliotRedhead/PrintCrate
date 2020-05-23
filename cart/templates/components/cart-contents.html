@@ -2,7 +2,7 @@
   <div class="col-4">
     <form class="remove-cart-item-form" method="POST" action="{% url 'remove_from_cart' item.id %}">
       {% csrf_token %}
-      <button class="btn" alt=" Remove item from cart." type="submit"><i class="fas fa-times-circle"></i></button>
+      <button class="btn" alt="Remove item from cart." type="submit"><i class="fas fa-times-circle"></i></button>
     </form>
     <p class="pt-2 text-center">{{ item.product.name }}</p>
   </div>

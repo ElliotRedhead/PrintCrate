@@ -52,7 +52,6 @@ INSTALLED_APPS = [
     'homepage',
     'products',
     'about',
-    'faq',
     'contact',
     'storages',
     'sweetify'

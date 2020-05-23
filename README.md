@@ -114,15 +114,12 @@ The option to add a product to the user's cart is given here.
 ### About PrintCrate
 
 The about page gives a brief summary of what PrintCrate is and the main offering to the customer.
+Some common questions concerning logistics of the business, product material details and other services provided by PrintCrate are also answered.
 
 ### Contact
 
 The contact page provides a form for users to send their message directly to the PrintCrate owners.  
 The recipient email address is kept hidden in this way and prevents bot scraping of that information.
-
-### Frequently Asked Questions
-
-The FAQ page answers some common questions that are raised concerning logistics of the business, product material details and other services provided by PrintCrate.
 
 ### Register Account
 

@@ -32,10 +32,8 @@ def checkout_shipping_address_view(request):
 @login_required
 def checkout_payment(request):
     if request.method == "POST":
-        print("===== \n Payment form submitted. \n=====")
         payment_form = PaymentForm(request.POST)
         if payment_form.is_valid():
-            print("===== \n Valid payment form. \n=====")
             cart = request.session.get("cart", {})
             total = cart_contents(request)["total"]
             try:
@@ -46,13 +44,11 @@ def checkout_payment(request):
                     card=payment_form.cleaned_data["stripe_id"]
                 )
             except stripe.error.CardError:
-                print("===== \n Payment error. \n=====")
                 sweetify.error(
                     request,
                     "Payment error occurred, please retry with valid credentials."
                 )
             else:
-                print("===== \n Payment success. \n=====")
                 sweetify.success(
                     request,
                     "Payment successful, thank you for your purchase."
@@ -69,7 +65,7 @@ def checkout_payment(request):
                         total=total,
                     )
                     order_detail.save()
-                print("OrderDetail added to database.")
+                del request.session["cart"]
                 return redirect(reverse("home"))
         else:
             print("===== \n Payment form invalid. \n=====")

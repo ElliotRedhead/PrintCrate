@@ -152,5 +152,11 @@ ul {
 }
 
 th {
-  padding: 1rem 0.2rem !important;
+  padding: 1.3rem 0.2rem !important;
+  font-size: 0.9rem;
+}
+
+#order-table {
+  margin: 0;
+  width: 100%;
 }

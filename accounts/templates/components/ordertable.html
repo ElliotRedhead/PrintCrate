@@ -1,0 +1,26 @@
+<table id="order-table" class="table-striped table-bordered">
+  <thead>
+    <tr class="text-center">
+      <th scope="col">Product</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Total Price (£)</th>
+      <th scope="col">Purchase Date</th>
+      <th scope="col">Order Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in user_orders %}
+    <tr class="text-center">
+      <th scope="row">{{ item.product }}</th>
+      <th scope="row">{{ item.quantity }}</th>
+      <th scope="row">{{ item.total }}</th>
+      <th scope="row">{{ item.purchase_date|date:"d/m/yy"}}</th>
+      <th scope="row">
+        {% if item.order_complete %}
+        Complete
+        {% else %}
+        In Progress
+        {% endif %}
+      </th>
+      {% endfor %}
+</table>

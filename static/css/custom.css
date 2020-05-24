@@ -150,3 +150,7 @@ ul {
   background: #afdab534;
   border-radius: 0.5rem;
 }
+
+th {
+  padding: 1rem 0.2rem !important;
+}

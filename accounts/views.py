@@ -43,6 +43,4 @@ def profile(request):
     user = User.objects.get(username=request.user)
     user_orders = OrderDetail.objects.filter(
         shipping__customer_id=user.id)
-    for item in user_orders:
-        print(f"Orders ==== \n {item} \n ===")
-    return render(request, "profile.html", {"page_title": "Profile | PrintCrate"})
+    return render(request, "profile.html", {"page_title": "Profile | PrintCrate", "user_orders": user_orders})

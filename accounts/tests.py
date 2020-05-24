@@ -80,17 +80,17 @@ class RegistrationViewTest(TestCase, Client):
     def test_registration_third_party_templates_rendered_with_call(self):
         """Tests third party templates used with register URL."""
         response = self.client.get("/accounts/register")
-        self.assertTemplateUsed(response, "bootstrap/uni_form.html")
-        self.assertTemplateUsed(response, "bootstrap/errors.html")
-        self.assertTemplateUsed(response, "bootstrap/field.html")
+        self.assertTemplateUsed(response, "bootstrap4/uni_form.html")
+        self.assertTemplateUsed(response, "bootstrap4/errors.html")
+        self.assertTemplateUsed(response, "bootstrap4/field.html")
         self.assertTemplateUsed(response, "django/forms/widgets/text.html")
         self.assertTemplateUsed(response, "django/forms/widgets/input.html")
         self.assertTemplateUsed(response, "django/forms/widgets/attrs.html")
         self.assertTemplateUsed(
-            response, "bootstrap/layout/help_text_and_errors.html")
+            response, "bootstrap4/layout/help_text_and_errors.html")
         self.assertTemplateUsed(
-            response, "bootstrap/layout/field_errors_block.html")
-        self.assertTemplateUsed(response, "bootstrap/layout/help_text.html")
+            response, "bootstrap4/layout/field_errors_block.html")
+        self.assertTemplateUsed(response, "bootstrap4/layout/help_text.html")
         self.assertTemplateUsed(response, "django/forms/widgets/email.html")
         self.assertTemplateUsed(response, "django/forms/widgets/password.html")
 
@@ -128,17 +128,17 @@ class LoginViewTest(TestCase, Client):
     def test_login_correct_third_party_templates_rendered_with_call(self):
         """Tests if third party templates are used upon calling login URL."""
         response = self.client.get("/accounts/login")
-        self.assertTemplateUsed(response, "bootstrap/uni_form.html")
-        self.assertTemplateUsed(response, "bootstrap/errors.html")
-        self.assertTemplateUsed(response, "bootstrap/field.html")
+        self.assertTemplateUsed(response, "bootstrap4/uni_form.html")
+        self.assertTemplateUsed(response, "bootstrap4/errors.html")
+        self.assertTemplateUsed(response, "bootstrap4/field.html")
         self.assertTemplateUsed(response, "django/forms/widgets/text.html")
         self.assertTemplateUsed(response, "django/forms/widgets/input.html")
         self.assertTemplateUsed(response, "django/forms/widgets/attrs.html")
         self.assertTemplateUsed(
-            response, "bootstrap/layout/help_text_and_errors.html")
+            response, "bootstrap4/layout/help_text_and_errors.html")
         self.assertTemplateUsed(
-            response, "bootstrap/layout/field_errors_block.html")
-        self.assertTemplateUsed(response, "bootstrap/layout/help_text.html")
+            response, "bootstrap4/layout/field_errors_block.html")
+        self.assertTemplateUsed(response, "bootstrap4/layout/help_text.html")
         self.assertTemplateUsed(response, "django/forms/widgets/password.html")
 
     def test_successful_submission(self):

@@ -126,14 +126,14 @@ class TestCheckoutInfoView(TestCase):
         session["cart"] = {1: 1}
         session.save()
         response = self.client.get("/checkout/info/")
-        self.assertTemplateUsed(response, "bootstrap/uni_form.html")
-        self.assertTemplateUsed(response, "bootstrap/errors.html")
-        self.assertTemplateUsed(response, "bootstrap/field.html")
+        self.assertTemplateUsed(response, "bootstrap4/uni_form.html")
+        self.assertTemplateUsed(response, "bootstrap4/errors.html")
+        self.assertTemplateUsed(response, "bootstrap4/field.html")
         self.assertTemplateUsed(response, "django/forms/widgets/text.html")
         self.assertTemplateUsed(response, "django/forms/widgets/input.html")
         self.assertTemplateUsed(response, "django/forms/widgets/attrs.html")
         self.assertTemplateUsed(
-            response, "bootstrap/layout/help_text_and_errors.html")
+            response, "bootstrap4/layout/help_text_and_errors.html")
         self.assertTemplateUsed(
-            response, "bootstrap/layout/field_errors_block.html")
-        self.assertTemplateUsed(response, "bootstrap/layout/help_text.html")
+            response, "bootstrap4/layout/field_errors_block.html")
+        self.assertTemplateUsed(response, "bootstrap4/layout/help_text.html")

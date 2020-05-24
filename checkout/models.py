@@ -26,7 +26,9 @@ class OrderDetail(models.Model):
     product = models.ForeignKey(Product, null=False, on_delete=models.CASCADE)
     quantity = models.IntegerField(blank=False)
     total = models.IntegerField(blank=False)
-    purchase_date = models.DateField(default=datetime.date.today, blank=True)
+    purchase_date = models.DateField(
+        default=datetime.date.today, blank=True)
+    order_complete = models.BooleanField(default=False)
 
     def __str__(self):
         return (f"{self.quantity}-{self.product.name}-{self.purchase_date}-£{self.total}")

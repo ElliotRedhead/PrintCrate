@@ -7,28 +7,28 @@
         <img class="product-detail-image" src="{{ product.product_image.url }}"
           alt="Product image of {{ product.name }}." style="height:18rem; width:18rem; object-fit: cover;">
       </div>
-      <div class="col-12 col-md-6 f-flex justify-content-center">
-        <div class="container-fluid">
+      <div class="col-12 col-md-6">
+        <div class="container-fluid d-flex flex-column justify-content-between">
           <div class="row">
-            <p class="col-12 text-center">{{ product.name }}</p>
+            <h1 class="col-12 text-center font-weight-bold mb-2">{{ product.name }}</h1>
           </div>
           <div class="row">
-            <p class="col-12">{{ product.description }}</p>
+            <p class="col-12 text-center">{{ product.description }}</p>
           </div>
-          <div class="row">
-            <p class="col-12 col-md-4 text-center text-right-md">£{{ product.price }}</p>
-            <p class="col-12 col-md-8 text-center">Number in stock: {{ product.stock_available }}</p>
+          <div class="row d-flex align-items-center">
+            <p class="col-12 col-md-6 text-center text-right-md">Price: £{{ product.price }}</p>
+            <p class="col-12 col-md-6 text-center">Number available: {{ product.stock_available }}</p>
           </div>
           <div class="row">
             <form action="{% url 'add_to_cart' product.pk %}" method="POST"
               class="col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
               {% csrf_token %}
-              <div class="input-group">
+              <div class="input-group mb-5 mt-3">
                 <input type="number" name="quantity" aria-label="Input field for quantity." min="1"
                   max="{{ product.stock_available }}" class="form-control text-center" placeholder="Quantity"
                   required />
                 <span class="input-group-btn">
-                  <button class="btn btn-dark" type="submit">
+                  <button class="btn btn-custom" type="submit">
                     Add
                   </button>
                 </span>

@@ -1,4 +1,6 @@
 from django import forms
+from django.contrib.auth.password_validation import validate_password
+from django.core import validators
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 
@@ -14,7 +16,14 @@ class UserRegisterForm(UserCreationForm):
 
 
 class UserCredentialsUpdateForm(forms.ModelForm):
-    email = forms.EmailField()
+    email = forms.EmailField(
+        label="Set Email Address",
+        widget=forms.EmailInput(attrs={"placeholder": "Enter Email"}))
+
+    password = forms.CharField(
+        label="Set Password",
+        widget=forms.PasswordInput(attrs={"placeholder": "Enter Password"}),
+        validators=[validate_password])
 
     class Meta:
         model = User

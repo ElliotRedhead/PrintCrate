@@ -1,27 +1,42 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container main-container">
-  <div class="row">
-    <div class="col-4 offset-1">
-      <img class="product-image" src="{{ product.product_image.url }}" alt="Product image of {{ product.name }}.">
-    </div>
-    <div class="col-6">
-      <p>{{ product.name }}</p>
-      <p>{{ product.description }}</p>
-      <p>£{{ product.price }}</p>
-      <p>Number in stock: {{ product.stock_available }}</p>
-      <form action="{% url 'add_to_cart' product.pk %}" method="POST">
-        {% csrf_token %}
-        <div class="input-group">
-          <input type="number" name="quantity" aria-label="Input field for quantity." min="1"
-            max="{{ product.stock_available }}" class="form-control" placeholder="Quantity" required />
-          <span class="input-group-btn">
-            <button class="btn btn-dark" type="submit">
-              Add
-            </button>
-          </span>
+<div class="main-container d-flex">
+  <div class="container align-self-center">
+    <div class="row">
+      <div class="col-12 col-md-6 d-flex justify-content-center">
+        <img class="product-detail-image" src="{{ product.product_image.url }}"
+          alt="Product image of {{ product.name }}." style="height:18rem; width:18rem; object-fit: cover;">
+      </div>
+      <div class="col-12 col-md-6 f-flex justify-content-center">
+        <div class="container-fluid">
+          <div class="row">
+            <p class="col-12 text-center">{{ product.name }}</p>
+          </div>
+          <div class="row">
+            <p class="col-12">{{ product.description }}</p>
+          </div>
+          <div class="row">
+            <p class="col-12 col-md-4 text-center text-right-md">£{{ product.price }}</p>
+            <p class="col-12 col-md-8 text-center">Number in stock: {{ product.stock_available }}</p>
+          </div>
+          <div class="row">
+            <form action="{% url 'add_to_cart' product.pk %}" method="POST"
+              class="col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+              {% csrf_token %}
+              <div class="input-group">
+                <input type="number" name="quantity" aria-label="Input field for quantity." min="1"
+                  max="{{ product.stock_available }}" class="form-control text-center" placeholder="Quantity"
+                  required />
+                <span class="input-group-btn">
+                  <button class="btn btn-dark" type="submit">
+                    Add
+                  </button>
+                </span>
+              </div>
+            </form>
+          </div>
         </div>
-      </form>
+      </div>
     </div>
   </div>
 </div>

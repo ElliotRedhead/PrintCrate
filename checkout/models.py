@@ -25,7 +25,7 @@ class OrderDetail(models.Model):
         CustomerShipping, null=False, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, null=False, on_delete=models.CASCADE)
     quantity = models.IntegerField(blank=False)
-    total = models.IntegerField(blank=False)
+    total = models.DecimalField(max_digits=6, decimal_places=2, blank=False)
     purchase_date = models.DateField(
         default=datetime.date.today, blank=True)
     order_complete = models.BooleanField(default=False)

@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, reverse
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 import sweetify
-from .forms import UserRegisterForm
+from .forms import UserRegisterForm, UserCredentialsUpdateForm
 from checkout.models import OrderDetail, CustomerShipping
 from django.contrib.auth.models import User
 
@@ -43,4 +43,10 @@ def profile(request):
     user = User.objects.get(username=request.user)
     user_orders = OrderDetail.objects.filter(
         shipping__customer_id=user.id)
-    return render(request, "profile.html", {"page_title": "Profile | PrintCrate", "user_orders": user_orders})
+    if request.method == "POST":
+        form = UserCredentialsUpdateForm(request.POST)
+        if form.is_valid():
+            form.save()
+    else:
+        form = UserCredentialsUpdateForm
+    return render(request, "profile.html", {"page_title": "Profile | PrintCrate", "user_orders": user_orders, "form": form})

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Open+Sans&family=Lato:ital,wght@1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Lato:ital,wght@1,700&family=Permanent+Marker&family=Sigmar+One&display=swap");
 
 body {
   font-size: 16px;
@@ -11,7 +11,7 @@ body {
 #site-title {
   font-size: 1.8rem;
   color: #000000;
-  font-family: "Black Ops One", cursive;
+  font-family: "Sigmar One", cursive;
 }
 
 .jumbotron {
@@ -26,7 +26,7 @@ body {
 }
 
 #jumbotron-title {
-  font-family: "Black Ops One", cursive;
+  font-family: "Sigmar One", cursive;
   font-size: 3rem;
 }
 
@@ -163,7 +163,8 @@ th {
 }
 
 h1 {
-  font-size: 1.8rem;
+  font-size: 2rem;
+  font-family: "Permanent Marker", cursive;
 }
 
 .form-control:focus {

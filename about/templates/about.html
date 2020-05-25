@@ -5,7 +5,7 @@
     <div class="row my-auto">
       <div class="col-12 my-auto">
         <!-- Page title. -->
-        <h1 class="text-center">About PrintCrate</h1>
+        <h1 class="text-center mb-2">About PrintCrate</h1>
       </div>
     </div>
     <div class="row">
@@ -28,7 +28,8 @@
             </div>
             <div id="collapse-faq-one" class="collapse hide" aria-labelled-by="collapsefaqone"
               data-parent="#faq-accordion">
-              <p class="card-body">Standard stock levels are based on previous customer demand, if you require a greater
+              <p class="card-body text-center">Standard stock levels are based on previous customer demand, if you
+                require a greater
                 quantity than is available
                 please <a href="{% url 'contact' %}">contact us</a>.</p>
             </div>
@@ -36,12 +37,14 @@
           <div class="card">
             <div class="card-header">
               <button class="btn d-flex" type="button" data-toggle="collapse" data-target="#collapse-faq-two"
-                aria-expanded="false" aria-controls="collapsefaqtwo">Can I purchase design files (STL files) of your
+                aria-expanded="false" aria-controls="collapsefaqtwo">Can I purchase
+                design files (STL files) of your
                 products?</button>
             </div>
-            <div id="collapse-faq-two" class="collapse hide" aria-labelled-by="collapsefaqtwo"
+            <div id="collapse-faq-two" class="collapse hide text-center" aria-labelled-by="collapsefaqtwo"
               data-parent="#faq-accordion">
-              <p class="card-body">We don't currently offer purchasing of standard design files, we can however provide
+              <p class="card-body text-center">We don't currently offer purchasing of standard design files, we can
+                however provide
                 design files for
                 custom orders,
                 <a href="{% url 'contact' %}">contact us</a> for more information.</p>
@@ -55,7 +58,8 @@
             </div>
             <div id="collapse-faq-three" class="collapse hide" aria-labelled-by="collapsefaqthree"
               data-parent="#faq-accordion">
-              <p class="card-body">PETG, a Glycol modified version of Polyethylene Terephthalate (PET) is primarily
+              <p class="card-body text-center">PETG, a Glycol modified version of Polyethylene Terephthalate (PET) is
+                primarily
                 used.
                 PETG is suitable for printing across a wide variety of applications as it is durable, strong and impact
                 resistance while
@@ -70,7 +74,8 @@
             </div>
             <div id="collapse-faq-four" class="collapse hide" aria-labelled-by="collapsefaqfour"
               data-parent="#faq-accordion">
-              <p class="card-body">We cannot provide food-safe/medical grade products due to the nature of FDM printing,
+              <p class="card-body text-center">We cannot provide food-safe/medical grade products due to the nature of
+                FDM printing,
                 custom orders of
                 products
                 for
@@ -83,7 +88,7 @@
     </div>
     <div class="row">
       <!-- Button to browse products. -->
-      <a href="{% url 'products' %}" class="btn btn-custom col-10 offset-1 col-md-4 offset-md-4">
+      <a href="{% url 'products' %}" class="btn btn-custom col-10 offset-1 col-md-4 offset-md-4 my-2">
         Browse Products
       </a>
     </div>

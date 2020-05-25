@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
-import sweetify
-from .forms import UserRegisterForm, UserCredentialsUpdateForm
-from checkout.models import OrderDetail
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import make_password
+import sweetify
+from checkout.models import OrderDetail
+from .forms import UserRegisterForm, UserCredentialsUpdateForm
 
 
 @login_required

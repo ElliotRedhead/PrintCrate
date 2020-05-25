@@ -8,10 +8,14 @@ body {
   text-decoration: none;
 }
 
-#site-title {
+#nav-title {
   font-size: 1.4rem;
-  color: #000000;
-  font-family: "Sigmar One", cursive;
+}
+
+.site-title {
+  color: #23b772;
+  text-shadow: -0.1rem 0 #000000, 0 0.1rem #000000, 0.1rem 0 #000000,
+    0 -0.1rem #000000;
 }
 
 .jumbotron {
@@ -26,7 +30,6 @@ body {
 }
 
 #jumbotron-title {
-  font-family: "Sigmar One", cursive;
   font-size: 3rem;
 }
 
@@ -125,7 +128,7 @@ body {
 }
 
 .fa-shopping-basket {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
 }
 
 .quality-icon {

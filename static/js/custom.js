@@ -2,6 +2,7 @@ $(function () {
     containerHeightHandling();
     if (window.location.pathname == "/")
     homepageProductSelection(bootstrapDetectBreakpoint());
+    navigationBarItemBorders(bootstrapDetectBreakpoint());
 }
 );
 
@@ -43,6 +44,12 @@ function fetchParameterSetup(fetchInputData){
 		body: JSON.stringify(fetchInputData)
 	};
 	return fetchParameters;
+}
+
+function navigationBarItemBorders(breakpoint){
+    if(breakpoint.index > 2) {
+        $(".nav-item").addClass("border")
+    }
 }
 
 function homepageProductSelection(breakpoint){

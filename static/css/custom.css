@@ -165,3 +165,8 @@ th {
 h1 {
   font-size: 1.8rem;
 }
+
+.form-control:focus {
+  border-color: #23b772;
+  box-shadow: inset 0 1px 1px #23b772, 0 0 8px #23b772;
+}

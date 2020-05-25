@@ -124,6 +124,10 @@ body {
     0 -0.05rem #000000;
 }
 
+.fa-shopping-basket {
+  font-size: 2rem;
+}
+
 .quality-icon {
   font-size: 3.5rem;
 }

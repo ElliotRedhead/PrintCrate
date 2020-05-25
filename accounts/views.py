@@ -3,7 +3,7 @@ from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 import sweetify
 from .forms import UserRegisterForm, UserCredentialsUpdateForm
-from checkout.models import OrderDetail, CustomerShipping
+from checkout.models import OrderDetail
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import make_password
 
@@ -40,14 +40,9 @@ def registration(request):
     return render(request, "register.html", {"form": form, "page_title": "Register | PrintCrate"})
 
 
+@login_required
 def profile(request):
-    try:
-        user = User.objects.get(username=request.user)
-        print(F"===== The user is {user} =======")
-        print(f"====\n {user.id} \n====")
-    except:
-        print("User instance is not available while being rewritten.")
-
+    user = User.objects.get(username=request.user)
     user_orders = OrderDetail.objects.filter(
         shipping__customer_id=user.id)
     if request.method == "POST":
@@ -57,17 +52,11 @@ def profile(request):
             hashed_password = make_password(form.cleaned_data["password"])
             new_credentials.password = hashed_password
             new_credentials.save()
-            print(f"=== \n The user is {request.user} \n ===")
-
-            # user = auth.authenticate(request, username=request.user,
-            #                          password=new_credentials.password)
-            # auth.login(request, user)
             sweetify.success(
                 request,
-                "Your credentials have been updated."
+                "Your credentials have been updated, please login."
             )
-            return redirect("profile")
-
+            return redirect("login")
     else:
         form = UserCredentialsUpdateForm(instance=user)
     return render(request, "profile.html", {"page_title": "Profile | PrintCrate", "user_orders": user_orders, "form": form})

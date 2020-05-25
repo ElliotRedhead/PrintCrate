@@ -66,7 +66,7 @@ def checkout_payment(request):
                     )
                     order_detail.save()
                 del request.session["cart"]
-                return redirect(reverse("home"))
+                return redirect(reverse("profile"))
     else:
         payment_form = PaymentForm()
     return render(request, "checkout_payment.html", {

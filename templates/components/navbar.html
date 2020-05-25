@@ -6,7 +6,11 @@
   <a class="pt-2 remove-text-decoration" href="{% url 'home' %}">
     <h1 id="site-title">PRINTCRATE</h1>
   </a>
-  <a href="{% url 'cart_view' %}" class="order-lg-2 pl-3"><i class="fas fa-shopping-basket"></i></a>
+  <a href="{% url 'cart_view' %}" class="order-lg-2 pl-md-3 pt-2 mr-2"><i class="fas fa-shopping-basket"></i>
+    {% if product_count > 0 %}
+    <label class="badge badge-info">{{ product_count }}</label>
+    {% endif %}
+  </a>
   <div id="navbarLinks" class="collapse navbar-collapse order-lg-1">
     <ul class="navbar-nav ml-auto">
       {% if user.is_authenticated %}

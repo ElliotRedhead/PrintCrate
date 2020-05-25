@@ -9,7 +9,7 @@ body {
 }
 
 #site-title {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   color: #000000;
   font-family: "Sigmar One", cursive;
 }
@@ -125,7 +125,7 @@ body {
 }
 
 .fa-shopping-basket {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 
 .quality-icon {
@@ -170,4 +170,13 @@ h1 {
 .form-control:focus {
   border-color: #23b772;
   box-shadow: inset 0 1px 1px #23b772, 0 0 8px #23b772;
+}
+
+.badge-info {
+  display: block;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.2rem 0.4rem;
+  border-radius: 1rem;
 }

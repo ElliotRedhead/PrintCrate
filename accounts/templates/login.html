@@ -2,21 +2,21 @@
 <!-- Enables Bootstrap CSS customisation of form appearance. -->
 {% load crispy_forms_tags %}
 {% block content %}
-<div class="container main-container">
-  <div class="row">
-    <div class="col-12 col-md-6">
+<div class="container main-container d-flex flex-column justify-content-center">
+  <div class="row d-flex justify-content-center">
+    <div class="col-12 col-md-6 col-lg-4">
       <!-- Login form to log into existing account. -->
-      <h1>Login</h1>
+      <h1 class="text-center mb-3">Login</h1>
       <form method="POST">
         {% csrf_token %}
-        <fieldset class="form-group">
+        <fieldset class="form-group py-3">
           {{ form|crispy }}
         </fieldset>
-        <div class="form-group">
-          <button type="submit" class="btn btn-custom">Login</button>
+        <div class="form-group d-flex justify-content-center">
+          <button type="submit" class="btn btn-custom mb-1">Login</button>
         </div>
       </form>
-      <span>New user? <a href="{% url 'register' %}">Register</a></span>
+      <p class="mb-5 pb-5">New user? <a href="{% url 'register' %}">Register here</a></p>
     </div>
   </div>
 </div>

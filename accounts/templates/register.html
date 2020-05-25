@@ -2,17 +2,17 @@
 <!-- Enables Boostrap CSS customisation of form appearance. -->
 {% load crispy_forms_tags %}
 {% block content %}
-<div class="container main-container">
-  <div class="row">
-    <div class="col-12 col-md-6">
+<div class="container main-container d-flex flex-column justify-content-center">
+  <div class="row d-flex justify-content-center">
+    <div class="col-12 col-md-6 col-lg-4">
       <!-- Register form to create a new account. -->
-      <h1>Create an account</h1>
+      <h1 class="text-center">Create an account</h1>
       <form method="POST">
         {% csrf_token %}
         <fieldset class="form-group">
           {{ form|crispy }}
         </fieldset>
-        <div class="form-group">
+        <div class="form-group d-flex justify-content-center">
           <button type="submit" class="btn btn-custom">Register</button>
         </div>
       </form>

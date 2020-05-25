@@ -3,8 +3,8 @@
     aria-controls="navbarLinks" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="pt-2 remove-text-decoration site-title" href="{% url 'home' %}">
-    <h1 id="site-title">PRINTCRATE</h1>
+  <a class="pt-2 remove-text-decoration" href="{% url 'home' %}">
+    <h1 class="site-title" id="nav-title">PRINTCRATE</h1>
   </a>
   <a href="{% url 'cart_view' %}" class="order-lg-2 pl-md-3 pt-2 mr-2"><i class="fas fa-shopping-basket"></i>
     {% if product_count > 0 %}

@@ -1,18 +1,20 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-<section class="container main-container">
-  <div class="row">
-    <div class="col-12 text-center">
-      <h2>Your Shipping Information</h2>
-    </div>
+<section class="container main-container d-flex flex-column justify-content-center">
+  <div class="row d-flex justify-content-center">
+    <h2 class="text-center my-3">Your Shipping Information</h2>
   </div>
-  <div class="row">
-    <div class="col-12">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-6 col-lg-4">
       <form method="POST">
         {% csrf_token %}
-        {{ customer_shipping_form|crispy }}
-        <button type="submit">Confirm</button>
+        <fieldset class="form-group pt-3 pb-1">
+          {{ customer_shipping_form|crispy }}
+        </fieldset>
+        <div class="form-group d-flex justify-content-center">
+          <button class="btn btn-custom" type="submit">Confirm</button>
+        </div>
       </form>
     </div>
   </div>

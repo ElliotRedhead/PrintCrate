@@ -8,7 +8,7 @@ class Product(models.Model):
         upload_to="product_images", blank=True)
     description = models.CharField(max_length=150)
     price = models.DecimalField(
-        max_digits=5, decimal_places=2, validators=[MinValueValidator(0.00)])
+        max_digits=6, decimal_places=2, validators=[MinValueValidator(0.00)])
     stock_available = models.PositiveSmallIntegerField(
         validators=[MinValueValidator(0), MaxValueValidator(50)])
     showcase_product = models.BooleanField(default=False)

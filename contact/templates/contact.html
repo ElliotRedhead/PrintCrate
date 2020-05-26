@@ -2,12 +2,12 @@
 {% load crispy_forms_tags %}
 {% block content %}
 <section class="container main-container d-flex flex-column justify-content-center align-items-center">
-  <h1 class="mb-5">Contact Us</h1>
+  <h1 class="mb-3 mt-2">Contact Us</h1>
   <form method="post">
     {% csrf_token %}
     {{ contact_form|crispy }}
     <div class="form-actions d-flex justify-content-center">
-      <button type="submit" class="btn btn-custom">Send</button>
+      <button type="submit" class="btn btn-custom mb-2">Send</button>
     </div>
   </form>
 </section>

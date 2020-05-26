@@ -52,7 +52,6 @@ body {
   border-width: 0.1rem;
   border-color: #c2c2c2;
   background-color: #ebf0ea;
-  box-shadow: 0.2rem 0.2rem 0.2rem #5252527a;
   overflow: hidden;
 }
 
@@ -182,4 +181,20 @@ h1 {
   right: 1rem;
   padding: 0.2rem 0.4rem;
   border-radius: 1rem;
+}
+
+#product-detail-container {
+  background: #afdab534;
+  border-radius: 0.3rem;
+  border: solid 0.1rem rgba(3, 43, 3, 0.459);
+}
+
+#product-detail-image {
+  height: 18rem;
+  width: 18rem;
+  object-fit: cover;
+}
+
+.depth-shadow {
+  box-shadow: 0.4rem 0.4rem 0.4rem #525252a2;
 }

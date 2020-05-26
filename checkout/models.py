@@ -23,7 +23,7 @@ class CustomerShipping(models.Model):
 class OrderDetail(models.Model):
     shipping = models.ForeignKey(
         CustomerShipping, null=False, on_delete=models.CASCADE)
-    product = models.ForeignKey(Product, null=False, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, null=False, on_delete=models.PROTECT)
     quantity = models.IntegerField(blank=False)
     total = models.DecimalField(max_digits=9, decimal_places=2, blank=False)
     purchase_date = models.DateField(

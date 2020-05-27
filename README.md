@@ -260,6 +260,7 @@ Accounts for the following (some environmental variables are required from these
    os.environ.setdefault("EMAIL_RECIPIENT", "<Email Address to Send Contact Form Messages to>")
    os.environ.setdefault("STRIPE_PUBLISHABLE", "<Your Stripe Publishable Key>")
    os.environ.setdefault("STRIPE_SECRET", "<Your Stripe Secret Key>")
+   os.environ.setdefault("DJANGO_SECRET", "<Your Stripe Secret Key>")
    os.environ.setdefault("DEPLOY", "True")
    ```
 
@@ -325,6 +326,7 @@ Steps to deploy PrintCrate to Heroku:
 
    | Key                   | Value                                            |
    | --------------------- | ------------------------------------------------ |
+   | DJANGO_SECRET         | <Your Django Secret Key>                         |
    | AWS_ACCESS_KEY_ID     | <Your AWS Access Key>                            |
    | AWS_SECRET_ACCESS_KEY | <Your AWS Secret Access Key>                     |
    | DATABASE_URL          | <Your PostgreSQL Database URL>                   |

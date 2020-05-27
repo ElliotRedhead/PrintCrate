@@ -278,13 +278,15 @@ Accounts for the following (some environmental variables are required from these
    py manage.py createsuperuser
    ```
 
-10. Run the project on a local server:
+10. Add your development IP to the ALLOWED_HOSTS variable list in settings.py.
+
+11. Run the project on a local server:
 
     ```terminal
     py manage.py runserver
     ```
 
-11. Add new products to the database by accessing the URL provided in the terminal and adding "/admin", logging in with your superuser credentials and accessing the Products table.
+12. Add new products to the database by accessing the URL provided in the terminal and adding "/admin", logging in with your superuser credentials and accessing the Products table.
 
 ---
 

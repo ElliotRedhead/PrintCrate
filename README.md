@@ -258,16 +258,18 @@ Accounts for the following (some environmental variables are required from these
    os.environ.setdefault("AWS_SECRET_ACCESS_KEY","<Your AWS Secret Access Key>")
    os.environ.setdefault("DATABASE_URL", "<Your PostgreSQL Database URL>")
    os.environ.setdefault("EMAIL_HOST", "<Your SMTP Enabled Gmail Address>")
-   #See [this page](https://kinsta.com/knowledgebase/free-smtp-server/) for enabling instructions.
    os.environ.setdefault("HOST_PASS", "<Your SMTP Enabled Gmail Password")
    os.environ.setdefault("EMAIL_RECIPIENT", "<Email Address to Send Contact Form Messages to")
    os.environ.setdefault("STRIPE_PUBLISHABLE", "<Your Stripe Publishable Key>")
    os.environ.setdefault("STRIPE_SECRET", "<Your Stripe Secret Key>")
    ```
 
-8. Migrate models to create your database structures:
+   See [this page](https://kinsta.com/knowledgebase/free-smtp-server/) for instructions to enable SMTP with Gmail.
+
+8. Make and migrate models to create your database structures:
 
    ```terminal
+   py manage.py makemigrations
    py manage.py migrate
    ```
 

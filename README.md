@@ -196,9 +196,7 @@ Testing details can be viewed in the [TESTING.md](/TESTING.md) file.
 
 ## Deployment
 
-### Running this project in a local environment
-
-#### Prerequisites
+### Prerequisites
 
 - An Integrated Development Environment (IDE) e.g. [Visual Studio Code](https://code.visualstudio.com/)
 - [Python 3](https://www.python.org/downloads/)
@@ -211,7 +209,7 @@ Accounts for the following (some environmental variables are required from these
 - [AWS](https://aws.amazon.com/) and [an S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html)
 - [Gmail](https://www.google.com/gmail/)
 
-#### Step Instructions
+### Running this project in a local environment
 
 1. Save a copy of this github repository with the Git clone function in your terminal:
 
@@ -258,10 +256,11 @@ Accounts for the following (some environmental variables are required from these
    os.environ.setdefault("AWS_SECRET_ACCESS_KEY","<Your AWS Secret Access Key>")
    os.environ.setdefault("DATABASE_URL", "<Your PostgreSQL Database URL>")
    os.environ.setdefault("EMAIL_HOST", "<Your SMTP Enabled Gmail Address>")
-   os.environ.setdefault("HOST_PASS", "<Your SMTP Enabled Gmail Password")
-   os.environ.setdefault("EMAIL_RECIPIENT", "<Email Address to Send Contact Form Messages to")
+   os.environ.setdefault("HOST_PASS", "<Your SMTP Enabled Gmail Password>")
+   os.environ.setdefault("EMAIL_RECIPIENT", "<Email Address to Send Contact Form Messages to>")
    os.environ.setdefault("STRIPE_PUBLISHABLE", "<Your Stripe Publishable Key>")
    os.environ.setdefault("STRIPE_SECRET", "<Your Stripe Secret Key>")
+   os.environ.setdefault("DEPLOY", "True")
    ```
 
    See [this page](https://kinsta.com/knowledgebase/free-smtp-server/) for instructions to enable SMTP with Gmail.
@@ -288,3 +287,61 @@ Accounts for the following (some environmental variables are required from these
 11. Add new products to the database by accessing the URL provided in the terminal and adding "/admin", logging in with your superuser credentials and accessing the Products table.
 
 ---
+
+### Deployment of this project to Heroku
+
+Steps to deploy PrintCrate to Heroku:
+
+1. Create a requirements.txt file populated by required python modules:
+
+   ```terminal
+   pip freeze > requirements.txt
+   ```
+
+   _NB: Please refer to documentation for the specific syntax required for your OS, `pip` may require replacement with `pip3`._
+
+2. Create a Procfile:
+
+   ```terminal
+   echo web: py app.py > Procfile.
+   ```
+
+   _NB: Please refer to documentation for the specific syntax required for your OS, `py` may require replacement with `python3` or `python`_
+
+3. Add requirements.txt and Procfile to git tracking, committing their addition and pushing those changes.
+
+4. Open [https://dashboard.heroku.com/apps](Heroku) in your browser, signing in/creating an account as required.  
+   Create an application by selecting the "New" button on the dashboard. Create a name for the application with an appropriate region.
+
+5. Open the dashboard of the new application on Heroku, select the "Deployment" tab and select GitHub from the Deployment Method selection.
+
+6. Search for the correct GitHub repository from the list of your existing repositories and select the correct repository.
+
+7. Within the application dashboard, select the "Settings" tab then "Reveal Config Vars".
+
+   Populate the config variables table with the following:
+
+   | Key                   | Value                                            |
+   | --------------------- | ------------------------------------------------ |
+   | AWS_ACCESS_KEY_ID     | <Your AWS Access Key>                            |
+   | AWS_SECRET_ACCESS_KEY | <Your AWS Secret Access Key>                     |
+   | DATABASE_URL          | <Your PostgreSQL Database URL>                   |
+   | EMAIL_HOST            | <Your SMTP Enabled Gmail Address>                |
+   | HOST_PASS             | <Your SMTP Enabled Gmail Password>               |
+   | EMAIL_RECIPIENT       | <Email Address to Send Contact Form Messages to> |
+   | STRIPE_PUBLISHABLE    | <Your Stripe Publishable Key>                    |
+   | STRIPE_SECRET         | <Your Stripe Secret Key>                         |
+   | DEPLOY                | True                                             |
+
+8. Ensure you are using the postgreSQL database by either creating an env file as instructed in "Running this project in a local environment.7" or stipulating the postgreSQL URL in settings.py.
+
+9. Make migrations and migrate the database models to the postgreSQL database:
+
+   ```terminal
+   py manage.py makemigrations
+   py manage.py migrate
+   ```
+
+10. In the Heroku app dashboard, select the "Deploy" tab. Scroll down to "Manual Deploy", select the master branch and select "Deploy Branch".
+
+11. The build progress can be monitored in the log for the Heroku application, upon build completion, select the "Open App" button to view the deployed application.

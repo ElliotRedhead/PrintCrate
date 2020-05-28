@@ -45,46 +45,46 @@ Key objectives/requirements for site users.
 
 This colour palette was formed upon project inception and used to drive UI decisions within the project, adjustments may be made to this as project development progresses.
 
-# New Colour Scheme Implemented
+# Detail colour scheme here.
 
 ### Wireframes
 
 <details>
-<summary> Project Inception Wireframes </summary>
+<summary> Project Inception Wireframes (Click to View) </summary>
 
 Project inception wireframes were created to provide guidance from the initial planning stages with a mobile-first development perspective and were used as the starting point for page layouts.
 
-### Homepage
+#### Homepage
 
 - [Mobile Homepage](/wireframes/home-mobile.png)
 - [Tablet Homepage](/wireframes/home-tablet.png)
 - [Desktop Homepage](/wireframes/home-desktop.png)
 
-### Register Page
+#### Register Page
 
 - [Mobile Register](/wireframes/register-mobile.png)
 - [Tablet Register](/wireframes/register-tablet.png)
 - [Desktop Register](/wireframes/register-desktop.png)
 
-### Login Page
+#### Login Page
 
 - [Mobile Login](/wireframes/login-mobile.png)
 - [Tablet Login](/wireframes/login-tablet.png)
 - [Desktop Login](/wireframes/login-desktop.png)
 
-### Products Page
+#### Products Page
 
 - [Mobile Products Page](/wireframes/products-mobile.png)
 - [Tablet Products Page](/wireframes/products-tablet.png)
 - [Desktop Products Page](/wireframes/products-desktop.png)
 
-### Contact Page
+#### Contact Page
 
 - [Mobile Contact Page](/wireframes/contact-mobile.png)
 - [Tablet Contact Page](/wireframes/contact-tablet.png)
 - [Desktop Contact Page](/wireframes/contact-desktop.png)
 
-### About Page
+#### About Page
 
 - [Mobile About Page](/wireframes/about-mobile.png)
 - [Tablet About Page](/wireframes/about-tablet.png)
@@ -93,6 +93,37 @@ Project inception wireframes were created to provide guidance from the initial p
 </details>
 
 --
+
+<details>
+<summary> Project Evolution Wireframes (Click to View) </summary>
+
+As the project progressed, wireframes were created to guide towards a final project layout and better reflect the project evolution.
+
+#### Homepage
+
+#### Register Page
+
+#### Login Page
+
+#### Products List Page
+
+#### Product Detail Page
+
+#### Contact Page
+
+#### About Page
+
+#### Cart Page
+
+#### Checkout (Shipping) Page
+
+#### Checkout (Payment) Page
+
+#### Error404 Page
+
+#### Error500 Page
+
+</details>
 
 ## Page Features
 

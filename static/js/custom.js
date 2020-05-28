@@ -23,7 +23,8 @@ $(".quantity-input").change(function(){
         itemId: itemId,
         newItemQuantity: newItemQuantity 
     };
-    fetch(".", fetchParameterSetup(fetchInputData))
+    identifyingHeader = "quantityValidationFetch";
+    fetch(".", fetchParameterSetup(fetchInputData, identifyingHeader))
         .then(response => {
             response.json()
             .then(responseJson => {
@@ -37,13 +38,35 @@ $(".quantity-input").change(function(){
         })
 })
 
-function fetchParameterSetup(fetchInputData){
+$(".remove-cart-item-button").click(function(){
+    itemId = this.dataset.removeItemId;
+    fetchInputData = {"itemId" : itemId}
+    swal.fire({"timer":"20000",
+    "title":"Remove product",
+    "text":"Are you sure you wish to remove this item from your cart?",
+    "icon":"warning",
+    "showConfirmButton":"true",
+    "showCancelButton":"true",
+    "confirmButtonText":"Remove"})
+    .then((userConfirmation) => {
+        if (userConfirmation.value) {
+            identifyingHeader = "removeCartItemFetch"
+            fetch(".", fetchParameterSetup(fetchInputData, identifyingHeader))
+            .then(function(){
+                location.reload()
+            })
+            
+        }
+    })
+})
+
+function fetchParameterSetup(fetchInputData, identifyingHeader){
 	const fetchParameters = {
 		method: "POST",
 		cors: "*same-origin",
 		headers: new Headers({
+            "Identifying-Header" : identifyingHeader,
             "Content-Type": "application/json",
-            "Quantity-Validation-Fetch": true,
             "X-CSRFToken": csrftoken,
             "X-Requested-With": "XMLHttpRequest"
         }),

@@ -1,9 +1,7 @@
 <div class="row d-flex align-items-center">
   <div class="col-4">
-    <form class="remove-cart-item-form" method="POST" action="{% url 'remove_from_cart' item.id %}">
-      {% csrf_token %}
-      <button class="btn" alt="Remove item from cart." type="submit"><i class="fas fa-times-circle"></i></button>
-    </form>
+    <button class="btn remove-cart-item-button" alt="Remove item from cart." data-remove-item-id="{{ item.product.id }}"
+      type="submit"><i class="fas fa-times-circle"></i></button>
     <p class="pt-2 text-center">{{ item.product.name }}</p>
   </div>
   <p class="col-2 offset-md-1 pt-2 text-center">£{{ item.product.price }}</p>

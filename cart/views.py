@@ -36,11 +36,17 @@ def cart_view(request):
         empty_cart_modal(request)
         return redirect(reverse("products"))
     if request.method == "POST":
-        if request.headers["Quantity-Validation-Fetch"]:
+        if request.headers["Identifying-Header"] == "quantityValidationFetch":
             custom_fetch_request = json.loads(request.body)
             response = validate_item_quantity_change(
                 request, custom_fetch_request)
             return JsonResponse(response)
+        if request.headers["Identifying-Header"] == "removeCartItemFetch":
+            custom_fetch_request = json.loads(request.body)
+            cart = request.session["cart"]
+            target_product = custom_fetch_request["itemId"]
+            del cart[target_product]
+            request.session["cart"] = cart
     return render(request, "cart.html", {"page_title": "Cart | PrintCrate"})
 
 
@@ -85,7 +91,10 @@ def validate_item_quantity_change(request, custom_fetch_request):
 
 
 def remove_from_cart(request, id):
-    cart = request.session.get("cart")
-    cart.pop(id)
-    request.session["cart"] = cart
+    # sweetify.sweetalert(
+    #     request,
+    # )
+    # # cart = request.session.get("cart")
+    # cart.pop(id)
+    # request.session["cart"] = cart
     return redirect(reverse("cart_view"))

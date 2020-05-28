@@ -35,10 +35,10 @@ def checkout_payment(request):
         payment_form = PaymentForm(request.POST)
         if payment_form.is_valid():
             cart = request.session.get("cart", {})
-            total = cart_contents(request)["total"]
+            cart_total = cart_contents(request)["total"]
             try:
                 customer = stripe.Charge.create(
-                    amount=int(total*100),
+                    amount=int(cart_total*100),
                     currency="GBP",
                     description=request.user.email,
                     card=payment_form.cleaned_data["stripe_id"]
@@ -56,13 +56,13 @@ def checkout_payment(request):
                 for item, quantity in cart.items():
                     product = get_object_or_404(
                         Product, pk=item)
-                    total += quantity * product.price
+                    product_total = quantity * product.price
                     order_detail = OrderDetail(
                         shipping=CustomerShipping.objects.filter(
                             customer=request.user).last(),
                         product=product,
                         quantity=quantity,
-                        total=total,
+                        total=product_total,
                     )
                     order_detail.save()
                 del request.session["cart"]

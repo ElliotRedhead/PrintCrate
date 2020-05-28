@@ -7,7 +7,7 @@ def cart_contents(request):
     Enables access to cart items from all apps in project.
     Code modified from core CodeInstitute course content.
     """
-    cart = request.session.get('cart', {})
+    cart = request.session.get("cart", {})
     cart_items = []
     total = 0
     product_count = 0

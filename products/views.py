@@ -10,7 +10,7 @@ def products_view(request):
 
 def product_detail_view(request, pk):
     product = Product.objects.get(pk=pk)
-    return render(request, "productdetail.html", {"product": product})
+    return render(request, "productdetail.html", {"product": product, "page_title": f"{product.name} | PrintCrate"})
 
 
 def product_search(request):

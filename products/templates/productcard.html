@@ -1,8 +1,10 @@
 <div class="product-card depth-shadow d-flex justify-content-around align-items-center">
   <div class="d-flex align-items-center justify-content-center product-card-image-container">
-    <img class="product-card-image ml-1" src="{{ product.product_image.url }}"
-      alt="Product image of {{ product.name }}.">
-    </img>
+    <a href="{% url 'product_detail' product.pk %}">
+      <img class="product-card-image ml-1" src="{{ product.product_image.url }}"
+        alt="Product image of {{ product.name }}.">
+      </img>
+    </a>
   </div>
   <div class="product-card-information d-flex flex-column justify-content-around align-items-center mr-2">
     <div class="product-card-title font-weight-bold mt-3 text-center">{{ product.name }}</div>

@@ -41,7 +41,7 @@ def cart_view(request):
             response = validate_item_quantity_change(
                 request, custom_fetch_request)
             return JsonResponse(response)
-    return render(request, "cart.html")
+    return render(request, "cart.html", {"page_title": "Cart | PrintCrate"})
 
 
 def add_to_cart(request, id):
@@ -70,8 +70,6 @@ def adjust_cart(request, id):
 
 
 def validate_item_quantity_change(request, custom_fetch_request):
-    # Below is testing response.
-    # Comparison with current cart contents is required.
     item_id = custom_fetch_request["itemId"]
     new_item_quantity = custom_fetch_request["newItemQuantity"]
     response = {
@@ -82,9 +80,7 @@ def validate_item_quantity_change(request, custom_fetch_request):
 
 
 def remove_from_cart(request, id):
-    print(id)
     cart = request.session.get("cart")
-    print(cart)
     cart.pop(id)
     request.session["cart"] = cart
     return redirect(reverse("cart_view"))

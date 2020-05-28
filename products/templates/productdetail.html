@@ -21,6 +21,7 @@
             <p class="col-12 col-md-6 text-center">Number available: {{ product.stock_available }}</p>
           </div>
           <div class="row">
+            {% if product.stock_available > 0 %}
             <form action="{% url 'add_to_cart' product.pk %}" method="POST"
               class="col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 my-2">
               {% csrf_token %}
@@ -35,6 +36,9 @@
                 </span>
               </div>
             </form>
+            {% else %}
+            <p class="col-12 text-center font-italic">This item is currently out of stock.</p>
+            {% endif %}
           </div>
         </div>
       </div>

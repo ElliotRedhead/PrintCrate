@@ -17,11 +17,11 @@ class UserRegisterForm(UserCreationForm):
 
 class UserCredentialsUpdateForm(forms.ModelForm):
     email = forms.EmailField(
-        label="Set Email Address",
+        label="New Email Address",
         widget=forms.EmailInput(attrs={"placeholder": "Enter Email"}))
 
     password = forms.CharField(
-        label="Set Password",
+        label="New Password",
         widget=forms.PasswordInput(attrs={"placeholder": "Enter Password"}),
         validators=[validate_password])
 

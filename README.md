@@ -92,8 +92,6 @@ Project inception wireframes were created to provide guidance from the initial p
 
 </details>
 
---
-
 <details>
 <summary> Project Evolution Wireframes (Click to View) </summary>
 

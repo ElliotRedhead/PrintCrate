@@ -37,6 +37,10 @@ body {
   height: 1.9rem;
 }
 
+#clipboard-url {
+  cursor: pointer;
+}
+
 .product-description {
   height: 8rem;
   overflow-y: auto;

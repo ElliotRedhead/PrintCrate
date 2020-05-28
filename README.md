@@ -401,18 +401,18 @@ Steps to deploy PrintCrate to Heroku:
 
    Populate the config variables table with the following:
 
-   | Key                   | Value                                            |
-   | --------------------- | ------------------------------------------------ |
-   | DJANGO_SECRET         | <Your Django Secret Key>                         |
-   | AWS_ACCESS_KEY_ID     | <Your AWS Access Key>                            |
-   | AWS_SECRET_ACCESS_KEY | <Your AWS Secret Access Key>                     |
-   | DATABASE_URL          | <Your PostgreSQL Database URL>                   |
-   | EMAIL_HOST            | <Your SMTP Enabled Gmail Address>                |
-   | HOST_PASS             | <Your SMTP Enabled Gmail Password>               |
-   | EMAIL_RECIPIENT       | <Email Address to Send Contact Form Messages to> |
-   | STRIPE_PUBLISHABLE    | <Your Stripe Publishable Key>                    |
-   | STRIPE_SECRET         | <Your Stripe Secret Key>                         |
-   | DEPLOY                | True                                             |
+   | Key                   | Value                                              |
+   | --------------------- | -------------------------------------------------- |
+   | DJANGO_SECRET         | `<Your Django Secret Key>`                         |
+   | AWS_ACCESS_KEY_ID     | `<Your AWS Access Key>`                            |
+   | AWS_SECRET_ACCESS_KEY | `<Your AWS Secret Access Key>`                     |
+   | DATABASE_URL          | `<Your PostgreSQL Database URL>`                   |
+   | EMAIL_HOST            | `<Your SMTP Enabled Gmail Address>`                |
+   | HOST_PASS             | `<Your SMTP Enabled Gmail Password>`               |
+   | EMAIL_RECIPIENT       | `<Email Address to Send Contact Form Messages to>` |
+   | STRIPE_PUBLISHABLE    | `<Your Stripe Publishable Key>`                    |
+   | STRIPE_SECRET         | `<Your Stripe Secret Key>`                         |
+   | DEPLOY                | `True`                                             |
 
 8. Ensure you are using the postgreSQL database by either creating an env file as instructed in "Running this project in a local environment.7" or stipulating the postgreSQL URL in settings.py.
 

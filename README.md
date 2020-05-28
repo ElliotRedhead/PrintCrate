@@ -101,27 +101,75 @@ As the project progressed, wireframes were created to guide towards a final proj
 
 #### Homepage
 
+- [Mobile Home Page](/wireframes/home-mobile-v2.png)
+- [Tablet Home Page](/wireframes/home-tablet-v2.png)
+- [Desktop Home Page](/wireframes/home-desktop-v2.png)
+
 #### Register Page
+
+- [Mobile Register Page](/wireframes/register-mobile-v2.png)
+- [Tablet Register Page](/wireframes/register-tablet-v2.png)
+- [Desktop Register Page](/wireframes/register-Desktop-v2.png)
 
 #### Login Page
 
+- [Mobile Login Page](/wireframes/login-mobile-v2.png)
+- [Tablet Login Page](/wireframes/login-tablet-v2.png)
+- [Desktop Login Page](/wireframes/login-desktop-v2.png)
+
 #### Products List Page
+
+- [Mobile Products List Page](/wireframes/products-mobile-v2.png)
+- [Tablet Products List Page](/wireframes/products-tablet-v2.png)
+- [Desktop Products List Page](/wireframes/products-desktop-v2.png)
 
 #### Product Detail Page
 
+- [Mobile Product Detail Page](/wireframes/productdetail-mobile-v2.png)
+- [Tablet Product Detail Page](/wireframes/productdetail-tablet-v2.png)
+- [Desktop Product Detail Page](/wireframes/productdetail-desktop-v2.png)
+
 #### Contact Page
+
+- [Mobile Contact Page](/wireframes/contact-mobile-v2.png)
+- [Tablet Contact Page](/wireframes/contact-tablet-v2.png)
+- [Desktop Contact Page](/wireframes/contact-desktop-v2.png)
 
 #### About Page
 
+- [Mobile About Page](/wireframes/about-mobile-v2.png)
+- [Tablet About Page](/wireframes/about-tablet-v2.png)
+- [Desktop About Page](/wireframes/about-desktop-v2.png)
+
 #### Cart Page
+
+- [Mobile Cart Page](/wireframes/cart-mobile-v2.png)
+- [Tablet Cart Page](/wireframes/cart-tablet-v2.png)
+- [Desktop Cart Page](/wireframes/cart-desktop-v2.png)
 
 #### Checkout (Shipping) Page
 
+- [Mobile Shipping Page](/wireframes/shipping-mobile-v2.png)
+- [Tablet Shipping Page](/wireframes/shipping-tablet-v2.png)
+- [Desktop Shipping Page](/wireframes/shipping-desktop-v2.png)
+
 #### Checkout (Payment) Page
+
+- [Mobile Payment Page](/wireframes/payment-mobile-v2.png)
+- [Tablet Payment Page](/wireframes/payment-tablet-v2.png)
+- [Desktop Payment Page](/wireframes/payment-desktop-v2.png)
 
 #### Error404 Page
 
+- [Mobile 404 Page](/wireframes/error404-mobile-v2.png)
+- [Tablet 404 Page](/wireframes/error404-tablet-v2.png)
+- [Desktop 404 Page](/wireframes/error404-desktop-v2.png)
+
 #### Error500 Page
+
+- [Mobile 500 Page](/wireframes/error500-mobile-v2.png)
+- [Tablet 500 Page](/wireframes/error500-tablet-v2.png)
+- [Desktop 500 Page](/wireframes/error500-desktop-v2.png)
 
 </details>
 

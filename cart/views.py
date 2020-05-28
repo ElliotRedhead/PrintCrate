@@ -71,11 +71,16 @@ def adjust_cart(request, id):
 
 def validate_item_quantity_change(request, custom_fetch_request):
     item_id = custom_fetch_request["itemId"]
-    new_item_quantity = custom_fetch_request["newItemQuantity"]
+    cart = request.session["cart"]
+    old_item_quantity = int((cart[item_id]))
+    new_item_quantity = int(custom_fetch_request["newItemQuantity"])
     response = {
         "itemId": item_id,
-        "newItemQuantity": new_item_quantity
+        "newItemQuantity": new_item_quantity,
+        "updatedQuantity": False
     }
+    if old_item_quantity != new_item_quantity:
+        response["updatedQuantity"] = True
     return response
 
 

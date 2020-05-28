@@ -16,6 +16,7 @@ function containerHeightHandling(){
 }
 
 $(".quantity-input").change(function(){
+    quantityInputElement = this
     newItemQuantity = this.value;
     itemId = this.dataset.itemId;
     const fetchInputData = {
@@ -26,7 +27,12 @@ $(".quantity-input").change(function(){
         .then(response => {
             response.json()
             .then(responseJson => {
-                console.log(responseJson)
+                if(responseJson.updatedQuantity == true){
+                    $(quantityInputElement).siblings(".btn").removeClass("invisible");
+                }
+                else {
+                    $(quantityInputElement).siblings(".btn").addClass("invisible");
+                }
             })
         })
 })

@@ -24,25 +24,28 @@
     {% endfor %}
   </div>
   <!-- https://docs.djangoproject.com/en/3.0/topics/pagination/ -->
-    <div class="row pagination">
-      <div class="text-center mx-auto">
-          {% if page_object.has_previous %}
-            <button class="btn"><a href="?page=1">First</a></button>
-            <button class="btn"><a href="?page={{ page_object.previous_page_number }}">Previous</a></button>
-          {% endif %}
-          <span class="current">
-              Page {{ page_object.number }} of {{ page_object.paginator.num_pages }}
-          </span>
-  
-          {% if page_object.has_next %}
-              <button class="btn"><a href="?page={{ page_object.next_page_number }}">Next</a></button>
-              <button class="btn"><a href="?page={{ page_object.paginator.num_pages }}">Last</a></button>
-          {% endif %}
+  <div class="row justify-content-center align-items-center">
+    {% if page_object.has_previous %}
+    <a href="?page=1" class="text-decoration-none"><button class="btn pagination-btn"><i
+          class="fas fa-angle-double-left"></i></button></a>
+    <a href="?page={{ page_object.previous_page_number }}"><button class="btn pagination-btn"><i
+          class="fas fa-angle-left"></i></button></a>
+    {% endif %}
+    <div class="mx-3">
+      Page {{ page_object.number }} of {{ page_object.paginator.num_pages }}
     </div>
-    {% else %}
-    <h1 class="d-flex text-center mt-3">There are currently no items in
-      stock.</h1>
+    {% if page_object.has_next %}
+    <a href="?page={{ page_object.next_page_number }}"><button class="btn pagination-btn"><i
+          class="fas fa-angle-right"></i></button></a>
+    <a href="?page={{ page_object.paginator.num_pages }}"><button class="btn pagination-btn"><i
+          class="fas fa-angle-double-right"></i></button></a>
     {% endif %}
   </div>
+
+  {% else %}
+  <h1 class="d-flex text-center mt-3">There are currently no items in
+    stock.</h1>
+  {% endif %}
+</div>
 </div>
 {% endblock %}

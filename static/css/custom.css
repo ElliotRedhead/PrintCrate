@@ -89,6 +89,23 @@ body {
   color: #23b772;
 }
 
+.pagination-btn {
+  background: #ffffff;
+  background: linear-gradient(180deg, #dddddd 30%, #858585 100%);
+  box-shadow: 0.2rem 0.2rem 0.2rem #5252527a;
+  border-color: #dfdfdf;
+  border-radius: 0.15rem;
+  color: #000000;
+}
+
+.pagination-btn > i {
+  color: #ffffff;
+}
+
+.pagination-btn:hover {
+  background: linear-gradient(180deg, #b3b3b3 30%, #4d4d4d 100%);
+}
+
 /* Custom button styling to suit site theme. */
 
 .btn-custom {

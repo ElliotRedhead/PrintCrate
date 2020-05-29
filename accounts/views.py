@@ -1,3 +1,4 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect, reverse
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
@@ -14,7 +15,8 @@ def logout(request):
     auth.logout(request)
     sweetify.success(
         request,
-        "You have been successfully logged out."
+        title="You have been successfully logged out.",
+        icon="success"
     )
     return redirect(reverse("home"))
 
@@ -22,8 +24,15 @@ def logout(request):
 def registration(request):
     if request.user.is_authenticated:
         return redirect("home")
+    previous_page = request.META.get("HTTP_REFERER")
+    form = UserRegisterForm(request.POST)
+    if previous_page:
+        if "next" in previous_page:
+            marker_index = previous_page.index("next")
+            string_length = len(previous_page)
+            redirect_string = previous_page[marker_index+5:string_length]
+            request.session["redirect_target"] = redirect_string
     if request.method == "POST":
-        form = UserRegisterForm(request.POST)
         if form.is_valid():
             form.save()
             sweetify.success(
@@ -34,7 +43,7 @@ def registration(request):
                                      password=form.cleaned_data.get("password1"))
             if user is not None:
                 auth.login(request, user)
-            return redirect("home")
+                return redirect("home")
     else:
         form = UserRegisterForm()
     return render(request, "register.html", {"form": form, "page_title": "Register | PrintCrate"})

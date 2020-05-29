@@ -15,7 +15,7 @@ class TestCheckoutInfoView(TestCase):
         """Tests if non-authenticated user is redirected to login page."""
         response = self.client.get("/checkout/shipping/")
         self.assertEqual(response.status_code, 302)
-        response = self.client.get("/checkout/info/", follow=True)
+        response = self.client.get("/checkout/shipping/", follow=True)
         self.assertRedirects(
             response, "/accounts/login?next=/checkout/shipping/")
 

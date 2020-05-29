@@ -54,12 +54,13 @@ def registration(request):
 @login_required
 def profile(request):
     previous_page = request.META.get("HTTP_REFERER")
-    if previous_page.endswith("login"):
-        sweetify.success(
-            request,
-            title="Login successful.",
-            icon="success",
-        )
+    if previous_page:
+        if previous_page.endswith("login"):
+            sweetify.success(
+                request,
+                title="Login successful.",
+                icon="success",
+            )
     user = User.objects.get(username=request.user)
     user_orders = OrderDetail.objects.filter(
         shipping__customer_id=user.id)

@@ -42,7 +42,7 @@ Key objectives/requirements for site users.
 #### Customer Story Fulfilment
 
 1. From any page of the PrintCrate site: selection of the "Register" button in the navigation bar loads a registration page. The registration page displays a form with validation. If the form is populated with invalid values the registration is rejected upon submission with an error message detailing why registration has failed. Upon population of the form with valid values the browser redirects away from the register page with a success feedback message displayed.
-2. From a logged-out state, access to the "Profile" or "Checkout" pages is restricted. The login feature is accessed by selecting "Login" from the navigation bar, which loads the login page. The login page displays a form with validation. If the form is populated with invalid values the login is rejected upon submission with an error message detailing why login has failed. Upon login success the user is redirected to their account page with new navigation options indicating the updated user state.
+2. From a logged-out state, access to the "Profile" or "Checkout" pages is restricted. The login feature is accessed by selecting "Login" from the navigation bar, which loads the login page. The login page displays a form with validation. If the form is populated with invalid values the login is rejected upon submission with an error message detailing why login has failed. Upon login success the user is redirected to their account page with new navigation options and success modal indicating the updated user state.
 
 ## Design & Styling
 

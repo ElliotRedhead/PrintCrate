@@ -9,12 +9,13 @@
 <!-- Sweetalert2 import (required site-wide for feedback to user.) -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.10.12/dist/sweetalert2.all.min.js"
   integrity="sha256-HyVNOA4KTbmvCLxBoFNrj0FLZtj/RCWyg4zfUjIry0k=" crossorigin="anonymous"></script>
-<!-- Passing bootstrap-defiend breakpoints to javascript, required site-wide. -->
+<!-- Passing bootstrap-defined breakpoints to javascript, required site-wide. -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap-detect-breakpoint/src/bootstrap-detect-breakpoint.js"></script>
 <!-- Copy site link to clipboard, required site-wide as used in footer. -->
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
 <!-- Passes CSRF token for custom fetches. -->
 <script src="{% static 'js/cookie.js' %}"></script>
+{% if "payment" in request.path %}
 <!-- Stripe used for handling customer payments. -->
 <script src="https://js.stripe.com/v2"></script>
 <script>
@@ -23,5 +24,6 @@
   //]]
 </script>
 <script src="{% static 'js/stripe.js' %}"></script>
+{% endif %}
 <!-- Custom javascript by site developer. -->
 <script src="{% static 'js/custom.js' %}"></script>

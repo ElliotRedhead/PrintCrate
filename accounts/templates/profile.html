@@ -3,6 +3,10 @@
 <section class="d-flex main-container">
   <div class="align-self-center container px-3">
     <div class="row">
+      <h1 class="col-12 text-center">Your Account Details</h1>
+      <p class="col-12 text-center">Welcome {{ user.username }}, here you can find your purchases and update your email address/password.</p>
+    </div>
+    <div class="row">
       <div class="col-12 col-md-6 d-flex flex-column align-self-center px-1">
         {% if user_orders %}
         {% include "components/ordertable.html" %}

@@ -99,9 +99,6 @@ body {
   color: #ffffff;
   border-radius: 0.15rem;
   letter-spacing: 0.1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .btn-custom:focus {

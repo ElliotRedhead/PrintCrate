@@ -75,12 +75,6 @@ function fetchParameterSetup(fetchInputData, identifyingHeader){
 	return fetchParameters;
 }
 
-function navigationBarItemBorders(breakpoint){
-    if(breakpoint.index > 2) {
-        $(".nav-item").addClass("border")
-    }
-}
-
 function homepageProductSelection(breakpoint){
     if (breakpoint.index < 3) {
         $(".product-container").eq(2).hide();

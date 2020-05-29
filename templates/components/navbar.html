@@ -13,21 +13,21 @@
   </a>
   <div id="navbarLinks" class="collapse navbar-collapse order-lg-1">
     <ul class="navbar-nav ml-auto">
-      {% if user.is_authenticated %}
-      <li class="nav-item border bg-white mx-1">
-        <a class="nav-link text-center px-3" href="{% url 'profile' %}"><i class="fas fa-user mx-2"></i>Profile</a></li>
-      <li class="nav-item border bg-white mx-1">
-        <a class="nav-link text-center" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt mx-2"></i>Logout</a></li>
-      {% else %}
-      <li class="nav-item border bg-white mx-1">
-        <a class="nav-link text-center px-3" href="{% url 'register' %}"><i class="fas fa-user-plus mx-2"></i>Register</a></li>
-      <li class="nav-item border bg-white mx-1">
-        <a class="nav-link text-center px-3" href="{% url 'login' %}"><i class="fas fa-sign-in-alt mx-2"></i>Login</a></li>
-      {% endif %}
       <li class="nav-item border bg-white mx-1">
         <a class="nav-link text-center px-3" href="{% url 'products' %}"><i class="fas fa-search mx-2"></i>Browse Products</a></li>
       <li class="nav-item border bg-white mx-1">
         <a class="nav-link text-center px-3" href="{% url 'about' %}"><i class="fas fa-info mx-2"></i>About</a></li>
+        {% if user.is_authenticated %}
+          <li class="nav-item border bg-white mx-1">
+            <a class="nav-link text-center px-3" href="{% url 'profile' %}"><i class="fas fa-user mx-2"></i>Profile</a></li>
+          <li class="nav-item border bg-white mx-1">
+            <a class="nav-link text-center" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt mx-2"></i>Logout</a></li>
+        {% else %}
+          <li class="nav-item border bg-white mx-1">
+            <a class="nav-link text-center px-3" href="{% url 'register' %}"><i class="fas fa-user-plus mx-2"></i>Register</a></li>
+          <li class="nav-item border bg-white mx-1">
+            <a class="nav-link text-center px-3" href="{% url 'login' %}"><i class="fas fa-sign-in-alt mx-2"></i>Login</a></li>
+        {% endif %}
       <li class="nav-item border bg-white mx-1">
         <a class="nav-link text-center px-3" href="{% url 'contact' %}"><i class="fas fa-envelope mx-2"></i>Contact Us</a></li>
     </ul>

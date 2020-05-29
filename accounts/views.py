@@ -55,9 +55,11 @@ def registration(request):
 def profile(request):
     previous_page = request.META.get("HTTP_REFERER")
     if previous_page.endswith("login"):
-        print("User logged in then redirected to profile.")
-    else:
-        print("User visited from alternate page.")
+        sweetify.success(
+            request,
+            title="Login successful.",
+            icon="success",
+        )
     user = User.objects.get(username=request.user)
     user_orders = OrderDetail.objects.filter(
         shipping__customer_id=user.id)

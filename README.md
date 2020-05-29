@@ -18,26 +18,31 @@ The webshop boasts a modern and intuitive shopping experience, providing custome
 - People with product requirements that require specific customisation.
 - People searching for 3D-printed products.
 
-## User Stories
+### User Stories
 
-### User Story Scope
+#### Customer Stories
 
 Key objectives/requirements for site users.
 
 1. As a new user: I want to create an account.
 2. As a returning user: I want to login to my existing account.
-3. As a user browsing products: I want to navigate products effectively.
+3. As a user browsing products: I want to navigate standard products.
 4. As a user interested in a particular product: I want to expand details of a specific product to view a description.
 5. As a user interested in the background of the company: I want to read more about the business.
 6. As a user purchasing a product: I want to add a product to my cart.
 7. As a user purchasing a product: I want to know if there is sufficient stock available for my order.
 8. As a user purchasing a product: I want to view the products currently in my cart.
 9. As a user reviewing my cart: I want to alter quantities of products in my cart.
-10. As a returning user: I want to be able to update my account details if required.
-11. As a satisfied customer: I want to be able to share PrintCrate on social networks.
-12. As a customer requesting a non-standard model: I want to upload an image file for the company to review, with a message and contact details.
+10. As a user finalising a purchase: I want to provide shipping information an dpay for my purchase.
+11. As a user with finalised purchases: I want to view all of my ordered products.
+12. As a returning user: I want to be able to update my account details if required.
+13. As a satisfied customer: I want to be able to share PrintCrate on social networks.
+14. As a customer requesting a non-standard model or with an additional query: I want to contact the site owner.
 
----
+#### Customer Story Fulfilment
+
+1. From any page of the PrintCrate site: selection of the "Register" button in the navigation bar loads a registration page. The registration page displays a form with validation. If the form is populated with invalid values the registration is rejected upon submission with an error message detailing why registration has failed. Upon population of the form with valid values the browser redirects away from the register page with a success feedback message displayed.
+2. From a logged-out state, access to the "Profile" or "Checkout" pages is restricted. The login feature is accessed by selecting "Login" from the navigation bar, which loads the login page. The login page displays a form with validation. If the form is populated with invalid values the login is rejected upon submission with an error message detailing why login has failed. Upon login success the user is redirected to their account page with new navigation options indicating the updated user state.
 
 ## Design & Styling
 

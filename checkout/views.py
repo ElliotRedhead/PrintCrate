@@ -62,12 +62,15 @@ def checkout_payment(request):
             except stripe.error.CardError:
                 sweetify.error(
                     request,
-                    "Payment error occurred, please retry with valid credentials."
+                    title="Payment error occurred, please retry with valid credentials.",
+                    text="If error persists, contact site owner.",
+                    icon="error"
                 )
             else:
                 sweetify.success(
                     request,
-                    "Payment successful, thank you for your purchase."
+                    title="Payment successful, thank you for your purchase.",
+                    icon="success"
                 )
                 create_order_product_records(request, cart)
 

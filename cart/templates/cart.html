@@ -13,6 +13,7 @@
   {% include "components/cart-contents.html" %}
   {% endfor %}
   <p class="text-center mt-5">Total: £{{ total }} </p>
+  <small class="text-center font-italic">*Please note that items may be shipped separately depending on manufacture location.</small>
   <a href="{% url 'shipping' %}" class="btn btn-custom mt-3" role="button">Checkout</a>
 </div>
 {% endblock %}

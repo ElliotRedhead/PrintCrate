@@ -13,19 +13,20 @@ class TestCheckoutInfoView(TestCase):
 
     def test_redirect_if_user_not_logged_in(self):
         """Tests if non-authenticated user is redirected to login page."""
-        response = self.client.get("/checkout/info/")
+        response = self.client.get("/checkout/shipping/")
         self.assertEqual(response.status_code, 302)
         response = self.client.get("/checkout/info/", follow=True)
-        self.assertRedirects(response, "/accounts/login?next=/checkout/info/")
+        self.assertRedirects(
+            response, "/accounts/login?next=/checkout/shipping/")
 
     def test_redirect_if_user_logged_empty_cart(self):
         """Tests if an authenticated user is redirected with empty cart."""
         User.objects.create_user(
             username="testuser", password="thisisasecret101")
         self.client.login(username="testuser", password="thisisasecret101")
-        response = self.client.get("/checkout/info/")
+        response = self.client.get("/checkout/shipping/")
         self.assertEqual(response.status_code, 302)
-        response = self.client.get("/checkout/info/", follow=True)
+        response = self.client.get("/checkout/shipping/", follow=True)
         self.assertRedirects(response, "/products/")
 
     def test_page_loads_if_user_logged_with_cart_items(self):
@@ -43,7 +44,7 @@ class TestCheckoutInfoView(TestCase):
         session = self.client.session
         session["cart"] = {1: 1}
         session.save()
-        response = self.client.get("/checkout/info/")
+        response = self.client.get("/checkout/shipping/")
         self.assertEqual(response.status_code, 200)
 
     def test_submission_of_shipping_information_creates_object(self):
@@ -61,7 +62,7 @@ class TestCheckoutInfoView(TestCase):
         session = self.client.session
         session["cart"] = {1: 1}
         session.save()
-        self.client.post("/checkout/info/", {
+        self.client.post("/checkout/shipping/", {
             "full_name": "Homer Simpson",
             "primary_address_line": "742",
             "secondary_address_line": "Evergreen Terrace",
@@ -99,7 +100,7 @@ class TestCheckoutInfoView(TestCase):
         session = self.client.session
         session["cart"] = {1: 1}
         session.save()
-        response = self.client.get("/checkout/info/")
+        response = self.client.get("/checkout/shipping/")
         self.assertTemplateUsed(response, "checkout_shipping_address.html")
         self.assertTemplateUsed(response, "base.html")
         self.assertTemplateUsed(response, "layout/head.html")
@@ -125,7 +126,7 @@ class TestCheckoutInfoView(TestCase):
         session = self.client.session
         session["cart"] = {1: 1}
         session.save()
-        response = self.client.get("/checkout/info/")
+        response = self.client.get("/checkout/shipping/")
         self.assertTemplateUsed(response, "bootstrap4/uni_form.html")
         self.assertTemplateUsed(response, "bootstrap4/errors.html")
         self.assertTemplateUsed(response, "bootstrap4/field.html")

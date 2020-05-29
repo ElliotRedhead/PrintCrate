@@ -1,15 +1,33 @@
 from django.shortcuts import render
 from django.db.models import Q
+from django.core.paginator import Paginator
 from .models import Product
+
+
+def paginator_setup(request, products):
+    paginator = Paginator(products, 4)
+    paginator_info = {
+        "page_number": request.GET.get("page"),
+        "page_object": paginator.get_page("page_number")
+    }
+    return paginator_info
 
 
 def products_view(request):
     products = Product.objects.all()
-    return render(request, "productslist.html", {"products": products, "page_title": "Products | PrintCrate"})
+    paginator_info = paginator_setup(request, products)
+    print(paginator_info["page_number"])
+    #   ["paginator_info"]["page_number"])
+    # page_number = paginator_setup["page_number"]
+    # page_object = paginator_setup["page_object"]
+    return render(request, "productslist.html", {"products": products, "page_title": "Products | PrintCrate", "page_object": paginator_info["page_object"]})
 
 
 def product_detail_view(request, pk):
     product = Product.objects.get(pk=pk)
+    paginator = Paginator(products, 15)
+    page_number = request.GET.get("page")
+    page_object = paginator.get_page(page_number)
     return render(request, "productdetail.html", {"product": product, "page_title": f"{product.name} | PrintCrate"})
 
 

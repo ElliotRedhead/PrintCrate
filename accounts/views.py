@@ -37,15 +37,16 @@ def registration(request):
             form.save()
             sweetify.success(
                 request,
-                "Account created successfully."
+                title="Account created successfully.",
+                icon="success"
             )
             user = auth.authenticate(request, username=form.cleaned_data.get("username"),
                                      password=form.cleaned_data.get("password1"))
             if user is not None:
                 auth.login(request, user)
-                if request.session["redirect_target"]:
+                if request.session.get("redirect_target"):
                     return HttpResponseRedirect(request.session["redirect_target"])
-                return redirect("home")
+                return redirect("profile")
     else:
         form = UserRegisterForm()
     return render(request, "register.html", {"form": form, "page_title": "Register | PrintCrate"})

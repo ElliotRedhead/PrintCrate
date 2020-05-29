@@ -43,6 +43,8 @@ def registration(request):
                                      password=form.cleaned_data.get("password1"))
             if user is not None:
                 auth.login(request, user)
+                if request.session["redirect_target"]:
+                    return HttpResponseRedirect(request.session["redirect_target"])
                 return redirect("home")
     else:
         form = UserRegisterForm()

@@ -1,12 +1,15 @@
-// credit: https://stackoverflow.com/questions/19333098/403-forbidden-error-when-making-an-ajax-post-request-in-django-framework/26100613#26100613
+/**
+ * Retrieves the target cookie from user.
+ * credit: https://stackoverflow.com/questions/19333098/403-forbidden-error-when-making-an-ajax-post-request-in-django-framework/26100613#26100613
+ * @param {string} name The name of the cookie to access.
+ */
 function getCookie(name) {
     let cookieValue = null;
-    if (document.cookie && document.cookie != '') {
-        var cookies = document.cookie.split(';');
-        for (var i = 0; i < cookies.length; i++) {
-            var cookie = jQuery.trim(cookies[i]);
-            // Does this cookie string begin with the name we want?
-            if (cookie.substring(0, name.length + 1) == (name + '=')) {
+    if (document.cookie && document.cookie != "") {
+        let cookies = document.cookie.split(";");
+        for (let i = 0; i < cookies.length; i++) {
+            let cookie = jQuery.trim(cookies[i]);
+            if (cookie.substring(0, name.length + 1) == (name + "=")) {
                 cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
                 break;
             }
@@ -15,4 +18,4 @@ function getCookie(name) {
         return cookieValue;
 }
 
-let csrftoken = getCookie('csrftoken');
+let csrftoken = getCookie("csrftoken");

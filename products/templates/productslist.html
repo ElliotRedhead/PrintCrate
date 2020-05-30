@@ -12,7 +12,7 @@
   </div>
   {% if search_query %}
   <div class="row">
-    <p class="col-12 mt-1">Search results for: "{{ search_query }}"</p>
+    <p class="col-12 mt-1">Search results for: <span id="search_query">{{ search_query }}</span></p>
   </div>
   {% endif %}
   {% if products %}
@@ -26,18 +26,18 @@
   <!-- https://docs.djangoproject.com/en/3.0/topics/pagination/ -->
   <div class="row justify-content-center align-items-center">
     {% if page_object.has_previous %}
-    <a href="?page=1" class="text-decoration-none"><button class="btn pagination-btn"><i
+    <a href="?page=1" class="pagination-control"><button class="btn pagination-btn"><i
           class="fas fa-angle-double-left"></i></button></a>
-    <a href="?page={{ page_object.previous_page_number }}"><button class="btn pagination-btn"><i
+    <a href="?page={{ page_object.previous_page_number }}" class="pagination-control"><button class="btn pagination-btn"><i
           class="fas fa-angle-left"></i></button></a>
     {% endif %}
     <div class="mx-3">
       Page {{ page_object.number }} of {{ page_object.paginator.num_pages }}
     </div>
     {% if page_object.has_next %}
-    <a href="?page={{ page_object.next_page_number }}"><button class="btn pagination-btn"><i
+    <a href= "?page={{ page_object.next_page_number }}" class="pagination-control"><button class="btn pagination-btn"><i
           class="fas fa-angle-right"></i></button></a>
-    <a href="?page={{ page_object.paginator.num_pages }}"><button class="btn pagination-btn"><i
+    <a href="?page={{ page_object.paginator.num_pages }}" class="pagination-control"><button class="btn pagination-btn"><i
           class="fas fa-angle-double-right"></i></button></a>
     {% endif %}
   </div>

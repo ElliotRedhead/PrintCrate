@@ -170,8 +170,8 @@ body {
 
 .green-border-container {
   background: #afdab534;
-  border-radius: 0.7rem;
-  border: #95d89eda 1px solid;
+  border-radius: 0.4rem;
+  border: #a4cea0da 0.3rem double;
 }
 
 th {
@@ -209,7 +209,7 @@ h1 {
 }
 
 #product-detail-container {
-  background: #afdab534;
+  background: #fafafa;
   border-radius: 0.3rem;
   border: solid 0.1rem #032b0375;
 }

@@ -12,7 +12,7 @@ class CustomerShipping(models.Model):
         max_length=50, blank=True, null=True)
     town_or_city = models.CharField(max_length=50, blank=False)
     county = models.CharField(max_length=50, blank=False)
-    postcode = models.CharField(max_length=20, blank=False)
+    postcode = models.CharField(max_length=10, blank=False)
     country = models.CharField(max_length=50, blank=False)
     phone_number = models.CharField(max_length=20, blank=False)
 
@@ -25,7 +25,7 @@ class OrderDetail(models.Model):
         CustomerShipping, null=False, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, null=False, on_delete=models.PROTECT)
     quantity = models.IntegerField(blank=False)
-    total = models.DecimalField(max_digits=9, decimal_places=2, blank=False)
+    total = models.DecimalField(max_digits=10, decimal_places=2, blank=False)
     purchase_date = models.DateField(
         default=datetime.date.today, blank=True)
     order_complete = models.BooleanField(default=False)

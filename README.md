@@ -257,8 +257,8 @@ The standard inventory sold on this website is constructed with the following mo
 | Product Name        | name             | max_length=25                                        | CharField                 |
 | Product Image       | product_image    | blank=True                                           | ImageField                |
 | Product Description | description      | max_length=150                                       | TextField                 |
-| Product Price       | price            | max_digits=5, decimal_places=2, MinValueValidator(0) | DecimalField              |
-| Quantity Available  | stock_available  | MinValueValidator(0), MaxValueValidator(50)          | PositiveSmallIntegerField |
+| Product Price       | price            | max_digits=6, decimal_places=2, MinValueValidator(0) | DecimalField              |
+| Quantity Available  | stock_available  | MinValueValidator(0)                                 | PositiveSmallIntegerField |
 | Showcase Product    | showcase_product | default=False                                        | Boolean                   |
 
 ### Shipping Information Model
@@ -273,7 +273,7 @@ This model stores the shipping information for an order placed by a user.
 | Secondary Address Line | secondary_address_line | max_length=50, blank=True, null=True | CharField       |
 | Town/City              | town_or_city           | max_length=50, blank=False           | CharField       |
 | County                 | county                 | max_length=50, blank=False           | CharField       |
-| Postcode               | postcode               | max_length=20, blank=False           | CharField       |
+| Postcode               | postcode               | max_length=10, blank=False           | CharField       |
 | Country                | country                | max_length=50,blank=False            | CharField       |
 | Phone Number           | phone_number           | max_length=20, blank=False           | CharField       |
 
@@ -281,12 +281,14 @@ This model stores the shipping information for an order placed by a user.
 
 This model stores the details of an order made by a customer.
 
-| Key Name    | Database Key | Field Validation                        | Value Type                  |
-| ----------- | ------------ | --------------------------------------- | --------------------------- |
-| Shipping    | shipping     | null=False, on_delete=models.CASCADE    | ForeignKey CustomerShipping |
-| Product     | product      | null=False, on_delete=models.CASCADE    | ForeignKey Product          |
-| Quantity    | quantity     | blank=False                             | IntegerField                |
-| Total Price | total        | default=datetime.date.today, blank=True | DateField                   |
+| Key Name      | Database Key   | Field Validation                             | Value Type                  |
+| ------------- | -------------- | -------------------------------------------- | --------------------------- |
+| Shipping      | shipping       | null=False, on_delete=models.CASCADE         | ForeignKey CustomerShipping |
+| Product       | product        | null=False, on_delete=models.PROTECT         | ForeignKey Product          |
+| Quantity      | quantity       | blank=False                                  | IntegerField                |
+| Total Price   | total          | max_digits=10, decimal_places=2, blank=False | DecimalField                |
+| Purchase Date | purchase_date  | default=datetime.date.today, blank=True      | DateField                   |
+| Order Status  | order_complete | default=False                                | BooleanField                |
 
 ## Testing
 

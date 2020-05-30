@@ -5,7 +5,7 @@ from .models import Product
 
 
 def paginator_setup(request, products):
-    paginator = Paginator(products, 4)
+    paginator = Paginator(products, 15)
     page_object = paginator.get_page(request.GET.get("page"))
     return page_object
 

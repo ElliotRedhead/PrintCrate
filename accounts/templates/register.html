@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-<!-- Enables Boostrap CSS customisation of form appearance. -->
+<!-- Enables customisation of form appearance. -->
 {% load crispy_forms_tags %}
 {% block content %}
 <div class="container main-container d-flex flex-column justify-content-center">
@@ -8,6 +8,7 @@
       <!-- Register form to create a new account. -->
       <h1 class="text-center">Create an account</h1>
       <form method="POST">
+        <!-- Loads CSRF token for form submission. -->
         {% csrf_token %}
         <fieldset class="form-group">
           {{ form|crispy }}

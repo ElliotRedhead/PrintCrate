@@ -8,11 +8,13 @@
     </div>
     <div class="row">
       <div class="col-12 col-md-6 d-flex flex-column align-self-center px-1">
+        <!-- Imports a table detailing the user's purchases if purchases exist. -->
         {% if user_orders %}
-        {% include "components/ordertable.html" %}
-        <small class="text-center font-italic">*Please note that items may be shipped separately depending on manufacture location.</small>
+          {% include "components/ordertable.html" %}
+          <small class="text-center font-italic">*Please note that items may be shipped separately depending on manufacture location.</small>
         {% else %}
-        <h1 class="text-center">Purchases made will be accessible here.</h1>
+          <!-- Placeholder text if no purchases have been made yet. -->
+          <h1 class="text-center">Purchases made will be accessible here.</h1>
         {% endif %}
       </div>
       <div class="col-12 col-md-6 d-flex align-self-center justify-content-center" id="new-profile-credentials">

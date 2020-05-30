@@ -2,6 +2,8 @@
 
 ## Automated Testing
 
+Automated testing is conducted to support manual testing during development as required, the intent is not to achieve 100% coverage with automated testing alone as this would delay rather than aid project development.
+
 ### Python Unit Testing
 
 _NB: The Heroku hobby-tier does not give permissions to allow creation of databases that are required for python automated testing. In order to run the unit testing I temporarily commented out the postgres credentials for this project to test against the default sqlite database._

@@ -5,11 +5,17 @@ from django.shortcuts import render, redirect
 from .forms import ContactForm
 
 # https://learndjango.com/tutorials/django-email-contact-form
+# https://stackoverflow.com/a/28374362/
 
 
 def contact_us(request):
     if request.method == "GET":
         contact_form = ContactForm()
+        current_user = request.user
+        if str(current_user) != "AnonymousUser":
+            contact_form.fields["email"].widget.attrs.update({
+                "value": current_user.email
+            })
     else:
         contact_form = ContactForm(request.POST)
         if contact_form.is_valid():
@@ -19,7 +25,7 @@ def contact_us(request):
                 contact_form.cleaned_data["contact_message"]
             try:
                 send_mail(subject, contact_message, customer_email_address, [
-                          os.environ.get("EMAIL_RECIPIENT")])
+                    os.environ.get("EMAIL_RECIPIENT")])
             except BadHeaderError:
                 return HttpResponse("Invalid header found.")
             return redirect("contact_success")

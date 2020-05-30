@@ -17,8 +17,11 @@ def products_view(request):
 
 
 def product_detail_view(request, pk):
+    previous_page = request.META.get("HTTP_REFERER")
+    if previous_page is None:
+        previous_page = "/products"
     product = Product.objects.get(pk=pk)
-    return render(request, "productdetail.html", {"product": product, "page_title": f"{product.name} | PrintCrate"})
+    return render(request, "productdetail.html", {"product": product, "page_title": f"{product.name} | PrintCrate", "previous_page": previous_page})
 
 
 def product_search(request):

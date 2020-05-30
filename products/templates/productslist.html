@@ -12,7 +12,7 @@
   </div>
   {% if search_query %}
   <div class="row">
-    <p class="col-12 mt-1">Search results for: <span id="search_query">{{ search_query }}</span></p>
+    <p class="col-12 mt-1">Search results for: <span id="search-query">{{ search_query }}</span></p>
   </div>
   {% endif %}
   {% if products %}
@@ -43,7 +43,7 @@
   </div>
 
   {% else %}
-  <h1 class="d-flex text-center mt-3">There are currently no items in
+  <h1 id="empty-items-list-declaration" class="d-flex text-center mt-3">There are currently no items in
     stock.</h1>
   {% endif %}
 </div>

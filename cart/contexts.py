@@ -8,12 +8,14 @@ def cart_contents(request):
     Code modified from core CodeInstitute course content.
     Each product instance price is multiplied by quantity to calculate total
     price of the items in the cart.
+    If product in cart has been removed from database the item is removed from
+    cart.
     """
     cart = request.session.get("cart", {})
     cart_items = []
     total = 0
     product_count = 0
-    for item, quantity in cart.items():
+    for item, quantity in list(cart.items()):
         try:
             product = Product.objects.get(pk=item)
             total += quantity * product.price
@@ -21,10 +23,8 @@ def cart_contents(request):
             cart_items.append(
                 {"id": item, "quantity": quantity, "product": product})
         except Product.DoesNotExist:
-            print(f"The missing item's primary key is {item}")
-            print(request.session.get("cart"))
-            print(
-                "An item that was previously in the cart has been deleted from the database.")
+            cart.pop(item)
+            request.session["cart"] = cart
     return {
         "cart_items": cart_items,
         "total": total,

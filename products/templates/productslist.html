@@ -3,16 +3,16 @@
 <div class="container-fluid main-container">
   <div class="row">
     <!-- Search form to filter for queried term. -->
-    <form class="form container mt-2 mx-1" action="{% url 'product_search' %}" method="GET">
-      <div class="row">
-        <input class="form-control col-7 mr-1" type="text" name="search_query">
-        <button class="btn btn-custom col-4 text-center" type="search">Search</button>
+    <form class="form container mt-3 mx-1" action="{% url 'product_search' %}" method="GET">
+      <div class="row d-flex justify-content-md-end">
+        <input class="form-control col-7 col-md-5 col-lg-3 mx-1" type="text" name="search_query">
+        <button class="btn btn-custom col-4 col-md-2 col-lg-1 text-center" type="search">Search</button>
       </div>
     </form>
   </div>
   {% if search_query %}
   <div class="row">
-    <p class="col-12 mt-1">Search results for: <span id="search-query">{{ search_query }}</span></p>
+    <p class="col-12 col-md-6 offset-md-5 text-center">Search results for: <span id="search-query">{{ search_query }}</span></p>
   </div>
   {% endif %}
   {% if products %}

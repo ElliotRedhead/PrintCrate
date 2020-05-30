@@ -26,3 +26,6 @@ Unit tests can be found in the "tests.py" files of applicable applications withi
   The corrective action was to pass the "page_title" variable as an argument from the rendering view.  
   This resolved the issue but was not possible for the login view as it is using one of Django's contrib packages, meaning it is not possible to access the view itself.  
   The extended corrective action to make the login page title function correctly was to pass the variable as an "extra_context" variable via the accounts/urls.py file, the view then passes this to the rendering HTML as expected.
+
+- Removal of products from the database with those products in the user's cart resulted in a server error (500) as the cart context file was seeking a non-existing item.  
+  This bug was fixed by removing the item from the user's cart if it did not exist in the product database, see [the contexts file, lines 24-26](cart\contexts.py).

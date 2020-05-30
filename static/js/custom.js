@@ -124,11 +124,11 @@ function fetchParameterSetup(fetchInputData, identifyingHeader){
 
 if(window.location.href.match("products/search")){
     $("#empty-items-list-declaration").append(" that match your search criteria.")
-    const search_addition = $("#search-query").text();
-    const formatted_search_addition = search_addition.replace(/ /g,"+");
+    const searchAddition = $("#search-query").text();
+    const formattedSearchAddition = searchAddition.replace(/ /g,"+");
     ($(".pagination-control")).map(function () {
-        const default_paginator = $(this).attr("href");
-        const formatted_paginator = default_paginator.substring(1, default_paginator.length);
-        $(this).attr("href", `search?search_query=${formatted_search_addition}&${formatted_paginator}`);
+        const defaultPaginator = $(this).attr("href");
+        const formattedPaginator = defaultPaginator.substring(1, defaultPaginator.length);
+        $(this).attr("href", `search?search_query=${formattedSearchAddition}&${formattedPaginator}`);
     });
 }

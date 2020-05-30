@@ -242,6 +242,10 @@ The user has the ability to update the quantities of products in their cart, and
 
 The checkout feature allows users to submit their shipping address and conduct payment through Stripe processing.
 
+### Contact Us
+
+The contact feature enables customers to email the site owner to detail additional queries or requests.
+
 ## Data Modelling
 
 ### User Model

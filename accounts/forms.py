@@ -16,6 +16,7 @@ class UserRegisterForm(UserCreationForm):
 
 
 class UserCredentialsUpdateForm(forms.ModelForm):
+    """Form providing fiels to update user credentials."""
     email = forms.EmailField(
         label="New Email Address",
         widget=forms.EmailInput(attrs={"placeholder": "Enter Email"}))

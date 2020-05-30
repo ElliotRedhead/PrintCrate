@@ -5,10 +5,10 @@ from .forms import UserRegisterForm
 
 
 class RegistrationFormTest(TestCase):
-    """Tests registration form validation."""
+    """Test registration form validation."""
 
     def test_field_labels(self):
-        """Tests if field labels exist and are correct."""
+        """Test if field labels exist and are correct."""
         form = UserRegisterForm()
         self.assertTrue(form.fields["username"].label == "Username")
         self.assertTrue(form.fields["email"].label == "Email")
@@ -17,7 +17,7 @@ class RegistrationFormTest(TestCase):
             form.fields["password2"].label == "Password confirmation")
 
     def test_field_help_prompts(self):
-        """Tests if Django help text tips are displayed for applicable fields.
+        """Test if Django help text tips are displayed for applicable fields.
 
         The email field is not included as validated via other means.
         """
@@ -36,7 +36,7 @@ class RegistrationFormTest(TestCase):
                         "Enter the same password as before, for verification.")
 
     def test_successful_submission(self):
-        """Tests if form is determined to be valid given valid input."""
+        """Test if form is determined to be valid given valid input."""
         form_data = {
             "username": "testuser",
             "email": "testemail@domain.com",
@@ -48,14 +48,14 @@ class RegistrationFormTest(TestCase):
 
 
 class RegistrationViewTest(TestCase, Client):
-    """Tests the user registration view functionality."""
+    """Test the user registration view functionality."""
 
     def client_setup(self):
-        """Creates new client to conduct isolated unit tests."""
+        """Create new client to conduct isolated unit tests."""
         self.client = Client()
 
     def test_registration_page_responds_with_url_call(self):
-        """Tests if a view is loaded upon calling the login URL.
+        """Test if a view is loaded upon calling the login URL.
 
         The test passes with 200 (success),
         test fails if other status codes e.g. 404 (not found) are returned.
@@ -65,7 +65,7 @@ class RegistrationViewTest(TestCase, Client):
         self.assertEqual(response.status_code, 200)
 
     def test_registration_correct_user_templates_rendered_with_call(self):
-        """Tests if correct templates are rendered upon calling register URL.
+        """Test if correct templates are rendered upon calling register URL.
 
         Bootstrap and django-specific templates are omitted from this test.
         """
@@ -78,7 +78,7 @@ class RegistrationViewTest(TestCase, Client):
         self.assertTemplateUsed(response, "layout/scripts.html")
 
     def test_registration_third_party_templates_rendered_with_call(self):
-        """Tests third party templates used with register URL."""
+        """Test third party templates used with register URL."""
         response = self.client.get("/accounts/register")
         self.assertTemplateUsed(response, "bootstrap4/uni_form.html")
         self.assertTemplateUsed(response, "bootstrap4/errors.html")
@@ -96,14 +96,14 @@ class RegistrationViewTest(TestCase, Client):
 
 
 class LoginViewTest(TestCase, Client):
-    """Tests the user login view functionality."""
+    """Tess the user login view functionality."""
 
     def client_setup(self):
-        """Creates new client to conduct isolated unit tests."""
+        """Create new client to conduct isolated unit tests."""
         self.client = Client()
 
     def test_login_page_responds_with_url_call(self):
-        """Tests if a view is loaded upon calling the login URL.
+        """Test if a view is loaded upon calling the login URL.
 
         The test passes with 200 (success),
         test fails if other status codes e.g. 404 (not found) are returned.
@@ -113,7 +113,7 @@ class LoginViewTest(TestCase, Client):
         self.assertEqual(response.status_code, 200)
 
     def test_login_correct_user_templates_rendered_with_call(self):
-        """Tests if correct templates are rendered upon calling login URL.
+        """Test if correct templates are rendered upon calling login URL.
 
         Bootstrap and django-specific templates are omitted from this test.
         """
@@ -126,7 +126,7 @@ class LoginViewTest(TestCase, Client):
         self.assertTemplateUsed(response, "layout/scripts.html")
 
     def test_login_correct_third_party_templates_rendered_with_call(self):
-        """Tests if third party templates are used upon calling login URL."""
+        """Test if third party templates are used upon calling login URL."""
         response = self.client.get("/accounts/login")
         self.assertTemplateUsed(response, "bootstrap4/uni_form.html")
         self.assertTemplateUsed(response, "bootstrap4/errors.html")
@@ -142,7 +142,7 @@ class LoginViewTest(TestCase, Client):
         self.assertTemplateUsed(response, "django/forms/widgets/password.html")
 
     def test_successful_submission(self):
-        """Tests if user is logged in with valid credentials.
+        """Test if user is logged in with valid credentials.
 
         An example user is created in the database, credentials
         for that user are then submitted in the login view.

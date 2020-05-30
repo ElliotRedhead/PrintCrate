@@ -22,8 +22,16 @@ def logout(request):
 
 
 def registration(request):
+    """Handle user registration and success feedback.
+
+    Redirects to account profile details if user is authenticated.
+    If user has been redirected to register e.g. due to checkout in progress
+    they are redirected to previous page following successful registration.
+    User is authenticated following successful registration with success modal.
+    """
+
     if request.user.is_authenticated:
-        return redirect("home")
+        return redirect("profile")
     previous_page = request.META.get("HTTP_REFERER")
     form = UserRegisterForm(request.POST)
     if previous_page:
@@ -40,20 +48,36 @@ def registration(request):
                 title="Account created successfully.",
                 icon="success"
             )
-            user = auth.authenticate(request, username=form.cleaned_data.get("username"),
-                                     password=form.cleaned_data.get("password1"))
+            user = auth.authenticate(
+                request,
+                username=form.cleaned_data.get("username"),
+                password=form.cleaned_data.get("password1")
+            )
             if user is not None:
                 auth.login(request, user)
                 if request.session.get("redirect_target"):
-                    return HttpResponseRedirect(request.session["redirect_target"])
+                    return HttpResponseRedirect(
+                        request.session["redirect_target"]
+                    )
                 return redirect("profile")
     else:
         form = UserRegisterForm()
-    return render(request, "register.html", {"form": form, "page_title": "Register | PrintCrate"})
+    return render(
+        request,
+        "register.html",
+        {"form": form, "page_title": "Register | PrintCrate"}
+    )
 
 
 @login_required
 def profile(request):
+    """Create account profile page with update credentials form.
+
+    Serves as default page to redirect following login, sweetalert modal integrated.
+    Orders are filtered to display logged in user's orders only.
+    A validated user update form enables user to update their credentials,
+    a success modal is displayed on update success.
+    """
     previous_page = request.META.get("HTTP_REFERER")
     if previous_page:
         if previous_page.endswith("login"):

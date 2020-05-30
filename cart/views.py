@@ -88,13 +88,3 @@ def validate_item_quantity_change(request, custom_fetch_request):
     if old_item_quantity != new_item_quantity:
         response["updatedQuantity"] = True
     return response
-
-
-def remove_from_cart(request, id):
-    # sweetify.sweetalert(
-    #     request,
-    # )
-    # # cart = request.session.get("cart")
-    # cart.pop(id)
-    # request.session["cart"] = cart
-    return redirect(reverse("cart_view"))

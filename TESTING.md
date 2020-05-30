@@ -6,6 +6,8 @@
 
 _NB: The Heroku hobby-tier does not give permissions to allow creation of databases that are required for python automated testing. In order to run the unit testing I temporarily commented out the postgres credentials for this project to test against the default sqlite database._
 
+Unit tests can be found in the "tests.py" files of applicable applications within the repository.
+
 #### Products Application
 
 - The product model was tested upon creation to verify that the correct product name was returned. The test itself was validated by input of incorrect followed by correct test subjects, these returned a failed and passing test result as expected.

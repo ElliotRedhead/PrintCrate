@@ -1,54 +1,54 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="jumbotron full-height d-flex align-items-center">
-  <div class="container">
-    <div class="row my-5">
-      <h1 id="jumbotron-title" class="col-12 text-center site-title">PrintCrate</h1>
-    </div>
-    <div class="row justify-content-center my-5">
-      <p class="lead bg-light px-3 border depth-shadow text-center">3D prints and designs for aesthetic and functional
-        needs.</p>
-    </div>
-    <hr class="my-4">
-    <div class="row my-5 align-content-center">
-      <a class="btn btn-custom btn-lg col-10 offset-1 my-3 col-md-4 offset-md-2" href="{% url 'products' %}"
-        role="button">
-        BROWSE PRODUCTS
-      </a>
-      <a class="btn btn-custom btn-lg col-10 offset-1 my-3 col-md-4 ml-md-1 d-flex flex-column justify-content-center"
-        href="{% url 'about' %}" role="button">
-        ABOUT US
-      </a>
-    </div>
-  </div>
-</section>
-<section class="container">
-  <div class="row py-5 my-5 green-border-container depth-shadow">
-    <div class="col-4 d-flex flex-column align-items-center border-right">
-      <i class="quality-icon fas fa-microchip mb-4"></i>
-      <span class="text-center font-weight-bold quality-text">Latest in FDM Technology</span>
-    </div>
-    <div class="col-4 d-flex flex-column align-items-center border-right">
-      <i class="quality-icon fas fa-palette mb-4"></i>
-      <div class="d-flex align-self-bottom text-center font-weight-bold quality-text">Tailored Designs
+  <section class="jumbotron full-height d-flex align-items-center">
+    <div class="container">
+      <div class="row my-5">
+        <h1 id="jumbotron-title" class="col-12 text-center site-title">PrintCrate</h1>
+      </div>
+      <div class="row justify-content-center my-5">
+        <p class="lead bg-light px-3 border depth-shadow text-center">3D prints and designs for aesthetic and functional
+          needs.</p>
+      </div>
+      <hr class="my-4">
+      <div class="row my-5 align-content-center">
+        <a class="btn btn-custom btn-lg col-10 offset-1 my-3 col-md-4 offset-md-2" href="{% url 'products' %}"
+          role="button">
+          BROWSE PRODUCTS
+        </a>
+        <a class="btn btn-custom btn-lg col-10 offset-1 my-3 col-md-4 ml-md-1 d-flex flex-column justify-content-center"
+          href="{% url 'about' %}" role="button">
+          ABOUT US
+        </a>
       </div>
     </div>
-    <div class="col-4 d-flex flex-column align-items-center">
-      <i class="quality-icon fas fa-pencil-ruler mb-4"></i>
-      <span class="text-center font-weight-bold quality-text">Quality Assured</span>
+  </section>
+  <section class="container">
+    <div class="row py-5 my-5 green-border-container depth-shadow">
+      <div class="col-4 d-flex flex-column align-items-center border-right">
+        <i class="quality-icon fas fa-microchip mb-4"></i>
+        <span class="text-center font-weight-bold quality-text">Latest in FDM Technology</span>
+      </div>
+      <div class="col-4 d-flex flex-column align-items-center border-right">
+        <i class="quality-icon fas fa-palette mb-4"></i>
+        <div class="d-flex align-self-bottom text-center font-weight-bold quality-text">Tailored Designs
+        </div>
+      </div>
+      <div class="col-4 d-flex flex-column align-items-center">
+        <i class="quality-icon fas fa-pencil-ruler mb-4"></i>
+        <span class="text-center font-weight-bold quality-text">Quality Assured</span>
+      </div>
     </div>
-  </div>
-</section>
-<section class="container">
-  <div class="row">
-    <h1 class="col-12 text-center">Showcase Products</h1>
-  </div>
-  <div class="row d-flex flex-wrap justify-content-around">
-    {% for product in products %}
-    <div class="product-container col-12 col-md-6 col-lg-4 my-3">
-      {% include "productcard.html" %}
+  </section>
+  <section class="container py-5">
+    <div class="row">
+      <h1 class="col-12 text-center">Showcase Products</h1>
     </div>
-    {% endfor %}
-  </div>
-</section>
+    <div class="row d-flex flex-wrap justify-content-around">
+      {% for product in products %}
+        <div class="product-container col-12 col-md-6 col-lg-4 my-3">
+        {% include "productcard.html" %}
+        </div>
+      {% endfor %}
+    </div>
+  </section>
 {% endblock %}

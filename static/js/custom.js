@@ -122,5 +122,11 @@ function fetchParameterSetup(fetchInputData, identifyingHeader){
     return fetchParameters;
 }
 
-
-
+if(window.location.href.match("products/search")){
+    const search_addition = $("#search_query").text()
+    ($(".pagination-control")).map(function () {
+        const default_paginator = $(this).attr("href");
+        const formatted_paginator = default_paginator.substring(1, default_paginator.length);
+        $(this).attr("href", `search?search_query=${search_addition}&${formatted_paginator}`);
+    });
+}

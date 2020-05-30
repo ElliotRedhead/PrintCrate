@@ -1,19 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
-<div id="cart-container" class="container main-container d-flex flex-column justify-content-center">
-  <div class="row d-flex justify-content-center">
-    <h1 class="mb-5">Your Cart Contents</h1>
+<div class="main-container d-flex align-items-center">
+  <div class="container green-border-container d-flex flex-column justify-content-center py-3">
+    <div class="row d-flex justify-content-center">
+      <h1 class="mb-5">Your Cart Contents</h1>
+    </div>
+    <div class="row font-weight-bold text-center mb-3">
+      <div class="col-4">Name</div>
+      <div class="col-2 offset-md-1">Price</div>
+      <div class="col-4">Quantity</div>
+    </div>
+    {% for item in cart_items %}
+      {% include "components/cart-contents.html" %}
+    {% endfor %}
+    <p class="text-center mt-5">Total: £{{ total }} </p>
+    <small class="text-center font-italic">*Please note that items may be shipped separately depending on manufacture
+      location.</small>
+    <a href="{% url 'shipping' %}" class="btn btn-custom mt-3" role="button">Checkout</a>
   </div>
-  <div class="row font-weight-bold text-center mb-3">
-    <div class="col-4">Name</div>
-    <div class="col-2 offset-md-1">Price</div>
-    <div class="col-4">Quantity</div>
-  </div>
-  {% for item in cart_items %}
-  {% include "components/cart-contents.html" %}
-  {% endfor %}
-  <p class="text-center mt-5">Total: £{{ total }} </p>
-  <small class="text-center font-italic">*Please note that items may be shipped separately depending on manufacture location.</small>
-  <a href="{% url 'shipping' %}" class="btn btn-custom mt-3" role="button">Checkout</a>
 </div>
 {% endblock %}

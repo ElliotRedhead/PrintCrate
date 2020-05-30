@@ -168,9 +168,10 @@ body {
   color: #fc7d7d;
 }
 
-#cart-container {
+.green-border-container {
   background: #afdab534;
-  border-radius: 0.5rem;
+  border-radius: 0.7rem;
+  border: #95d89eda 1px solid;
 }
 
 th {

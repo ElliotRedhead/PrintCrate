@@ -10,6 +10,7 @@
       </div>
     </form>
   </div>
+  <!-- Feedback to remind user what their search terms were. -->
   {% if search_query %}
   <div class="row">
     <p class="col-12 col-md-6 offset-md-5 text-center mt-1">Search results for: <span id="search-query">{{ search_query }}</span></p>
@@ -23,29 +24,27 @@
     </div>
     {% endfor %}
   </div>
-  <!-- https://docs.djangoproject.com/en/3.0/topics/pagination/ -->
+  <!-- Pagination controllers, aiding with loading time of product results. -->
   <div class="row justify-content-center align-items-center">
     {% if page_object.has_previous %}
-    <a href="?page=1" class="pagination-control"><button class="btn pagination-btn"><i
-          class="fas fa-angle-double-left"></i></button></a>
-    <a href="?page={{ page_object.previous_page_number }}" class="pagination-control"><button class="btn pagination-btn"><i
-          class="fas fa-angle-left"></i></button></a>
+      <a href="?page=1" class="pagination-control"><button class="btn pagination-btn"><i
+            class="fas fa-angle-double-left"></i></button></a>
+      <a href="?page={{ page_object.previous_page_number }}" class="pagination-control"><button class="btn pagination-btn"><i
+            class="fas fa-angle-left"></i></button></a>
     {% endif %}
     <div class="mx-3">
       Page {{ page_object.number }} of {{ page_object.paginator.num_pages }}
     </div>
     {% if page_object.has_next %}
-    <a href= "?page={{ page_object.next_page_number }}" class="pagination-control"><button class="btn pagination-btn"><i
-          class="fas fa-angle-right"></i></button></a>
-    <a href="?page={{ page_object.paginator.num_pages }}" class="pagination-control"><button class="btn pagination-btn"><i
-          class="fas fa-angle-double-right"></i></button></a>
+      <a href= "?page={{ page_object.next_page_number }}" class="pagination-control"><button class="btn pagination-btn"><i
+            class="fas fa-angle-right"></i></button></a>
+      <a href="?page={{ page_object.paginator.num_pages }}" class="pagination-control"><button class="btn pagination-btn"><i
+            class="fas fa-angle-double-right"></i></button></a>
     {% endif %}
   </div>
-
   {% else %}
-  <h1 id="empty-items-list-declaration" class="d-flex flex-column text-center align-self-center mt-5">There are currently no items in
-    stock</h1>
+    <h1 id="empty-items-list-declaration" class="d-flex flex-column text-center align-self-center mt-5">There are currently no items in
+      stock</h1>
   {% endif %}
-</div>
 </div>
 {% endblock %}

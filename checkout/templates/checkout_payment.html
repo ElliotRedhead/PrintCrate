@@ -13,8 +13,10 @@
   <div class="row d-flex justify-content-center">
     <div class="col-md-6 col-lg-4">
       <form id="payment-form" method="POST">
+        <!-- Loads CSRF token for form submission. -->
         {% csrf_token %}
         <fieldset class="form-group pt-3 pb-1">
+          <!-- Form for user to input their payment method details. -->
           {{ payment_form|crispy }}
         </fieldset>
         <div class="form-group d-flex justify-content-center">
@@ -25,6 +27,7 @@
   </div>
   <div class="row">
     <div class="col-12">
+      <!-- Error message is displayed if Stripe error occurs. -->
       <p class="text-center text-danger" id="stripe-error-message"></p>
     </div>
   </div>

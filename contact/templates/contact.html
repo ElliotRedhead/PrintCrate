@@ -4,7 +4,9 @@
 <section class="container main-container d-flex flex-column justify-content-center align-items-center">
   <h1 class="mb-3 mt-2">Contact Us</h1>
   <form method="post">
+    <!-- Loads CSRF token for form submission. -->
     {% csrf_token %}
+    <!-- Displays contact form for user to input their message to site owner. -->
     {{ contact_form|crispy }}
     <div class="form-actions d-flex justify-content-center">
       <button type="submit" class="btn btn-custom mb-2">Send</button>

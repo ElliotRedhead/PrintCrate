@@ -2,15 +2,18 @@
 {% block content %}
 <div class="main-container d-flex">
   <div class="container align-self-center green-border-container depth-shadow py-3">
+    <!-- A button to return to the previous page, further useful if searching products. -->
     <div class="row mb-3 ml-3"><a href="{{ previous_page }}"><button class="btn btn-custom">Return to products</button></a></div>
     <div class="row d-flex align-items-center justify-content-around">
       <div class="col-12 col-md-4 d-flex justify-content-center px-0">
+        <!-- A large image of the selected product. -->
         <img id="product-detail-image" class="my-4 my-md-0 depth-shadow" src="{{ product.product_image.url }}"
           alt="Product image of {{ product.name }}.">
       </div>
       <div class="col-12 col-md-6">
         <div class="container-fluid d-flex flex-column justify-content-between depth-shadow"
           id="product-detail-container">
+          <!-- Further information about the product and ability to add product to cart. -->
           <div class="row">
             <h1 class="col-12 text-center font-weight-bold mt-3 mb-4">{{ product.name }}</h1>
           </div>

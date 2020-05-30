@@ -1,11 +1,13 @@
 <div class="row d-flex align-items-center">
   <div class="col-4">
+    <!-- Icon to trigger removal of item from the user's cart. -->
     <button class="btn remove-cart-item-button" alt="Remove item from cart." data-remove-item-id="{{ item.product.id }}"
       type="submit"><i class="fas fa-times-circle"></i></button>
     <p class="pt-2 text-center">{{ item.product.name }}</p>
   </div>
   <p class="col-2 offset-md-1 pt-2 text-center">£{{ item.product.price }}</p>
   <form method="POST" action="{% url 'adjust_cart' item.id %}" class="form col-6 col-md-3 offset-md-1">
+    <!-- Loads CSRF token for form submission. -->
     {% csrf_token %}
     <label for="inputAmount" class="sr-only">Item Quantity</label>
     <div class="input-group ml-2">

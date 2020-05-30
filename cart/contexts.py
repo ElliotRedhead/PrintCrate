@@ -21,6 +21,8 @@ def cart_contents(request):
             cart_items.append(
                 {"id": item, "quantity": quantity, "product": product})
         except Product.DoesNotExist:
+            print(f"The missing item's primary key is {item}")
+            print(request.session.get("cart"))
             print(
                 "An item that was previously in the cart has been deleted from the database.")
     return {

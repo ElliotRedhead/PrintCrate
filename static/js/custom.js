@@ -123,6 +123,7 @@ function fetchParameterSetup(fetchInputData, identifyingHeader){
 }
 
 if(window.location.href.match("products/search")){
+    $("#empty-items-list-declaration").append(" that match your search criteria.")
     const search_addition = $("#search-query").text();
     ($(".pagination-control")).map(function () {
         const default_paginator = $(this).attr("href");

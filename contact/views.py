@@ -4,11 +4,17 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from .forms import ContactForm
 
-# https://learndjango.com/tutorials/django-email-contact-form
-# https://stackoverflow.com/a/28374362/
-
 
 def contact_us(request):
+    """Constructs email from form, sending details via SMTP.
+
+    If the user is logged in, the email address field is pre-populated.
+    Invalid field submission results in user feedback through form validation.
+    As content is sent through Gmail SMTP the sender's email address is also included
+    in the message body, as the "from" field is overwritten by Gmail account owner's credentials.
+    Core code adapted from: https://learndjango.com/tutorials/django-email-contact-form
+    Insertion of existing user email adapted from https://stackoverflow.com/a/28374362/
+    """
     if request.method == "GET":
         contact_form = ContactForm()
         current_user = request.user
@@ -27,6 +33,7 @@ def contact_us(request):
                 send_mail(subject, contact_message, customer_email_address, [
                     os.environ.get("EMAIL_RECIPIENT")])
             except BadHeaderError:
+                # Prevents header injection.
                 return HttpResponse("Invalid header found.")
             return redirect("contact_success")
     return render(
@@ -37,6 +44,7 @@ def contact_us(request):
 
 
 def contact_success(request):
+    """Page rendered upon successful contact form submission."""
     return render(
         request,
         "contact_success.html",

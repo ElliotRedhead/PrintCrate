@@ -365,7 +365,7 @@ Accounts for the following (some environmental variables are required from these
    os.environ.setdefault("EMAIL_RECIPIENT", "<Email Address to Send Contact Form Messages to>")
    os.environ.setdefault("STRIPE_PUBLISHABLE", "<Your Stripe Publishable Key>")
    os.environ.setdefault("STRIPE_SECRET", "<Your Stripe Secret Key>")
-   os.environ.setdefault("DJANGO_SECRET", "<Your Stripe Secret Key>")
+   os.environ.setdefault("DJANGO_SECRET", "<Your Django Secret Key>")
    os.environ.setdefault("DEPLOY", "True")
    ```
 

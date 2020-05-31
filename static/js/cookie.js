@@ -2,6 +2,7 @@
  * Retrieves the target cookie from user.
  * credit: https://stackoverflow.com/questions/19333098/403-forbidden-error-when-making-an-ajax-post-request-in-django-framework/26100613#26100613
  * @param {string} name The name of the cookie to access.
+ * @returns {string} The value of the cookie.
  */
 function getCookie(name) {
     let cookieValue = null;
@@ -15,7 +16,7 @@ function getCookie(name) {
             }
         }
     }
-        return cookieValue;
+    return cookieValue;
 }
 
 let csrftoken = getCookie("csrftoken");

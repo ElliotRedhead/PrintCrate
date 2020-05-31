@@ -1,5 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Lato:ital,wght@1,700&family=Permanent+Marker&family=Sigmar+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Lato:ital,wght@1,700&family=Permanent+Marker&display=swap");
 
+/* Media queries are implemented to replace the jumbotron image, optimising file sizes across devices. */
 @media screen and (max-width: 767px) {
   .jumbotron {
     background-image: url("../img/zmorph-3dprinter-mobile.jpg");
@@ -12,51 +13,64 @@
   }
 }
 
+/* Sets default font-size and family. */
 body {
   font-size: 16px;
   font-family: "Open Sans", sans-serif;
 }
-.remove-text-decoration:hover {
-  text-decoration: none;
-}
 
+/* Sets PrintCrate text size in navigation bar. */
 #nav-title {
   font-size: 1.6rem;
 }
 
+/* Sets height of social icons in footer. */
+.footer-social-icon {
+  height: 1.9rem;
+}
+
+/* Sets PrintCrate text size in jumbotron. */
+#jumbotron-title {
+  font-size: 3rem;
+}
+
+/* Custom text border styling in navbar title and jumbotron title instances. */
 .site-title {
   color: #23b772;
   text-shadow: -0.1rem 0 #000000, 0 0.1rem #000000, 0.1rem 0 #000000,
     0 -0.1rem #000000;
 }
 
+/* Positioning of jumbotron content. */
 .jumbotron {
   background-size: cover;
   padding: 0;
   border-radius: 0;
 }
 
+/* Adds transparent white background to jumbotron for an overlay effect. */
 .jumbotron > div {
   background-color: #ffffffb9;
 }
 
-#jumbotron-title {
-  font-size: 3rem;
+/* Customises the text accompanying 'quality icons' on the homepage. */
+.quality-text {
+  font-family: "Lato", sans-serif;
+  font-size: 1.2rem;
 }
 
-.footer-social-icon {
-  height: 1.9rem;
+/* Customises the icons describing service quality on homepage. */
+.quality-icon {
+  font-size: 3.5rem;
 }
 
+/* Sets height of product description field, if text exceeds a scrollbar is used. */
 .product-description {
   height: 8rem;
   overflow-y: auto;
 }
 
-.fill-parent-height {
-  height: 100%;
-}
-
+/* Customises product card appearance. */
 .product-card {
   height: 17rem;
   border-style: double;
@@ -79,6 +93,7 @@ body {
   overflow: hidden;
 }
 
+/* Increases product image size on card hover. */
 .product-card:hover .product-card-image {
   transform: scale(1.5, 1.5);
 }
@@ -96,10 +111,12 @@ body {
   text-transform: capitalize;
 }
 
+/* Contrasting colour for price. */
 .product-card-price {
   color: #23b772;
 }
 
+/* Styling of pagination buttons for contrast. */
 .pagination-btn {
   background: #ffffff;
   background: linear-gradient(180deg, #dddddd 30%, #858585 100%);
@@ -118,7 +135,6 @@ body {
 }
 
 /* Custom button styling to suit site theme. */
-
 .btn-custom {
   background: #23b772;
   background: linear-gradient(180deg, #23b772 35%, #1d8152 100%);
@@ -140,6 +156,7 @@ body {
   color: #ffffff;
 }
 
+/* Responsive feedback on navigation icon hover. */
 .nav-item:hover > .nav-link {
   background-color: #b6b6b6;
   border-radius: 0.4rem;
@@ -165,10 +182,7 @@ body {
   font-size: 1.5rem;
 }
 
-.quality-icon {
-  font-size: 3.5rem;
-}
-
+/* Positioning of button to remove item from user cart. */
 .remove-cart-item-button {
   display: block;
   position: absolute;
@@ -185,6 +199,7 @@ body {
   border: #a4cea0da 0.3rem double;
 }
 
+/* Custom layout and overriding for table. */
 th {
   padding: 1.3rem 0.2rem !important;
   font-size: 0.9rem;
@@ -200,16 +215,19 @@ th {
   border-radius: 1rem;
 }
 
+/* Standardised top level heading across the site where required. */
 h1 {
   font-size: 2rem;
   font-family: "Permanent Marker", cursive;
 }
 
+/* Replacement of Bootstrap standard form input glow with green. */
 .form-control:focus {
   border-color: #23b772;
   box-shadow: inset 0 1px 1px #23b772, 0 0 8px #23b772;
 }
 
+/* Cart icon positioning and border. */
 .badge-info {
   display: block;
   position: fixed;
@@ -231,11 +249,7 @@ h1 {
   object-fit: cover;
 }
 
+/* Casts shadow of container to evoke content depth. */
 .depth-shadow {
   box-shadow: 0.4rem 0.4rem 0.4rem #525252a2;
-}
-
-.quality-text {
-  font-family: "Lato", sans-serif;
-  font-size: 1.2rem;
 }

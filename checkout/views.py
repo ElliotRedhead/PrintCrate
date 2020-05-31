@@ -74,6 +74,14 @@ def checkout_payment(request):
                     icon="error"
                 )
                 return redirect("profile")
+            except stripe.error.APIConnectionError:
+                sweetify.error(
+                    request,
+                    title="A payment error has occurred.",
+                    text="Connection to payment handler has failed, please retry later.",
+                    icon="error"
+                )
+                return redirect("profile")
             else:
                 sweetify.success(
                     request,

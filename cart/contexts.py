@@ -42,7 +42,8 @@ def cart_contents(request):
                     database_product_active_check(product)
                 except AssertionError:
                     cart_adjusted = True
-                    print(f"{item} is no longer an active item.")
+                    cart.pop(item)
+                    request.session["cart"] = cart
                 finally:
                     total += quantity * product.price
                     product_count += quantity

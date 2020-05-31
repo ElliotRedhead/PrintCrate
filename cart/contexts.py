@@ -6,6 +6,10 @@ def database_stock_check(cart_quantity, product_availability):
     assert cart_quantity <= product_availability
 
 
+def database_product_active_check(product):
+    assert product.active_product
+
+
 def cart_contents(request):
     """Enables access to cart items from all apps in project.
 
@@ -34,10 +38,16 @@ def cart_contents(request):
                     cart[item] = quantity
                 request.session["cart"] = cart
             finally:
-                total += quantity * product.price
-                product_count += quantity
-                cart_items.append(
-                    {"id": item, "quantity": quantity, "product": product})
+                try:
+                    database_product_active_check(product)
+                except AssertionError:
+                    cart_adjusted = True
+                    print(f"{item} is no longer an active item.")
+                finally:
+                    total += quantity * product.price
+                    product_count += quantity
+                    cart_items.append(
+                        {"id": item, "quantity": quantity, "product": product})
         except Product.DoesNotExist:
             cart_adjusted = True
             cart.pop(item)

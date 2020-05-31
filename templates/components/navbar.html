@@ -3,10 +3,10 @@
     aria-controls="navbarLinks" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="pt-2 text-decoration-none" href="{% url 'home' %}">
-    <h1 class="site-title" id="nav-title">PRINTCRATE</h1>
+  <a class="pt-2 text-decoration-none" href="{% url 'home' %}" aria-label="PrintCrate Home">
+    <h1 class="site-title" id="nav-title">PrintCrate</h1>
   </a>
-  <a href="{% url 'cart_view' %}" class="order-lg-2 pl-md-3 pt-2 mr-2"><i class="fas fa-shopping-basket"></i>
+  <a href="{% url 'cart_view' %}" class="order-lg-2 pl-md-3 pt-2 mr-2" aria-label="View cart contents"><i class="fas fa-shopping-basket"></i>
     <!-- Displays number of products currently in cart. -->
     {% if product_count > 0 %}
     <label class="badge badge-info">{{ product_count }}</label>

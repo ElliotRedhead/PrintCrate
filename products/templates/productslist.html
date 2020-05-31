@@ -27,18 +27,18 @@
   <!-- Pagination controllers, aiding with loading time of product results and defensive design. -->
   <div class="row justify-content-center align-items-center">
     {% if page_object.has_previous %}
-      <a href="?page=1" class="pagination-control"><button class="btn pagination-btn"><i
+      <a href="?page=1" class="pagination-control" aria-label="Navigate to first page"><button class="btn pagination-btn"><i
             class="fas fa-angle-double-left"></i></button></a>
-      <a href="?page={{ page_object.previous_page_number }}" class="pagination-control"><button class="btn pagination-btn"><i
+      <a href="?page={{ page_object.previous_page_number }}" class="pagination-control" aria-label="Navigate to previous page"><button class="btn pagination-btn"><i
             class="fas fa-angle-left"></i></button></a>
     {% endif %}
     <div class="mx-3">
       Page {{ page_object.number }} of {{ page_object.paginator.num_pages }}
     </div>
     {% if page_object.has_next %}
-      <a href= "?page={{ page_object.next_page_number }}" class="pagination-control"><button class="btn pagination-btn"><i
+      <a href= "?page={{ page_object.next_page_number }}" class="pagination-control" aria-label="Navigate to next page"><button class="btn pagination-btn"><i
             class="fas fa-angle-right"></i></button></a>
-      <a href="?page={{ page_object.paginator.num_pages }}" class="pagination-control"><button class="btn pagination-btn"><i
+      <a href="?page={{ page_object.paginator.num_pages }}" class="pagination-control" aria-label="Navigate to final page"><button class="btn pagination-btn"><i
             class="fas fa-angle-double-right"></i></button></a>
     {% endif %}
   </div>

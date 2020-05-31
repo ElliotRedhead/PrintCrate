@@ -4,7 +4,8 @@
 $(function () {
     containerHeightHandling();
     if (window.location.pathname == "/"){
-        homepageProductSelection(bootstrapDetectBreakpoint())
+        homepageProductSelection(bootstrapDetectBreakpoint());
+        homepageJumbotronMobileBackground(bootstrapDetectBreakpoint());
     };
 }
 );
@@ -45,6 +46,12 @@ $("#clipboard-url").click(function(){
 function homepageProductSelection(breakpoint){
     if (breakpoint.index < 3) {
         $(".product-container").eq(2).hide();
+    }
+}
+
+function homepageJumbotronMobileBackground(breakpoint){
+    if (breakpoint.index < 3){
+        $(".jumbotron").css("background-image","url('../img/zmorph-3dprinter-mobile.jpg'");
     }
 }
 

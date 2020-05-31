@@ -3,13 +3,13 @@
 /* Media queries are implemented to replace the jumbotron image, optimising file sizes across devices. */
 @media screen and (max-width: 767px) {
   .jumbotron {
-    background-image: url("../img/zmorph-3dprinter-mobile.jpg");
+    background-image: url("../img/zmorph_3dprinter_mobile.jpg");
   }
 }
 
 @media screen and (min-width: 768px) {
   .jumbotron {
-    background-image: url("../img/zmorph-3dprinter.jpg");
+    background-image: url("../img/zmorph_3dprinter.jpg");
   }
 }
 

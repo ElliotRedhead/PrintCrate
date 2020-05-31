@@ -3,6 +3,7 @@ from django.core.validators import MinValueValidator
 
 
 class Product(models.Model):
+    """Details product information."""
     name = models.CharField(max_length=25)
     product_image = models.ImageField(
         upload_to="product_images",

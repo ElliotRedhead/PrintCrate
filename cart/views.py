@@ -1,6 +1,5 @@
 import json
 from django.shortcuts import render, redirect, reverse
-from django.contrib import messages
 from django.http import JsonResponse
 import sweetify
 

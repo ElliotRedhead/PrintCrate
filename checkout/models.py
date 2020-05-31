@@ -5,6 +5,7 @@ from products.models import Product
 
 
 class CustomerShipping(models.Model):
+    """Model detailing shipping information for an order."""
     customer = models.ForeignKey(User, on_delete=models.CASCADE)
     full_name = models.CharField(max_length=100, blank=False)
     primary_address_line = models.CharField(max_length=50, blank=False)
@@ -21,6 +22,7 @@ class CustomerShipping(models.Model):
 
 
 class OrderDetail(models.Model):
+    """Model containing order details."""
     shipping = models.ForeignKey(
         CustomerShipping, null=False, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, null=False, on_delete=models.PROTECT)

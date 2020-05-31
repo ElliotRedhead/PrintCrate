@@ -3,10 +3,12 @@ import sweetify
 
 
 def database_stock_check(cart_quantity, product_availability):
+    """Test to determine if cart quantity exceeds quantity available."""
     assert cart_quantity <= product_availability
 
 
 def database_product_active_check(product):
+    """Test to determine if product is active on the store."""
     assert product.active_product
 
 

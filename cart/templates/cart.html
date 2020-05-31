@@ -10,6 +10,7 @@
       <div class="col-2 offset-md-1">Price</div>
       <div class="col-4">Quantity</div>
     </div>
+    <!-- Displays products in user's cart. -->
     {% for item in cart_items %}
       {% include "components/cart-contents.html" %}
     {% endfor %}

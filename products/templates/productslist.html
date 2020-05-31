@@ -24,7 +24,7 @@
     </div>
     {% endfor %}
   </div>
-  <!-- Pagination controllers, aiding with loading time of product results. -->
+  <!-- Pagination controllers, aiding with loading time of product results and defensive design. -->
   <div class="row justify-content-center align-items-center">
     {% if page_object.has_previous %}
       <a href="?page=1" class="pagination-control"><button class="btn pagination-btn"><i

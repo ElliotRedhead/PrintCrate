@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
+<!-- Basic error page, with link for homepage redirect. -->
 <section class="main-container container d-flex align-items-center justify-content-center">
   <div class="row">
     <h1 class="text-center col-12">This page doesn't exist, <a href="{% url 'home' %}">click here</a> to return
       home.</h1>
   </div>
-
 </section>
 {% endblock %}

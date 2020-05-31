@@ -7,10 +7,12 @@
     <h1 class="site-title" id="nav-title">PRINTCRATE</h1>
   </a>
   <a href="{% url 'cart_view' %}" class="order-lg-2 pl-md-3 pt-2 mr-2"><i class="fas fa-shopping-basket"></i>
+    <!-- Displays number of products currently in cart. -->
     {% if product_count > 0 %}
     <label class="badge badge-info">{{ product_count }}</label>
     {% endif %}
   </a>
+  <!-- Navigation links. -->
   <div id="navbarLinks" class="collapse navbar-collapse order-lg-1">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item border bg-white mx-1">

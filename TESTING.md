@@ -41,3 +41,8 @@ Unit tests can be found in the "tests.py" files of applicable applications withi
 
 - Simulation of poor network conditions for mobiles revealed excessively long load times for the homepage jumbotron background image.  
   The jumbotron background was deemed too resource intensive for mobile network usage, and the applied solution is to subsitute the jumbotron background image at lower resolutions via CSS media queries. The applied solution was successful in reducing network load with negligible impact to end-user aesthetics.
+
+- Product pagination is implemented to prevent long loading times (negating the requirement for a loading progress indicator also) as the product database could expand greatly in the future.
+  The same process is applied to viewing products that have been filtered by the search function. However, both pagination and the search function are dependent upon URL manipulation.  
+   With initial implementation of pagination a conflict was raised with the search feature as the URL queries were being overwritten.  
+   The solution was conditional URL manipulation managed by [custom javascript](static/js/custom.js), which preserves both additions.

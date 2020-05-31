@@ -16,8 +16,8 @@ def cart_contents(request):
     Code modified from core CodeInstitute course content.
     Each product instance price is multiplied by quantity to calculate total
     price of the items in the cart.
-    If product in cart has been removed from database the item is removed from
-    cart.
+    Database validation is conducted on each product, if the product fails
+    validation it is removed from the user cart with a user feedback prompt.
     """
     cart = request.session.get("cart", {})
     cart_items = []

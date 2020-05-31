@@ -1,5 +1,12 @@
 # PrintCrate - Development Testing
 
+## Note to Assessors
+
+Superuser access to the PostgreSQL database is granted to the following account for ease of your testing purposes.  
+Username: CodeInstitute  
+Password: PrintCI2020  
+These credentials have only been made available for assessment purposes of this educational project, and would not be shared in a production environment.
+
 ## Automated Testing
 
 Automated testing is conducted to support manual testing during development as required, the intent is not to achieve 100% coverage with automated testing alone as this would delay rather than aid project development.

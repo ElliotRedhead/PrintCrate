@@ -30,6 +30,8 @@ def cart_contents(request):
                 quantity = product.stock_available
                 if quantity == 0:
                     cart.pop(item)
+                else:
+                    cart[item] = quantity
                 request.session["cart"] = cart
             finally:
                 total += quantity * product.price

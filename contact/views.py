@@ -31,13 +31,11 @@ def contact_us(request):
                 contact_form.cleaned_data["contact_message"]
             try:
                 send_mail(subject, contact_message, customer_email_address, [
-                    os.environ.get("EMAIL_RECIPIENT")])
+                    os.environ.get("EMAIL_RECIPIENT")], True)
             except BadHeaderError:
                 # Prevents header injection.
                 return HttpResponse("Invalid header found.")
-            except Exception as e:
-                return HttpResponse(f"An exception occurred, please contact site owner with reference: {e.message} & {e.args}")
-            return redirect("contact_success")
+        return redirect("contact_success")
     return render(
         request,
         "contact.html",

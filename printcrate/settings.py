@@ -18,10 +18,6 @@ if os.path.exists("env.py"):
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv("DJANGO_SECRET")
 
@@ -142,6 +138,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+
+# Amazon Web Service Required Settings
 AWS_S3_OBJECT_PARAMETERS = {
     'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
     'CacheControl': 'max-age=99999999',
@@ -171,18 +169,23 @@ if os.getenv("DEPLOY"):
 else:
     STATIC_URL = "/static/"
 
-
+# Location of files for project operation.
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
 
+# Storage of messages for feedback to user between redirects.
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+
+# URLs to redirect user requiring login & upon login success.
 LOGIN_URL = "login"
 LOGIN_REDIRECT_URL = "profile"
 
+# Defining sweetalert version for sweeitfy function.
 SWEETIFY_SWEETALERT_LIBRARY = "sweetalert2"
 
+# Credentials for functioning contact form page.
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
@@ -190,7 +193,9 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = os.environ.get("EMAIL_HOST")
 EMAIL_HOST_PASSWORD = os.environ.get("HOST_PASS")
 
+# Stripe-required keys.
 STRIPE_PUBLISHABLE = os.getenv("STRIPE_PUBLISHABLE")
 STRIPE_SECRET = os.getenv("STRIPE_SECRET")
 
+# Definition of desired style for forms.
 CRISPY_TEMPLATE_PACK = "bootstrap4"

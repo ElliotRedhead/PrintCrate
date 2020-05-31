@@ -36,9 +36,6 @@ Unit tests can be found in the "tests.py" files of applicable applications withi
   This resolved the issue but was not possible for the login view as it is using one of Django's contrib packages, meaning it is not possible to access the view itself.  
   The extended corrective action to make the login page title function correctly was to pass the variable as an "extra_context" variable via the accounts/urls.py file, the view then passes this to the rendering HTML as expected.
 
-- Removal of products from the database with those products in the user's cart resulted in a server error (500) as the cart context file was seeking a non-existing item.  
-  This bug was fixed by removing the item from the user's cart if it did not exist in the product database, see [the contexts file, lines 24-26](cart\contexts.py).
-
 - Simulation of poor network conditions for mobiles revealed excessively long load times for the homepage jumbotron background image.  
   The jumbotron background was deemed too resource intensive for mobile network usage, and the applied solution is to subsitute the jumbotron background image at lower resolutions via CSS media queries. The applied solution was successful in reducing network load with negligible impact to end-user aesthetics.
 
@@ -46,3 +43,14 @@ Unit tests can be found in the "tests.py" files of applicable applications withi
   The same process is applied to viewing products that have been filtered by the search function. However, both pagination and the search function are dependent upon URL manipulation.  
    With initial implementation of pagination a conflict was raised with the search feature as the URL queries were being overwritten.  
    The solution was conditional URL manipulation managed by [custom javascript](static/js/custom.js), which preserves both additions.
+
+#### Database Integrity
+
+- Removal of products from the database with those products in the user's cart resulted in a server error (500) as the cart context file was seeking a non-existing item.  
+  This bug was fixed by removing the item from the user's cart if it did not exist in the product database, see [the contexts file, cart_contents function](cart\contexts.py).
+
+- Preservation of a user's previous orders is important to manage sales metrics and for both business and customer traceability following a purchase.  
+  Initial handling of product deletion was to prevent deletion if orders of those items had been placed in the past. However, over time this would result in a bloated library of redundant products if items were discontinued over time.  
+  The solution was to add another field to all products, "active_product" with default value of True.  
+  The products list is filtered to show only active products and any inactive products in user carts are removed.  
+  This allows the site owner to toggle visibility of items that may be out of stock for longer periods of time without deleting valuable order information.

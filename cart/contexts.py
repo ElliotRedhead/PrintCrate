@@ -1,5 +1,5 @@
-from products.models import Product
 import sweetify
+from products.models import Product
 
 
 def database_stock_check(cart_quantity, product_availability):

@@ -31,3 +31,6 @@ Unit tests can be found in the "tests.py" files of applicable applications withi
 
 - Removal of products from the database with those products in the user's cart resulted in a server error (500) as the cart context file was seeking a non-existing item.  
   This bug was fixed by removing the item from the user's cart if it did not exist in the product database, see [the contexts file, lines 24-26](cart\contexts.py).
+
+- Simulation of poor network conditions for mobiles revealed excessively long load times for the homepage jumbotron background image.  
+  The jumbotron background was deemed too resource intensive for mobile network usage, and the applied solution is to subsitute the jumbotron background image at lower resolutions via CSS media queries. The applied solution was successful in reducing network load with negligible impact to end-user aesthetics.

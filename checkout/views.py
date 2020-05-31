@@ -87,10 +87,15 @@ def checkout_payment(request):
 
 
 def create_order_product_records(request, cart):
-    """Creates the product order record in the database."""
+    """Creates the product order record in the database.
+
+    The product's available stock is decreased by the purchased quantity.
+    """
     for item, quantity in cart.items():
         product = get_object_or_404(Product, pk=item)
         product_total = quantity * product.price
+        product.stock_available -= quantity
+        product.save()
         order_detail = OrderDetail(
             shipping=CustomerShipping.objects.filter(
                 customer=request.user).last(),

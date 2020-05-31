@@ -5,7 +5,9 @@ $(function () {
     containerHeightHandling();
     if (window.location.pathname == "/"){
         homepageProductSelection(bootstrapDetectBreakpoint());
+        console.log($(".jumbotron").css("background-image"));
         homepageJumbotronMobileBackground(bootstrapDetectBreakpoint());
+        console.log($(".jumbotron").css("background-image"));
     };
 }
 );
@@ -51,7 +53,10 @@ function homepageProductSelection(breakpoint){
 
 function homepageJumbotronMobileBackground(breakpoint){
     if (breakpoint.index < 3){
-        $(".jumbotron").css("background-image","url('../img/zmorph-3dprinter-mobile.jpg'");
+        let desktopJumbotronBackground = ($(".jumbotron").css("background-image"));
+        const fileExtensionIndex = desktopJumbotronBackground.indexOf(".jpg");
+        const mobileJumbotronBackground = desktopJumbotronBackground.slice(0,fileExtensionIndex) + "-mobile" + desktopJumbotronBackground.slice(fileExtensionIndex);
+        ($(".jumbotron").css("background-image", mobileJumbotronBackground));
     }
 }
 

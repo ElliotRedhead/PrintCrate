@@ -6,6 +6,9 @@ $(function () {
     if (window.location.pathname == "/"){
         homepageProductSelection(bootstrapDetectBreakpoint());
     };
+    if(window.location.pathname.match("products/search")){
+        searchPaginationSupport();
+    }
 }
 );
 
@@ -122,7 +125,10 @@ function fetchParameterSetup(fetchInputData, identifyingHeader){
     return fetchParameters;
 }
 
-if(window.location.href.match("products/search")){
+/**
+ * Manipulates paginator target URLs to include search query.
+ */
+function searchPaginationSupport(){
     $("#empty-items-list-declaration").append(" that match your search criteria.")
     const searchAddition = $("#search-query").text();
     const formattedSearchAddition = searchAddition.replace(/ /g,"+");

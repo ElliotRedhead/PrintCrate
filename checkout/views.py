@@ -66,6 +66,14 @@ def checkout_payment(request):
                     text="If error persists, contact site owner.",
                     icon="error"
                 )
+            except stripe.error.InvalidRequestError:
+                sweetify.error(
+                    request,
+                    title="A payment error has occurred.",
+                    text="An item may have gone out of stock during checkout.",
+                    icon="error"
+                )
+                return redirect("profile")
             else:
                 sweetify.success(
                     request,
@@ -73,7 +81,6 @@ def checkout_payment(request):
                     icon="success"
                 )
                 create_order_product_records(request, cart)
-
                 del request.session["cart"]
                 return redirect(reverse("profile"))
     else:

@@ -264,6 +264,7 @@ The standard inventory sold on this website is constructed with the following mo
 | Product Price       | price            | max_digits=6, decimal_places=2, MinValueValidator(0) | DecimalField              |
 | Quantity Available  | stock_available  | MinValueValidator(0)                                 | PositiveSmallIntegerField |
 | Showcase Product    | showcase_product | default=False                                        | Boolean                   |
+| Active Product      | active_product   | default=True                                         | Boolean                   |
 
 ### Shipping Information Model
 

@@ -5,9 +5,7 @@ $(function () {
     containerHeightHandling();
     if (window.location.pathname == "/"){
         homepageProductSelection(bootstrapDetectBreakpoint());
-        console.log($(".jumbotron").css("background-image"));
         homepageJumbotronMobileBackground(bootstrapDetectBreakpoint());
-        console.log($(".jumbotron").css("background-image"));
     };
 }
 );
@@ -48,15 +46,6 @@ $("#clipboard-url").click(function(){
 function homepageProductSelection(breakpoint){
     if (breakpoint.index < 3) {
         $(".product-container").eq(2).hide();
-    }
-}
-
-function homepageJumbotronMobileBackground(breakpoint){
-    if (breakpoint.index < 3){
-        let desktopJumbotronBackground = ($(".jumbotron").css("background-image"));
-        const fileExtensionIndex = desktopJumbotronBackground.indexOf(".jpg");
-        const mobileJumbotronBackground = desktopJumbotronBackground.slice(0,fileExtensionIndex) + "-mobile" + desktopJumbotronBackground.slice(fileExtensionIndex);
-        ($(".jumbotron").css("background-image", mobileJumbotronBackground));
     }
 }
 

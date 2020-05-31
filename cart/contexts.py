@@ -43,7 +43,15 @@ def cart_contents(request):
             cart.pop(item)
             request.session["cart"] = cart
     if cart_adjusted:
-        print("The user's cart has been changed due to quantity restrictions.")
+        sweetify.error(
+            request,
+            title="One or more items have become unavailable",
+            text="Please review your updated cart contents.",
+            position="top-start",
+            timer=4000,
+            timerProgressBar=True,
+            button=True
+        )
     return {
         "cart_items": cart_items,
         "total": total,

@@ -5,7 +5,6 @@ $(function () {
     containerHeightHandling();
     if (window.location.pathname == "/"){
         homepageProductSelection(bootstrapDetectBreakpoint());
-        homepageJumbotronMobileBackground(bootstrapDetectBreakpoint());
     };
 }
 );

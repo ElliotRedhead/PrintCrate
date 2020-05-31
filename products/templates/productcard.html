@@ -9,7 +9,13 @@
   </div>
   <div class="product-card-information d-flex flex-column justify-content-around align-items-center mr-2">
     <div class="product-card-title font-weight-bold mt-3 text-center">{{ product.name }}</div>
-    <div class="product-card-price text-center">£{{ product.price }}</div>
+    <div class="product-card-price text-center">
+      {% if product.stock_available > 0 %}
+      £{{ product.price }}
+        {% else %}
+        Item out of stock.
+      {% endif %}
+    </div>
     <a href="{% url 'product_detail' product.pk %}" class="btn btn-custom mb-2">Product Details</a>
   </div>
 </div>

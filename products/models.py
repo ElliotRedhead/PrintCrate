@@ -16,6 +16,7 @@ class Product(models.Model):
     stock_available = models.PositiveSmallIntegerField(
         validators=[MinValueValidator(0)])
     showcase_product = models.BooleanField(default=False)
+    active_product = models.BooleanField(default=True)
 
     def __str__(self):
         return self.name

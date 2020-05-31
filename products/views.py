@@ -11,7 +11,7 @@ def paginator_setup(request, products):
 
 
 def products_view(request):
-    products = Product.objects.all()
+    products = Product.objects.filter(active_product=True)
     paginator_info = paginator_setup(request, products)
     return render(request, "productslist.html", {"products": products, "page_title": "Products | PrintCrate", "page_object": paginator_info})
 

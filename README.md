@@ -70,6 +70,10 @@ The live deployment is available [here](https://printcrate.herokuapp.com/)
     - [Libraries](#libraries)
     - [Tools](#tools)
     - [Databases](#databases)
+  - [Credits](#credits)
+    - [Image Sourcing](#image-sourcing)
+    - [Acknowledgements](#acknowledgements)
+      - [Disclaimer](#disclaimer)
 
 ## User Experience
 
@@ -556,3 +560,21 @@ Steps to deploy PrintCrate to Heroku:
 
 - [SQlite3](https://www.sqlite.org/index.html) as a development database.
 - [PostgreSQL](https://www.postgresql.org/) as a deployment-ready database.
+
+## Credits
+
+### Image Sourcing
+
+All product images in the PostgreSQL database were sourced from [thingiverse](https://www.thingiverse.com/), if interested in the original files [click here](https://pastebin.com/4VwD9th7).  
+The crate favicon was sourced from [free3d.com](https://free3d.com/3d-model/wooden-crate-153647.html).
+The social media/hyperlink sharing icons were sourced from [flaticon.com](https://www.flaticon.com/).
+The jumbotron 3d-printer background was sourced from [unsplash.com](https://unsplash.com/photos/UqCCSbAIaDU).
+
+### Acknowledgements
+
+Many thanks for support in the creation of this website to my mentor: [Simen Daehlin](https://github.com/Eventyret).
+Many thanks also to family, friends and the CodeInstitute Slack team for your support throughout my time on the course.
+
+#### Disclaimer
+
+This project and its contents are for educational purposes only.

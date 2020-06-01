@@ -182,7 +182,7 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 LOGIN_URL = "login"
 LOGIN_REDIRECT_URL = "profile"
 
-# Defining sweetalert version for sweeitfy function.
+# Defining sweetalert version for sweetify function.
 SWEETIFY_SWEETALERT_LIBRARY = "sweetalert2"
 
 # Credentials for functioning contact form page.

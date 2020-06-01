@@ -1,7 +1,7 @@
 <!-- Each product card provides a brief summary of the product. -->
 <div class="product-card depth-shadow d-flex justify-content-around align-items-center">
   <div class="d-flex align-items-center justify-content-center product-card-image-container">
-    <a href="{% url 'product_detail' product.pk %}">
+    <a href="{% url 'product_detail' product.pk %}" aria-label="Product details">
       <img class="product-card-image ml-1" src="{{ product.product_image.url }}"
         alt="Product image of {{ product.name }}.">
       </img>

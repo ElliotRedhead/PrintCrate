@@ -44,6 +44,11 @@ The project was also shared with friends with the objective of breaking the site
    With initial implementation of pagination a conflict was raised with the search feature as the URL queries were being overwritten.  
    The solution was conditional URL manipulation managed by [custom javascript](static/js/custom.js), which preserves both additions.
 
+### Contact Us
+
+- The contact form feature is fully functional within a development environment but attempts to send an email from the deployed environment may be blocked by Google's security features due to the unfamiliar IP address of the sign-in, see [screenshot](https://ibb.co/nBDRXbv).
+  Rather than using Gmail in the future I would save customer messages to a database, with an alert for the admin when new messages arrive.
+
 #### Database Integrity
 
 - Removal of products from the database with those products in the user's cart resulted in a server error (500) as the cart context file was seeking a non-existing item.  

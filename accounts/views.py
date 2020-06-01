@@ -88,7 +88,7 @@ def profile(request):
             )
     user = User.objects.get(username=request.user)
     user_orders = OrderDetail.objects.filter(
-        shipping__customer_id=user.id)
+        shipping__customer_id=user.id).order_by("-purchase_date")
     if request.method == "POST":
         form = UserCredentialsUpdateForm(request.POST, instance=user)
         if form.is_valid():

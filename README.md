@@ -578,3 +578,4 @@ Many thanks also to family, friends and the CodeInstitute Slack team for your su
 #### Disclaimer
 
 This project and its contents are for educational purposes only.
+At the time of writing/submission: the deployed version is identical to the development version.

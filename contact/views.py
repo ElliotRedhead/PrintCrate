@@ -35,8 +35,8 @@ def contact_us(request):
             except BadHeaderError:
                 # Prevents header injection.
                 return HttpResponse("Invalid header found.")
-            except Exception:
-                return HttpResponse(f"An exception occurred, please contact site owner with reference: {Exception}")
+            except Exception as e:
+                return HttpResponse(f"An exception occurred, please contact site owner with reference: {e.message} & {e.args}")
             return redirect("contact_success")
     return render(
         request,

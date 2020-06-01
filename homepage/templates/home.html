@@ -42,17 +42,19 @@
     </div>
   </div>
 </section>
-<section class="container py-5">
-  <div class="row">
-    <!-- Small selection of showcased products from PrintCrate. -->
-    <h1 class="col-12 text-center">Showcase Products</h1>
-  </div>
-  <div class="row d-flex flex-wrap justify-content-around">
-    {% for product in products %}
-      <div class="product-container col-12 col-md-6 col-lg-4 my-3">
-      {% include "productcard.html" %}
-      </div>
-    {% endfor %}
-  </div>
-</section>
+{% if products %}
+  <section class="container py-5">
+    <div class="row">
+      <!-- Small selection of showcased products from PrintCrate. -->
+      <h1 class="col-12 text-center">Showcase Products</h1>
+    </div>
+    <div class="row d-flex flex-wrap justify-content-around">
+      {% for product in products %}
+        <div class="product-container col-12 col-md-6 col-lg-4 my-3">
+        {% include "productcard.html" %}
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+{% endif %}
 {% endblock %}

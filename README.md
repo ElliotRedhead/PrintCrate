@@ -454,3 +454,43 @@ Steps to deploy PrintCrate to Heroku:
 10. In the Heroku app dashboard, select the "Deploy" tab. Scroll down to "Manual Deploy", select the master branch and select "Deploy Branch".
 
 11. The build progress can be monitored in the log for the Heroku application, upon build completion, select the "Open App" button to view the deployed application.
+
+## Technologies Used
+
+### Libraries
+
+- [Bootstrap 4](https://www.bootstrapcdn.com/) is used for resolution responsiveness and for general structuring of the UI.
+- [JQuery](https://jquery.com) is used within this project for ease of DOM manipulation.
+- [FontAwesome](https://fontawesome.com//) for a source of the majority of icons.
+- [Google Fonts](https://fonts.google.com/) to supply the fonts used across the site.
+
+### Tools
+
+- [PIP](https://pypi.org/project/pip/) for python package management.
+- [Git](https://git-scm.com/) for version control.
+- [GitHub](https://github.com/) to store the project repository.
+- [Django 3](https://www.djangoproject.com/) as a framework for building the project.
+- [Heroku](https://www.heroku.com/) for live deployment of PrintCrate.
+- [Gunicorn](https://pypi.org/project/gunicorn/) a Python WSGI HTTP Server to enable deployment to Heroku.
+- [Stripe](https://stripe.com) to handle customer payments.
+- [Travis](https://travis-ci.org/) for continuous integration testing.
+- [Django Storages](https://django-storages.readthedocs.io/en/latest/) to enable custom Django storage for AWS.
+- [AWS S3 Bucket](https://aws.amazon.com/) to store static files required on the site.
+- [Boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html) for compatibility with AWS.
+- [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) to custom-style Django forms.
+- [Pillow](https://pillow.readthedocs.io/en/stable/) to enable compatibility across image file formats.
+- [Psycopg2](https://pypi.org/project/psycopg2/) to enable the PostgreSQL database to function with Django.
+- [Coverage](https://coverage.readthedocs.io/en/coverage-5.1/) to have visibility on what code had automated testing.
+- [Sweetify](https://pypi.org/project/sweetify/) for improved modal displays.
+- [autopep8](https://pypi.org/project/autopep8/) for automatic formatting of Python code for PEP-8 style conformity.
+- [pylint](https://pypi.org/project/pylint/) as a primary linting tool for Python.
+- [eslint](https://eslint.org/) as a primary linting tool for JavaScript.
+- [Balsamiq](https://balsamiq.com/) for wireframe creation.
+- [BootstrapDetectBreakPoint.js](https://cdn.jsdelivr.net/npm/bootstrap-detect-breakpoint/) for a lightweight, ready-made solution to detect current display breakpoint.
+- [Cookie.js](https://github.com/js-cookie/js-cookie) for handling of cookies within javascript.
+- [Clipboard.js](https://clipboardjs.com/) to copy a target to the clipboard of the user.
+
+### Databases
+
+- [SQlite3](https://www.sqlite.org/index.html) as a development database.
+- [PostgreSQL](https://www.postgresql.org/) as a deployment-ready database.

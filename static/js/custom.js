@@ -5,7 +5,7 @@ $(function () {
     containerHeightHandling();
     if (window.location.pathname == "/"){
         homepageProductSelection(bootstrapDetectBreakpoint());
-    };
+    }
     if(window.location.pathname.match("products/search")){
         searchPaginationSupport();
     }
@@ -39,7 +39,7 @@ $("#clipboard-url").click(function(){
         text:"Site URL copied to clipboard.",
         timer: 3000,
     });
-})
+});
 
 /**
  * Hides the third showcase product on smaller displays for better site flow / layout.
@@ -56,14 +56,14 @@ function homepageProductSelection(breakpoint){
  * original quantity requested.
  */
 $(".quantity-input").change(function(){
-    quantityInputElement = this
-    newItemQuantity = this.value;
-    itemId = this.dataset.itemId;
+    const quantityInputElement = this;
+    const newItemQuantity = this.value;
+    const itemId = this.dataset.itemId;
     const fetchInputData = {
         itemId: itemId,
         newItemQuantity: newItemQuantity 
     };
-    identifyingHeader = "quantityValidationFetch";
+    const identifyingHeader = "quantityValidationFetch";
     fetch(".", fetchParameterSetup(fetchInputData, identifyingHeader))
         .then(response => {
             response.json()
@@ -74,17 +74,17 @@ $(".quantity-input").change(function(){
                     else {
                         $(quantityInputElement).siblings(".btn").addClass("invisible");
                     }
-                })
-        })
-})
+                });
+        });
+});
 
 /**
  * Button to remove item from cart triggers a confirmation modal on activation.
  * If user then activates confirmation button the item is removed from cart.
  */
 $(".remove-cart-item-button").click(function(){
-    itemId = this.dataset.removeItemId;
-    fetchInputData = {"itemId" : itemId}
+    const itemId = this.dataset.removeItemId;
+    let fetchInputData = {"itemId" : itemId};
     swal.fire({"timer":"20000",
         "title":"Remove product",
         "text":"Are you sure you wish to remove this item from your cart?",
@@ -94,15 +94,14 @@ $(".remove-cart-item-button").click(function(){
         "confirmButtonText":"Remove"})
         .then((userConfirmation) => {
             if (userConfirmation.value) {
-                identifyingHeader = "removeCartItemFetch"
+                const identifyingHeader = "removeCartItemFetch";
                 fetch(".", fetchParameterSetup(fetchInputData, identifyingHeader))
                     .then(function(){
-                        location.reload()
-                    })
-            
+                        location.reload();
+                    });
             }
-        })
-})
+        });
+});
 
 /**
  * A template used for constructing a fetch request to the backend.
@@ -129,7 +128,7 @@ function fetchParameterSetup(fetchInputData, identifyingHeader){
  * Manipulates paginator target URLs to include search query.
  */
 function searchPaginationSupport(){
-    $("#empty-items-list-declaration").append(" that match your search criteria.")
+    $("#empty-items-list-declaration").append(" that match your search criteria.");
     const searchAddition = $("#search-query").text();
     const formattedSearchAddition = searchAddition.replace(/ /g,"+");
     ($(".pagination-control")).map(function () {

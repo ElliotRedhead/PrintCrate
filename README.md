@@ -24,8 +24,7 @@ The live deployment is available [here](https://printcrate.herokuapp.com/)
       - [Customer Stories](#customer-stories)
       - [Customer Story Fulfilment](#customer-story-fulfilment)
   - [Design & Styling](#design--styling)
-    - [Colour Palette](#colour-palette)
-- [Detail colour scheme here.](#detail-colour-scheme-here)
+    - [Colour Scheme](#colour-scheme)
     - [Wireframes](#wireframes)
       - [Homepage](#homepage)
       - [Register Page](#register-page)
@@ -124,11 +123,12 @@ Key objectives/requirements for site users.
 
 ## Design & Styling
 
-### Colour Palette
+### Colour Scheme
 
-This colour palette was formed upon project inception and used to drive UI decisions within the project, adjustments may be made to this as project development progresses.
-
-# Detail colour scheme here.
+The original draft colour schemes for this project fell short of expectations when the site became more established, and as a result were disregarded for adaptive creative attempts.  
+The final colour scheme displays a light theme as is generally preferable for a webshop, with the main theme colour being shades of green.  
+Given that green is one of the colours most affected by colour-blindness, care was taken to ensure contrast and not to overlay with conflicting colours e.g. blue text on green background.  
+The prominent use of green, coupled with whitespace encourages a "new" and "fresh" perception of the site.
 
 ### Wireframes
 

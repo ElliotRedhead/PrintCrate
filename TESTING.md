@@ -5,7 +5,8 @@
 Superuser access to the PostgreSQL database is granted to the following account for ease of your testing purposes.  
 Username: CodeInstitute  
 Password: PrintCI2020  
-These credentials have only been made available for assessment purposes of this educational project, and would not be shared in a production environment.
+These credentials have only been made available for assessment purposes of this educational project, and would not be shared in a production environment.  
+If assessing using a new database: a minimum of three showcase products must be added in order to view the product showcase section on the homepage.
 
 ## Automated Testing
 
@@ -54,3 +55,7 @@ Unit tests can be found in the "tests.py" files of applicable applications withi
   The solution was to add another field to all products, "active_product" with default value of True.  
   The products list is filtered to show only active products and any inactive products in user carts are removed.  
   This allows the site owner to toggle visibility of items that may be out of stock for longer periods of time without deleting valuable order information.
+
+- Upon deployment of PrintCrate to Heroku a server error occured, caused by the selection of random showcase products for the homepage showcase products display.  
+  As there were less than three showcase products in the PostgreSQL database, sampling of three distinct objects with that filter was impossible and so caused an error.  
+  The implemented solution was to only sample if there are more than three showcase products in the database, select all if there are only three showcase products and only display the product showcase section if products are passed from the view.

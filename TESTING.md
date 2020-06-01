@@ -24,6 +24,10 @@ Unit tests can be found in the "tests.py" files of applicable applications withi
 
 ## Manual Testing
 
+Manual testing was conducted with each feature/iteration, the development server was accessed on a second monitor as changes were made to view in realtime what the impact of changes were.  
+Following user stories and attempting to anticipate unexpected traversal of the site has resulted in a more robust final product despite the greater time required to achieve this.  
+The project was also shared with friends with the objective of breaking the site in any way that they could, this encouraged defensive design regarding multiple users conducting transactions that affect product availability and better stock control. This also encouraged greater thought of how users may navigate the site in random ways and manipulation of URLs.
+
 ### Project-Wide
 
 - Page titles were found to be incorrectly handled upon utilising the Jinja {% include %} directive to incluide the head section in the base.html file.  

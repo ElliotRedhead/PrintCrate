@@ -1,4 +1,5 @@
 import sweetify
+
 from products.models import Product
 
 
@@ -50,7 +51,8 @@ def cart_contents(request):
                     total += quantity * product.price
                     product_count += quantity
                     cart_items.append(
-                        {"id": item, "quantity": quantity, "product": product})
+                        {"id": item, "quantity": quantity, "product": product}
+                    )
         except Product.DoesNotExist:
             cart_adjusted = True
             cart.pop(item)
@@ -63,10 +65,6 @@ def cart_contents(request):
             position="top-start",
             timer=4000,
             timerProgressBar=True,
-            button=True
+            button=True,
         )
-    return {
-        "cart_items": cart_items,
-        "total": total,
-        "product_count": product_count
-    }
+    return {"cart_items": cart_items, "total": total, "product_count": product_count}

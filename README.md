@@ -129,9 +129,9 @@ Key objectives/requirements for site users.
 
 ### Colour Scheme
 
-The original draft colour schemes for this project fell short of expectations when the site became more established, and as a result were disregarded for adaptive creative attempts.  
-The final colour scheme displays a light theme as is generally preferable for a webshop, with the main theme colour being shades of green.  
-Given that green is one of the colours most affected by colour-blindness, care was taken to ensure contrast and not to overlay with conflicting colours e.g. blue text on green background.  
+The original draft colour schemes for this project fell short of expectations when the site became more established, and as a result were disregarded for adaptive creative attempts.
+The final colour scheme displays a light theme as is generally preferable for a webshop, with the main theme colour being shades of green.
+Given that green is one of the colours most affected by colour-blindness, care was taken to ensure contrast and not to overlay with conflicting colours e.g. blue text on green background.
 The prominent use of green, coupled with whitespace encourages a "new" and "fresh" perception of the site.
 
 ### Wireframes
@@ -262,17 +262,17 @@ As the project progressed, wireframes were created to guide towards a final proj
 
 ### Home
 
-The homepage serves as the main landing page for site visitors.  
+The homepage serves as the main landing page for site visitors.
 The user is directed to browse products or learn more about PrintCrate, with a selection of products showcased as examples for the user.
 
 ### Products List
 
-Cards displaying the products available at PrintCrate provide an overview of standard stock, giving a summary of each product available at a glance.  
+Cards displaying the products available at PrintCrate provide an overview of standard stock, giving a summary of each product available at a glance.
 Users can access more details about each product by using the "Product Details" button of their selected product.
 
 ### Product Details
 
-Individual product detail pages include information such as the product name, image, description, price and quantity available.  
+Individual product detail pages include information such as the product name, image, description, price and quantity available.
 The option to add a product to the user's cart is given here.
 
 ### About PrintCrate
@@ -282,17 +282,17 @@ Some common questions concerning logistics of the business, product material det
 
 ### Contact
 
-The contact page provides a form for users to send their message directly to the PrintCrate owners.  
+The contact page provides a form for users to send their message directly to the PrintCrate owners.
 The recipient email address is kept hidden in this way and prevents bot scraping of that information.
 
 ### Register Account
 
-A user who is not logged in can access the Register page from the navigation bar, they are then prompted for username, email, password and a confirmation of the chosen password in order to create an account.  
+A user who is not logged in can access the Register page from the navigation bar, they are then prompted for username, email, password and a confirmation of the chosen password in order to create an account.
 If the user already owns an account, there is a prompt to login instead below the registration form.
 
 ### Login
 
-The login page prompts the user for their existing username and password to access their account.  
+The login page prompts the user for their existing username and password to access their account.
 If the user does not already own an account, a prompt below the login form can be clicked to redirect to the registration form.
 
 ### Logout
@@ -301,7 +301,7 @@ A logged in user can logout via the navigation bar link, this clears all session
 
 ### Cart
 
-The cart provides a list of all products in the user's cart with the current total price of all items in the cart.  
+The cart provides a list of all products in the user's cart with the current total price of all items in the cart.
 The user has the ability to update the quantities of products in their cart, and the total price is updated when those changes are submitted.
 
 ### Checkout
@@ -418,7 +418,7 @@ Accounts for the following (some environmental variables are required from these
    pip install -r requirements.txt.
    ```
 
-7. Setting environment variables:  
+7. Setting environment variables:
     Create a file in the root of the project named "env.py", copy the code block below and populate with your details:
 
    ```python
@@ -484,7 +484,7 @@ Steps to deploy PrintCrate to Heroku:
 
 3. Add requirements.txt and Procfile to git tracking, committing their addition and pushing those changes.
 
-4. Open [https://dashboard.heroku.com/apps](Heroku) in your browser, signing in/creating an account as required.  
+4. Open [https://dashboard.heroku.com/apps](Heroku) in your browser, signing in/creating an account as required.
    Create an application by selecting the "New" button on the dashboard. Create a name for the application with an appropriate region.
 
 5. Open the dashboard of the new application on Heroku, select the "Deployment" tab and select GitHub from the Deployment Method selection.
@@ -565,7 +565,7 @@ Steps to deploy PrintCrate to Heroku:
 
 ### Image Sourcing
 
-All product images in the PostgreSQL database were sourced from [thingiverse](https://www.thingiverse.com/), if interested in the original files [click here](https://pastebin.com/4VwD9th7).  
+All product images in the PostgreSQL database were sourced from [thingiverse](https://www.thingiverse.com/), if interested in the original files [click here](https://pastebin.com/4VwD9th7).
 The crate favicon was sourced from [free3d.com](https://free3d.com/3d-model/wooden-crate-153647.html).
 The social media/hyperlink sharing icons were sourced from [flaticon.com](https://www.flaticon.com/).
 The jumbotron 3d-printer background was sourced from [unsplash.com](https://unsplash.com/photos/UqCCSbAIaDU).

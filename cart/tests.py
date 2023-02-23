@@ -1,6 +1,7 @@
-from django.test import TestCase, Client
-from products.models import Product
 from django.contrib.auth.models import User
+from django.test import Client, TestCase
+
+from products.models import Product
 
 
 class TestCartView(TestCase):
@@ -17,14 +18,15 @@ class TestCartView(TestCase):
 
     def test_view_cart_contents(self):
         """Creates user & product, adds to cart & tests URL call."""
-        User.objects.create_user(
-            username="testuser", password="thisisasecret101")
-        item = Product(name="Product",
-                       product_image="testing_img.jpg",
-                       description="Product description.",
-                       price="20.00",
-                       stock_available="5",
-                       showcase_product="True")
+        User.objects.create_user(username="testuser", password="thisisasecret101")
+        item = Product(
+            name="Product",
+            product_image="testing_img.jpg",
+            description="Product description.",
+            price="20.00",
+            stock_available="5",
+            showcase_product="True",
+        )
         item.save()
         self.client.login(username="testuser", password="thisisasecret101")
         session = self.client.session
@@ -38,14 +40,15 @@ class TestCartView(TestCase):
 
         Placeholder data is used to successfully access the cart page.
         """
-        User.objects.create_user(
-            username="testuser", password="thisisasecret101")
-        item = Product(name="Product",
-                       product_image="testing_img.jpg",
-                       description="Product description.",
-                       price="20.00",
-                       stock_available="5",
-                       showcase_product="True")
+        User.objects.create_user(username="testuser", password="thisisasecret101")
+        item = Product(
+            name="Product",
+            product_image="testing_img.jpg",
+            description="Product description.",
+            price="20.00",
+            stock_available="5",
+            showcase_product="True",
+        )
         item.save()
         self.client.login(username="testuser", password="thisisasecret101")
         session = self.client.session

@@ -5,25 +5,33 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('products', '0003_auto_20200413_1145'),
+        ("products", "0003_auto_20200413_1145"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='product',
-            name='name',
+            model_name="product",
+            name="name",
             field=models.CharField(max_length=25),
         ),
         migrations.AlterField(
-            model_name='product',
-            name='price',
-            field=models.DecimalField(decimal_places=2, max_digits=5, validators=[django.core.validators.MinValueValidator(0.0)]),
+            model_name="product",
+            name="price",
+            field=models.DecimalField(
+                decimal_places=2,
+                max_digits=5,
+                validators=[django.core.validators.MinValueValidator(0.0)],
+            ),
         ),
         migrations.AlterField(
-            model_name='product',
-            name='stock_available',
-            field=models.PositiveSmallIntegerField(validators=[django.core.validators.MinValueValidator(0), django.core.validators.MaxValueValidator(50)]),
+            model_name="product",
+            name="stock_available",
+            field=models.PositiveSmallIntegerField(
+                validators=[
+                    django.core.validators.MinValueValidator(0),
+                    django.core.validators.MaxValueValidator(50),
+                ]
+            ),
         ),
     ]

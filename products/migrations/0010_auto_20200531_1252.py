@@ -5,20 +5,21 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('products', '0009_auto_20200526_0943'),
+        ("products", "0009_auto_20200526_0943"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='product',
-            name='active_product',
+            model_name="product",
+            name="active_product",
             field=models.BooleanField(default=True),
         ),
         migrations.AlterField(
-            model_name='product',
-            name='stock_available',
-            field=models.PositiveSmallIntegerField(validators=[django.core.validators.MinValueValidator(0)]),
+            model_name="product",
+            name="stock_available",
+            field=models.PositiveSmallIntegerField(
+                validators=[django.core.validators.MinValueValidator(0)]
+            ),
         ),
     ]

@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "printcrate"
+version = "0.2.0"
+description = "Django webstore for 3D printed creations."
+authors = ["Elliot Redhead"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "~3.9"
+django = "~3.1"
+django-crispy-forms = "1.9.2"
+django-storages = "1.9.1"
+pillow = "8.1.2"
+psycopg2 = "^2.9.5"
+stripe = "2.47.0"
+sweetify = "2.0.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.1.0"
+django-upgrade = "^1.13.0"
+flake8 = "^6.0.0"
+isort = "^5.12.0"
+pre-commit = "^3.0.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

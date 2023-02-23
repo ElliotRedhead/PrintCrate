@@ -1,0 +1,33 @@
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+    -   id: check-added-large-files
+    -   id: check-yaml
+    -   id: end-of-file-fixer
+    -   id: trailing-whitespace
+-   repo: local
+    hooks:
+    -   id: flake8
+        name: flake8
+        entry: flake8
+        language: python
+        types: [file, python]
+        args:
+        - "--max-line-length=88"
+        - "--extend-ignore=W503,E203"
+    -   id: isort
+        name: isort
+        entry: isort
+        language: python
+        types: [file, python]
+    -   id: black
+        name: Black
+        entry: poetry run black
+        language: python
+        types: [file, python]
+-   repo: https://github.com/adamchainz/django-upgrade
+    rev: "1.13.0"
+    hooks:
+    -   id: django-upgrade
+        args: [--target-version, "3.1"]

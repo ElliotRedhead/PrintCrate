@@ -1,6 +1,6 @@
-from django.test import TestCase, Client
+from django.test import Client, TestCase
+
 from .models import Product
-from .views import products_view
 
 
 class ProductModelTest(TestCase):
@@ -21,7 +21,7 @@ class ProductViewTest(TestCase, Client):
     def test_products_list_page_responds_with_url_call(self):
         """Tests if a view is loaded upon calling the products URL.
 
-        The test responds positively with 200, 
+        The test responds positively with 200,
         test fails if status code 404 expected.
         """
         response = self.client.get("/products/")

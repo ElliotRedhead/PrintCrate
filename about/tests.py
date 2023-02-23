@@ -1,11 +1,11 @@
-from django.test import TestCase, Client
+from django.test import Client, TestCase
 
 
 class AboutViewTest(TestCase, Client):
     """Test if 'about us' view is displayed."""
 
     def client_setup(self):
-        """Create client to conduct unit tests. """
+        """Create client to conduct unit tests."""
         self.client = Client()
 
     def test_about_us_page_responds_with_url_call(self):

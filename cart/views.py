@@ -1,7 +1,8 @@
 import json
-from django.shortcuts import render, redirect, reverse
-from django.http import JsonResponse
+
 import sweetify
+from django.http import JsonResponse
+from django.shortcuts import redirect, render, reverse
 
 # The contents of this file are closely based on the course content taught in
 # the CodeInstitute Full Stack Web Development course.
@@ -17,7 +18,7 @@ def empty_cart_modal(request):
         text="Add products to your cart.",
         timer=4000,
         timerProgressBar=True,
-        button=True
+        button=True,
     )
     return request
 
@@ -37,8 +38,7 @@ def cart_view(request):
     if request.method == "POST":
         if request.headers["Identifying-Header"] == "quantityValidationFetch":
             custom_fetch_request = json.loads(request.body)
-            response = validate_item_quantity_change(
-                request, custom_fetch_request)
+            response = validate_item_quantity_change(request, custom_fetch_request)
             return JsonResponse(response)
         if request.headers["Identifying-Header"] == "removeCartItemFetch":
             custom_fetch_request = json.loads(request.body)
@@ -82,7 +82,7 @@ def validate_item_quantity_change(request, custom_fetch_request):
     response = {
         "itemId": item_id,
         "newItemQuantity": new_item_quantity,
-        "updatedQuantity": False
+        "updatedQuantity": False,
     }
     if old_item_quantity != new_item_quantity:
         response["updatedQuantity"] = True

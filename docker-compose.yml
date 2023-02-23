@@ -1,0 +1,41 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres
+    volumes:
+      - db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_NAME=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    networks:
+    - printcrate
+    ports:
+      - "5432:5432"
+  django:
+    build:
+      context: ./
+    command: python3 manage.py runserver 0.0.0.0:8000
+    volumes:
+    - .:/django
+    networks:
+    - printcrate
+    ports:
+    - "8000:8000"
+    environment:
+      - POSTGRES_NAME=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    depends_on:
+      - db
+
+networks:
+  printcrate:
+    driver: bridge
+
+volumes:
+  db:
+    driver: local
+  django:
+    driver: local

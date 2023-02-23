@@ -1,13 +1,15 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+import stripe
+import sweetify
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
-import sweetify
-from cart.views import empty_cart_modal
+from django.shortcuts import get_object_or_404, redirect, render, reverse
+
 from cart.contexts import cart_contents
+from cart.views import empty_cart_modal
 from products.models import Product
+
 from .forms import CustomerShippingForm, PaymentForm
 from .models import CustomerShipping, OrderDetail
-import stripe
 
 stripe.api_key = settings.STRIPE_SECRET
 
@@ -35,8 +37,7 @@ def checkout_shipping_address_view(request):
     return render(
         request,
         "checkout_shipping_address.html",
-        {"page_title": "Shipping | PrintCrate",
-         "customer_shipping_form": form}
+        {"page_title": "Shipping | PrintCrate", "customer_shipping_form": form},
     )
 
 
@@ -54,39 +55,39 @@ def checkout_payment(request):
             cart_total = cart_contents(request)["total"]
             try:
                 stripe.Charge.create(
-                    amount=int(cart_total*100),
+                    amount=int(cart_total * 100),
                     currency="GBP",
                     description=request.user.email,
-                    card=payment_form.cleaned_data["stripe_id"]
+                    card=payment_form.cleaned_data["stripe_id"],
                 )
             except stripe.error.CardError:
                 sweetify.error(
                     request,
-                    title="Payment error occurred, please retry with valid credentials.",
+                    title="Payment error occurred, please check your credentials.",
                     text="If error persists, contact site owner.",
-                    icon="error"
+                    icon="error",
                 )
             except stripe.error.InvalidRequestError:
                 sweetify.error(
                     request,
                     title="A payment error has occurred.",
                     text="An item may have gone out of stock during checkout.",
-                    icon="error"
+                    icon="error",
                 )
                 return redirect("profile")
             except stripe.error.APIConnectionError:
                 sweetify.error(
                     request,
                     title="A payment error has occurred.",
-                    text="Connection to payment handler has failed, please retry later.",
-                    icon="error"
+                    text="Connection to payment handler failed, please retry later.",
+                    icon="error",
                 )
                 return redirect("profile")
             else:
                 sweetify.success(
                     request,
                     title="Payment successful, thank you for your purchase.",
-                    icon="success"
+                    icon="success",
                 )
                 create_order_product_records(request, cart)
                 del request.session["cart"]
@@ -94,10 +95,13 @@ def checkout_payment(request):
     else:
         payment_form = PaymentForm()
     return render(
-        request, "checkout_payment.html",
-        {"page_title": "Payment | PrintCrate",
-         "payment_form": payment_form,
-         "publishable": settings.STRIPE_PUBLISHABLE}
+        request,
+        "checkout_payment.html",
+        {
+            "page_title": "Payment | PrintCrate",
+            "payment_form": payment_form,
+            "publishable": settings.STRIPE_PUBLISHABLE,
+        },
     )
 
 
@@ -112,8 +116,7 @@ def create_order_product_records(request, cart):
         product.stock_available -= quantity
         product.save()
         order_detail = OrderDetail(
-            shipping=CustomerShipping.objects.filter(
-                customer=request.user).last(),
+            shipping=CustomerShipping.objects.filter(customer=request.user).last(),
             product=product,
             quantity=quantity,
             total=product_total,

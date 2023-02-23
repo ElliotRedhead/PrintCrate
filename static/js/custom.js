@@ -61,7 +61,7 @@ $(".quantity-input").change(function(){
     const itemId = this.dataset.itemId;
     const fetchInputData = {
         itemId: itemId,
-        newItemQuantity: newItemQuantity 
+        newItemQuantity: newItemQuantity
     };
     const identifyingHeader = "quantityValidationFetch";
     fetch(".", fetchParameterSetup(fetchInputData, identifyingHeader))

@@ -12,29 +12,21 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 
-if os.path.exists("env.py"):
-    import env  # noqa: F401
+from decouple import Csv, config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = os.environ.get("DJANGO_SECRET")
+SECRET_KEY = config("DJANGO_SECRET")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-if os.environ.get("DEPLOY"):
-    DEBUG = False
-else:
+DEPLOY = config("DEPLOY", cast=bool)
+DEBUG = not DEPLOY
+if DEBUG:
     print("Debug is set to true, this is only suitable for development environments.")
-    DEBUG = True
 
-ALLOWED_HOSTS = [
-    "localhost",
-    "*.herokuapp.com",
-    "printcrate.herokuapp.com",
-    "127.0.0.1",
-]
+ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv())
 
-# Application definition
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -42,6 +34,7 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
+    "crispy_bootstrap5",
     "crispy_forms",
     "django.contrib.staticfiles",
     "printcrate",
@@ -53,7 +46,6 @@ INSTALLED_APPS = [
     "about",
     "contact",
     "storages",
-    "sweetify",
 ]
 
 MIDDLEWARE = [
@@ -93,12 +85,12 @@ DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 # Database
 DATABASES = {
     "default": {
-        "ENGINE": os.environ.get("DATABASE_ENGINE"),
-        "NAME": os.environ.get("DATABASE_NAME"),
-        "USER": os.environ.get("DATABASE_USER"),
-        "PASSWORD": os.environ.get("DATABASE_PASSWORD"),
-        "HOST": os.environ.get("DATABASE_HOST"),
-        "PORT": os.environ.get("DATABASE_PORT"),
+        "ENGINE": config("DATABASE_ENGINE"),
+        "NAME": config("DATABASE_NAME"),
+        "USER": config("DATABASE_USER"),
+        "PASSWORD": config("DATABASE_PASSWORD"),
+        "HOST": config("DATABASE_HOST"),
+        "PORT": config("DATABASE_PORT", cast=int),
     }
 }
 
@@ -141,32 +133,29 @@ AWS_S3_OBJECT_PARAMETERS = {
 
 AWS_STORAGE_BUCKET_NAME = "django-printcrate-bucket"
 AWS_S3_REGION_NAME = "eu-west-2"
-AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
-AWS_SECRET_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
-AWS_S3_CUSTOM_DOMAIN = "%s.s3.amazonaws.com" % AWS_STORAGE_BUCKET_NAME
+AWS_ACCESS_KEY_ID = config("AWS_ACCESS_KEY")
+AWS_SECRET_KEY = config("AWS_SECRET_ACCESS_KEY")
+AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
 AWS_DEFAULT_ACL = None
 AWS_S3_FILE_OVERWRITE = False
 
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
+STATIC_URL = "/static/"
+STATICFILES_LOCATION = "static"
 
-if os.environ.get("DEPLOY"):
+MEDIAFILES_LOCATION = "media"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = "/media/"
+
+if DEPLOY:
     STATICFILES_STORAGE = "custom_storages.StaticStorage"
     DEFAULT_FILE_STORAGE = "custom_storages.MediaStorage"
     STATIC_URL = "/staticfiles/"
     DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
-    STATICFILES_LOCATION = "static"
-    MEDIAFILES_LOCATION = "media"
     DEFAULT_FILE_LOCATION = "custom_storages.MediaStorage"
-    STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
-    MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
-else:
-    STATIC_URL = "/static/"
+    STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/"
+    MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/"
 
-# Location of files for project operation.
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
-
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-MEDIA_URL = "/media/"
 
 # Storage of messages for feedback to user between redirects.
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
@@ -175,20 +164,18 @@ MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 LOGIN_URL = "login"
 LOGIN_REDIRECT_URL = "profile"
 
-# Defining sweetalert version for sweetify function.
-SWEETIFY_SWEETALERT_LIBRARY = "sweetalert2"
-
 # Credentials for functioning contact form page.
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_USE_TLS = True
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
-EMAIL_HOST_USER = os.environ.get("EMAIL_HOST")
-EMAIL_HOST_PASSWORD = os.environ.get("HOST_PASS")
+EMAIL_HOST_USER = config("EMAIL_HOST")
+EMAIL_HOST_PASSWORD = config("HOST_PASSWORD")
 
 # Stripe-required keys.
-STRIPE_PUBLISHABLE = os.environ.get("STRIPE_PUBLISHABLE")
-STRIPE_SECRET = os.environ.get("STRIPE_SECRET")
+STRIPE_PUBLISHABLE = config("STRIPE_PUBLISHABLE")
+STRIPE_SECRET = config("STRIPE_SECRET")
 
 # Definition of desired style for forms.
-CRISPY_TEMPLATE_PACK = "bootstrap4"
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"

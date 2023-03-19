@@ -1,5 +1,4 @@
-import os
-
+from django.conf import settings
 from django.core.mail import BadHeaderError, send_mail
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
@@ -40,7 +39,7 @@ def contact_us(request):
                     subject,
                     contact_message,
                     customer_email_address,
-                    [os.environ.get("EMAIL_RECIPIENT")],
+                    settings.EMAIL_RECIPIENT,
                     True,
                 )
             except BadHeaderError:

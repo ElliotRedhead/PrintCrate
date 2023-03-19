@@ -7,15 +7,19 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "~3.9"
+crispy-bootstrap5 = "^0.7"
 django = "~4.0"
 django-crispy-forms = "~2.0"
 django-storages = "~1.13"
+gunicorn = "^20.1.0"
 pillow = "~9.4"
 psycopg2 = "~2.9"
+python-decouple = "^3.8"
 stripe = "2.47.0"
 
 [tool.poetry.group.dev.dependencies]
 black = "~23.1"
+debugpy = "^1.6.6"
 django-upgrade = "~1.13.0"
 flake8 = "~6.0"
 isort = "~5.12"
